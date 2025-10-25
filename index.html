@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myceloom | Network Iteration</title>
+    <!-- SEO Meta Tags --><meta name="description" content="Myceloom (Network Iteration): An interactive generative artwork with particle life cycles and user-fed energy networks.">
+    <meta name="keywords" content="generative art, interactive art, mycelium, loom, javascript, canvas, digital art, particle system">
+    <meta name="author" content="Generative Artist">
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tone.js Removed -->
+
+    <style>
+        /* Basic styles */
+        html, body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #f0f0f0;
+            overflow: hidden; /* Prevents scrollbars */
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            cursor: none; /* Hide default cursor, as we are the node */
+        }
+        
+        /* Canvas styles */
+        #myceloomCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            display: block; /* Ensures no default margin */
+        }
+
+        /* UI elements styling */
+        .ui-element {
+            position: fixed;
+            z-index: 10;
+            font-weight: 300;
+        }
+
+        /* Modal styles */
+        #modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #modal-content {
+            animation: slide-in 0.3s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+
+    <!-- The Canvas for the artwork --><canvas id="myceloomCanvas"></canvas>
+
+    <!-- UI Elements -->
+    <!-- UPDATED: Title text changed and moved up to make room for footer -->
+    <div id="title" class="ui-element bottom-10 left-4 sm:bottom-12 sm:left-6 text-lg sm:text-xl text-gray-400 tracking-widest opacity-70">
+        myceloom.network
+    </div>
+
+    <!-- NEW: Footer link to unearth.im -->
+    <div class="ui-element bottom-4 left-4 sm:bottom-6 sm:left-6 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
+        <a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="hover:underline">a digital monument by unearth.im</a>
+    </div>
+
+    <!-- NEW: UI Controls Container in top-right -->
+    <div class="ui-element top-4 right-4 sm:top-6 sm:right-6 flex flex-col items-end space-y-2">
+        <!-- UPDATED: Artist Statement as a link -->
+        <a href="#" id="statementButton" class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
+            [Artist Statement]
+        </a>
+        
+        <!-- UPDATED: Mute Button moved here -->
+        <button id="muteButton" class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
+            [Mute]
+        </button>
+    </div>
+
+    <!-- Artist Statement Modal --><div id="modal" class="hidden fixed inset-0 z-20 flex items-center justify-center p-4" style="visibility: hidden; opacity: 0;">
+        <!-- Modal Overlay --><div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-md"></div>
+        
+        <!-- Modal Content --><div id="modal-content" class="relative bg-gray-900 text-gray-200 border border-gray-700 rounded-lg shadow-2xl max-w-md w-full p-6 sm:p-8">
+            <!-- Close Button --><button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors duration-200 text-3xl font-light">&times;</button>
+            
+            <h2 class="text-2xl sm:text-3xl font-light mb-5 text-white">Artist Statement</h2>
+            
+            <!-- UPDATED: Added new paragraph at the end -->
+            <div class="space-y-4 text-base sm:text-lg leading-relaxed text-gray-300 font-light">
+                <p>
+                    <strong class="font-medium text-white">Myceloom</strong> is an exploration of the unseen. It weaves together the organic, decentralized growth of mycelial networks with the structured, human-intentioned patterns of the loom.
+                </p>
+                <p>
+                    Each thread represents a connection, a thought, a packet of data. The work is never static; it is a living digital ecosystem, constantly growing, connecting, and dissolving.
+                </p>
+                <p>
+                    It asks: in our hyper-connected world, are we the weavers, the threads, or the emergent network itself?
+                </p>
+                
+                <!-- NEW: Paragraph with link to myceloom.com -->
+                <p class="pt-4 border-t border-gray-700 text-sm text-gray-400">
+                    Visit <a href="https://myceloom.com" target="_blank" rel="noopener noreferrer" class="text-teal-300 hover:text-teal-200 underline">myceloom.com</a> for a more substantial artist statement and an essay on the "myceloom" concept.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('myceloomCanvas');
+            const ctx = canvas.getContext('2d');
+
+            let particles = [];
+            let sparkles = []; // Array to hold sparkle effects
+            const numParticles = window.innerWidth > 768 ? 150 : 75; // Fewer particles on mobile
+            const maxParticles = numParticles + 100; // Max particles after user clicks/branching
+            const connectDistance = window.innerWidth > 768 ? 120 : 90;
+            const particleSpeed = 0.5;
+
+            // Colors
+            const particleColors = [
+                '#80ffdb', // Light Teal
+                '#72efdd',
+                '#5bc0eb', // Light Blue
+                '#4ea8de',
+                '#fde74c', // Sparse Yellow/Orange
+                '#ffffff'  // White
+            ];
+
+            // --- Native Web Audio API Setup ---
+            let audioCtx;
+            let mainGain;
+            let reverbDelay;
+            let feedback;
+            let isAudioInitialized = false;
+            let isMuted = false; // <-- NEW: Mute state
+
+            // Frequencies for our scales (C Pentatonic)
+            const pentatonicScale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99];
+            const branchScale = [1046.50, 1318.51, 1567.98]; // Higher notes
+
+            function initAudio() {
+                // Create audio context
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Create main gain
+                mainGain = audioCtx.createGain();
+                // UPDATED: Set initial gain based on mute state
+                mainGain.gain.value = isMuted ? 0 : 0.5; 
+                
+                // Create a simple "reverb" (echo) effect
+                reverbDelay = audioCtx.createDelay(0.8);
+                feedback = audioCtx.createGain();
+                feedback.gain.value = 0.4; // Feedback amount
+                
+                // Create a filter for the reverb to make it darker
+                const reverbFilter = audioCtx.createBiquadFilter();
+                reverbFilter.type = 'lowpass';
+                reverbFilter.frequency.value = 2500;
+                
+                // Route the reverb
+                reverbDelay.connect(reverbFilter);
+                reverbFilter.connect(feedback);
+                feedback.connect(reverbDelay);
+                
+                // Connect main gain to reverb and destination
+                mainGain.connect(reverbDelay);
+                mainGain.connect(audioCtx.destination); // Dry signal
+                reverbDelay.connect(audioCtx.destination); // Wet signal
+                
+                isAudioInitialized = true;
+                
+                // Start the drone loop
+                droneLoop();
+            }
+
+            async function startAudio() {
+                if (isAudioInitialized) {
+                    await audioCtx.resume();
+                    return;
+                }
+                if (!audioCtx) {
+                    try {
+                        initAudio();
+                        console.log('Myceloom audio context started.');
+                    } catch (e) {
+                        console.error("Audio context failed to start:", e);
+                    }
+                }
+            }
+
+            // --- Sound Players ---
+
+            function playUserPluck(freq) {
+                if (!isAudioInitialized) return;
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, now);
+                
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.4, now + 0.01); // Attack
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7); // Decay
+                
+                osc.connect(gain);
+                gain.connect(mainGain);
+                
+                osc.start(now);
+                osc.stop(now + 0.7);
+            }
+
+            function playBranchChime(freq) {
+                if (!isAudioInitialized) return;
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now);
+                
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.3, now + 0.01); // Attack
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5); // Decay
+                
+                osc.connect(gain);
+                gain.connect(mainGain);
+                
+                osc.start(now);
+                osc.stop(now + 0.5);
+            }
+
+            function playDroneNote() {
+                if (!isAudioInitialized) return;
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                const freq = pentatonicScale[Math.floor(Math.random() * pentatonicScale.length)];
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, now);
+                
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.1, now + 0.5); // Slow attack
+                gain.gain.linearRampToValueAtTime(0.0001, now + 2.5); // Slow decay
+                
+                osc.connect(gain);
+                gain.connect(mainGain);
+                
+                osc.start(now);
+                osc.stop(now + 2.5);
+            }
+
+            function droneLoop() {
+                playDroneNote();
+                setTimeout(droneLoop, 3000 + Math.random() * 2000); // 3-5 seconds
+            }
+
+            // --- Visual Logic (Unchanged) ---
+
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Particle class
+            class Particle {
+                constructor(type = 'standard', x, y) {
+                    this.type = type; // 'standard', 'mouse', 'branch'
+                    this.reset(x, y); // Initialize all properties
+                    this.color = (type === 'mouse') ? '#ffffff' : particleColors[Math.floor(Math.random() * particleColors.length)];
+                    this.radius = (type === 'mouse') ? 2.5 : Math.random() * 1.5 + 0.5;
+                }
+
+                reset(x, y) {
+                    this.x = x || Math.random() * canvas.width;
+                    this.y = y || Math.random() * canvas.height;
+                    
+                    if (this.type !== 'mouse') {
+                        this.vx = (Math.random() - 0.5) * particleSpeed;
+                        this.vy = (Math.random() - 0.5) * particleSpeed;
+                        this.life = 1.0; // Full life
+                        this.energy = 0; // No energy
+                        this.flash = 0; // Flash timer
+                    }
+                }
+
+                update() {
+                    if (this.type === 'standard' || this.type === 'branch') {
+                        this.x += this.vx;
+                        this.y += this.vy;
+
+                        // Bounce off edges
+                        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                        // Age
+                        this.life -= 0.0002; // Slow decay
+                        if (this.life <= 0) {
+                            this.reset(); // Respawn
+                        }
+                        
+                        // Flash decay
+                        if (this.flash > 0) this.flash -= 0.05;
+                    }
+                }
+
+                draw() {
+                    ctx.save();
+                    // Fade out based on life
+                    ctx.globalAlpha = this.life;
+                    
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+
+                    // Draw flash effect if branching
+                    if (this.flash > 0) {
+                        ctx.globalAlpha = this.flash;
+                        ctx.fillStyle = '#FFFFFF';
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius + this.flash * 5, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    
+                    ctx.restore();
+                }
+            }
+
+            // Sparkle class (for user click)
+            class Sparkle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = Math.random() * 1 + 0.2;
+                    this.color = '#FFFFFF';
+                    this.alpha = 1;
+                    this.speed = Math.random() * 2 + 1;
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.vx = Math.cos(this.angle) * this.speed;
+                    this.vy = Math.sin(this.angle) * this.speed;
+                    this.gravity = 0.05;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += this.gravity;
+                    this.alpha -= 0.03;
+                    this.radius *= 0.98;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, this.alpha);
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            // Create particles
+            function init() {
+                particles = [];
+                
+                // Create the mouse particle first (index 0)
+                particles.push(new Particle('mouse', -100, -100));
+
+                // Create standard particles
+                for (let i = 0; i < numParticles; i++) {
+                    particles.push(new Particle('standard'));
+                }
+            }
+
+            // Draw connections
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    // Don't draw connections from dying particles
+                    if (particles[i].life < 0.2) continue; 
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        if (particles[j].life < 0.2) continue;
+
+                        const dx = particles[i].x - particles[j].x; // <-- FIXED TYPO (was particles[i].x)
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < connectDistance) {
+                            const opacity = (1 - (dist / connectDistance)) * particles[i].life * particles[j].life;
+                            
+                            // Check if user (particle 0) is involved
+                            if (i === 0 || j === 0) {
+                                ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.7})`;
+                                ctx.lineWidth = 0.7;
+
+                                // Charge the other particle
+                                let otherP = (i === 0) ? particles[j] : particles[i];
+                                if (otherP.type !== 'mouse') {
+                                    otherP.energy += 0.005;
+
+                                    // Check for branching
+                                    if (otherP.energy > 1.0) {
+                                        otherP.energy = 0; // Reset energy
+                                        otherP.flash = 1.0; // Trigger flash
+                                        spawnNewParticle(otherP.x, otherP.y, 'branch');
+                                    }
+                                }
+                            } else {
+                                // Standard connection
+                                ctx.strokeStyle = `rgba(${hexToRgb(particles[i].color)}, ${opacity * 0.5})`;
+                                ctx.lineWidth = 0.5;
+                            }
+                            
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            // Animation loop
+            function animate() {
+                // Use a low-opacity clearRect for a trailing "fading" effect
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                
+                drawConnections();
+
+                // Update and draw sparkles
+                for (let i = sparkles.length - 1; i >= 0; i--) {
+                    sparkles[i].update();
+                    sparkles[i].draw();
+                    if (sparkles[i].alpha <= 0 || sparkles[i].radius <= 0.1) {
+                        sparkles.splice(i, 1); // Remove faded sparkles
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            // Helper function to convert hex color to rgb for rgba()
+            function hexToRgb(hex) {
+                let r = 0, g = 0, b = 0;
+                if (hex.length == 4) { // e.g., #f03
+                    r = parseInt(hex[1] + hex[1], 16);
+                    g = parseInt(hex[2] + hex[2], 16);
+                    b = parseInt(hex[3] + hex[3], 16);
+                } else if (hex.length == 7) { // e.g., #ff0033
+                    r = parseInt(hex.substring(1, 3), 16);
+                    g = parseInt(hex.substring(3, 5), 16);
+                    b = parseInt(hex.substring(5, 7), 16);
+                }
+                return `${r}, ${g}, ${b}`;
+            }
+
+            // Modal logic
+            const modal = document.getElementById('modal');
+            const statementButton = document.getElementById('statementButton');
+            const closeModalButton = document.getElementById('closeModal');
+            const modalOverlay = document.getElementById('modal-overlay');
+
+            const openModal = () => {
+                startAudio();
+                modal.classList.remove('hidden');
+                modal.style.visibility = 'visible';
+                modal.style.opacity = 1;
+                document.body.style.cursor = 'default'; // Show cursor for modal
+            };
+
+            const closeModal = () => {
+                modal.style.opacity = 0;
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.style.visibility = 'hidden';
+                }, 300); // Must match transition duration
+                document.body.style.cursor = 'none'; // Hide cursor again
+            };
+
+            // UPDATED: Added preventDefault for the new <a> tag
+            statementButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+            closeModalButton.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+
+            // --- NEW: Mute Button Logic ---
+            const muteButton = document.getElementById('muteButton');
+
+            async function toggleMute() {
+                // Ensure audio context is running before trying to change gain
+                await startAudio(); 
+                
+                isMuted = !isMuted;
+                if (isMuted) {
+                    if (mainGain) mainGain.gain.value = 0; // Mute
+                    muteButton.textContent = "[Unmute]";
+                } else {
+                    if (mainGain) mainGain.gain.value = 0.5; // Unmute to original volume
+                    muteButton.textContent = "[Mute]";
+                }
+            }
+            muteButton.addEventListener('click', toggleMute);
+
+
+            // --- Interaction Listeners ---
+
+            function updateMouseParticle(e) {
+                let x, y;
+                if (e.touches) {
+                    if (e.touches.length > 0) {
+                        x = e.touches[0].clientX;
+                        y = e.touches[0].clientY;
+                    } else {
+                        x = -100; y = -100;
+                    }
+                } else {
+                    x = e.clientX;
+                    y = e.clientY;
+                }
+                
+                if (particles[0]) {
+                    particles[0].x = x;
+                    particles[0].y = y;
+                }
+            }
+
+            // Generic function to spawn a new particle
+            function spawnNewParticle(x, y, type = 'user', e) { // <-- Added 'e'
+                startAudio(); // Ensure audio is started on first interaction
+
+                // Don't spawn if we're clicking on UI
+                if (e && (e.target === statementButton || e.target === closeModalButton || e.target === modalOverlay)) { // <-- Check passed 'e'
+                    return;
+                }
+
+                // Prune oldest particle if we're over the limit
+                if (particles.length > maxParticles) {
+                    // --- OPTIMIZED LOGIC ---
+                    if (particles.length > 1) { // Ensure mouse particle isn't alone
+                        particles.splice(1, 1); 
+                    }
+                    // --- END OPTIMIZED LOGIC ---
+                }
+
+                // Create the particle
+                const p = new Particle(type, x, y);
+                p.vx = (Math.random() - 0.5) * particleSpeed * 2; // Give it a little burst
+                p.vy = (Math.random() - 0.5) * particleSpeed * 2;
+                particles.push(p);
+
+                // --- Trigger Audio & Visuals based on type ---
+                if (type === 'user') {
+                    // Create sparkles
+                    const numSparkles = 10 + Math.floor(Math.random() * 5);
+                    for (let i = 0; i < numSparkles; i++) {
+                        sparkles.push(new Sparkle(x, y));
+                    }
+                    
+                    // Trigger "Pluck" sound
+                    if (isAudioInitialized) {
+                        const noteIndex = Math.floor((1 - (y / window.innerHeight)) * pentatonicScale.length);
+                        const freq = pentatonicScale[Math.max(0, Math.min(noteIndex, pentatonicScale.length - 1))];
+                        playUserPluck(freq);
+                    }
+                } 
+                else if (type === 'branch') {
+                    // Trigger "Branch" sound
+                    if (isAudioInitialized) {
+                        const freq = branchScale[Math.floor(Math.random() * branchScale.length)];
+                        playBranchChime(freq);
+                    }
+                }
+            }
+
+            // Listen for mouse and touch movements
+            window.addEventListener('mousemove', updateMouseParticle);
+            window.addEventListener('touchmove', updateMouseParticle, { passive: false });
+            window.addEventListener('touchend', (e) => {
+                if (particles[0]) {
+                    particles[0].x = -100;
+                    particles[0].y = -100;
+                }
+            });
+
+            // Listen for clicks and taps to spawn new particles (as 'user' type)
+            function handleUserSpawn(e) {
+                let x, y;
+                if (e.touches) {
+                    x = e.touches[0].clientX;
+                    y = e.touches[0].clientY; // <-- Fixed typo here (was e.clientY)
+                } else {
+                    x = e.clientX;
+                    y = e.clientY;
+                }
+                spawnNewParticle(x, y, 'user', e); // <-- Pass 'e'
+            }
+
+            window.addEventListener('click', handleUserSpawn);
+            window.addEventListener('touchstart', (e) => {
+                e.preventDefault(); 
+                handleUserSpawn(e);
+                updateMouseParticle(e);
+            }, { passive: false });
+
+
+            // Start the artwork
+            init();
+            animate();
+        });
+    </script>
+
+</body>
+</html>
