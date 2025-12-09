@@ -5,16 +5,65 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "VisualArtwork",
-  "name": "Myceloom: Network Iteration",
-  "artist": {
-    "@type": "Organization",
-    "name": "unearth.im",
-    "url": "https://unearth.im"
-  },
-  "artMedium": "Generative JavaScript",
-  "artform": "Interactive Digital Art",
-  "description": "An interactive particle system exploring the growth patterns of decentralized networks."
+  "@graph": [
+    {
+      "@type": "VisualArtwork",
+      "@id": "https://myceloom.network/#content",
+      "url": "https://myceloom.network",
+      "name": "Myceloom: Network Iteration",
+      "description": "An interactive particle system exploring the growth patterns of decentralized networks.",
+      "artMedium": "Interactive Particle System",
+      "artForm": "Digital Monument",
+      "inLanguage": "en-US",
+      "datePublished": "2024-12-01",
+      "publisher": { "@id": "https://unearth.im/#organization" },
+      "isPartOf": { "@id": "https://myceloom.network/#website" },
+      "author": [
+        { "@id": "https://josiest.com/#person" },
+        { "@id": "https://felixvelas.co/#person" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://myceloom.network/#website",
+      "url": "https://myceloom.network",
+      "name": "myceloom.network",
+      "publisher": { "@id": "https://unearth.im/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://unearth.im/#organization",
+      "name": "unearth.im",
+      "url": "https://unearth.im",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://unearth.im/favicon-32x32.png"
+      },
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://twitter.com/unearthim",
+        "https://github.com/unearthim"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://josiest.com/#person",
+      "name": "Josie Jefferson",
+      "url": "https://josiest.com",
+      "jobTitle": "Digital Archaeologist & Trust Architect",
+      "affiliation": { "@id": "https://unearth.im/#organization" },
+      "sameAs": ["https://notjojo.im"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://felixvelas.co/#person",
+      "name": "Felix Velasco",
+      "url": "https://felixvelas.co",
+      "jobTitle": "Trust Architect & Digital Archaeologist",
+      "affiliation": { "@id": "https://unearth.im/#organization" },
+      "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"]
+    }
+  ]
 }
 </script>
     <meta charset="UTF-8">
@@ -131,7 +180,9 @@
 
     <!-- NEW: Footer link to unearth.im -->
     <div class="ui-element bottom-4 left-4 sm:bottom-6 sm:left-6 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
-        <a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="hover:underline">a digital monument by unearth.im</a>
+        <small>
+            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer" class="hover:underline">liminal mind meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="hover:underline">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer" class="hover:underline">archive & anvil</a></b>
+        </small>
     </div>
 
     <!-- NEW: UI Controls Container in top-right -->
