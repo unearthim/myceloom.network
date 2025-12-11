@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <script type="application/ld+json">
@@ -33,7 +34,8 @@
     {
       "@type": "Organization",
       "@id": "https://unearth.im/#organization",
-      "name": "unearth.im",
+      "name": "Unearth Heritage Foundry",
+"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
       "url": "https://unearth.im",
       "logo": {
         "@type": "ImageObject",
@@ -72,9 +74,11 @@
     <!-- === 1. Primary Meta Tags === -->
     <title>Myceloom: Network Iteration | myceloom.network </title>
     <meta name="title" content="Myceloom: Network Iteration | myceloom.network">
-    <meta name="description" content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
-    <meta name="keywords" content="generative art, interactive art, mycelium, loom, javascript, canvas, digital art, particle system, unearth.im, web4, symbiotic web">
-    <meta name="author" content="myceloom.network (An unearth.im Project)">
+    <meta name="description"
+        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
+    <meta name="keywords"
+        content="generative art, interactive art, mycelium, loom, javascript, canvas, digital art, particle system, unearth.im, web4, symbiotic web">
+    <meta name="author" content="myceloom.network (by unearth heritage foundry - archive & anvil - unearth.im)">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
@@ -89,7 +93,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myceloom.network/">
     <meta property="og:title" content="Myceloom: Network Iteration | unearth.im">
-    <meta property="og:description" content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
+    <meta property="og:description"
+        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
     <meta property="og:image" content="https://myceloom.network/og-image.png">
     <meta property="og:site_name" content="unearth.im">
 
@@ -97,7 +102,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://myceloom.network/">
     <meta property="twitter:title" content="Myceloom: Network Iteration | unearth.im">
-    <meta property="twitter:description" content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
+    <meta property="twitter:description"
+        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
     <meta property="twitter:image" content="https://myceloom.network/og-image.png">
 
     <!-- === 5. Favicons === -->
@@ -110,25 +116,28 @@
     <meta name="msapplication-TileColor" content="#80ffdb">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-    
+
     <style>
         /* Basic styles */
-        html, body {
+        html,
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #000;
             color: #f0f0f0;
-            overflow: hidden; /* Prevents scrollbars */
+            overflow: hidden;
+            /* Prevents scrollbars */
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            cursor: none; /* Hide default cursor, as we are the node */
+            cursor: none;
+            /* Hide default cursor, as we are the node */
         }
-        
+
         /* Canvas styles */
         #myceloomCanvas {
             position: absolute;
@@ -137,7 +146,8 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            display: block; /* Ensures no default margin */
+            display: block;
+            /* Ensures no default margin */
         }
 
         /* UI elements styling */
@@ -161,6 +171,7 @@
                 transform: translateY(-20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -168,59 +179,79 @@
         }
     </style>
 </head>
+
 <body class="bg-black">
 
     <!-- The Canvas for the artwork --><canvas id="myceloomCanvas"></canvas>
 
     <!-- UI Elements -->
     <!-- UPDATED: Title text changed and moved up to make room for footer -->
-    <div id="title" class="ui-element bottom-10 left-4 sm:bottom-12 sm:left-6 text-lg sm:text-xl text-gray-400 tracking-widest opacity-70">
+    <div id="title"
+        class="ui-element bottom-10 left-4 sm:bottom-12 sm:left-6 text-lg sm:text-xl text-gray-400 tracking-widest opacity-70">
         myceloom.network
     </div>
 
     <!-- NEW: Footer link to unearth.im -->
-    <div class="ui-element bottom-4 left-4 sm:bottom-6 sm:left-6 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
+    <div
+        class="ui-element bottom-4 left-4 sm:bottom-6 sm:left-6 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
         <small>
-            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer" class="hover:underline">liminal mind meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="hover:underline">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer" class="hover:underline">archive & anvil</a></b>
+            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer"
+                    class="hover:underline">liminal mind meld</a></b> collaboration: digital monument by <b><a
+                    href="https://unearth.im" target="_blank" rel="noopener noreferrer"
+                    class="hover:underline">unearth.im</a></b> | <b><a href="https://archaeobytology.org"
+                    target="_blank" rel="noopener noreferrer" class="hover:underline">archive & anvil</a></b>
         </small>
     </div>
 
     <!-- NEW: UI Controls Container in top-right -->
     <div class="ui-element top-4 right-4 sm:top-6 sm:right-6 flex flex-col items-end space-y-2">
         <!-- UPDATED: Artist Statement as a link -->
-        <a href="#" id="statementButton" class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
+        <a href="#" id="statementButton"
+            class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
             [Artist Statement]
         </a>
-        
+
         <!-- UPDATED: Mute Button moved here -->
         <button id="muteButton" class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
             [Mute]
         </button>
     </div>
 
-    <!-- Artist Statement Modal --><div id="modal" class="hidden fixed inset-0 z-20 flex items-center justify-center p-4" style="visibility: hidden; opacity: 0;">
-        <!-- Modal Overlay --><div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-md"></div>
-        
-        <!-- Modal Content --><div id="modal-content" class="relative bg-gray-900 text-gray-200 border border-gray-700 rounded-lg shadow-2xl max-w-md w-full p-6 sm:p-8">
-            <!-- Close Button --><button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors duration-200 text-3xl font-light">&times;</button>
-            
+    <!-- Artist Statement Modal -->
+    <div id="modal" class="hidden fixed inset-0 z-20 flex items-center justify-center p-4"
+        style="visibility: hidden; opacity: 0;">
+        <!-- Modal Overlay -->
+        <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-md"></div>
+
+        <!-- Modal Content -->
+        <div id="modal-content"
+            class="relative bg-gray-900 text-gray-200 border border-gray-700 rounded-lg shadow-2xl max-w-md w-full p-6 sm:p-8">
+            <!-- Close Button --><button id="closeModal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors duration-200 text-3xl font-light">&times;</button>
+
             <h2 class="text-2xl sm:text-3xl font-light mb-5 text-white">Artist Statement</h2>
-            
+
             <!-- UPDATED: Added new paragraph at the end -->
             <div class="space-y-4 text-base sm:text-lg leading-relaxed text-gray-300 font-light">
                 <p>
-                    <strong class="font-medium text-white">Myceloom</strong> is an exploration of the unseen. It weaves together the organic, decentralized growth of mycelial networks with the structured, human-intentioned patterns of the loom.
+                    <strong class="font-medium text-white">Myceloom</strong> is an exploration of the unseen. It weaves
+                    together the organic, decentralized growth of mycelial networks with the structured,
+                    human-intentioned patterns of the loom.
                 </p>
                 <p>
-                    Each thread represents a connection, a thought, a packet of data. The work is never static; it is a living digital ecosystem, constantly growing, connecting, and dissolving.
+                    Each thread represents a connection, a thought, a packet of data. The work is never static; it is a
+                    living digital ecosystem, constantly growing, connecting, and dissolving.
                 </p>
                 <p>
-                    It asks: in our hyper-connected world, are we the weavers, the threads, or the emergent network itself?
+                    It asks: in our hyper-connected world, are we the weavers, the threads, or the emergent network
+                    itself?
                 </p>
-                
+
                 <!-- NEW: Paragraph with link to myceloom.com -->
                 <p class="pt-4 border-t border-gray-700 text-sm text-gray-400">
-                    Visit <a href="https://myceloom.com" target="_blank" rel="noopener noreferrer" class="text-teal-300 hover:text-teal-200 underline">myceloom.com</a> for a more substantial artist statement and an essay on the "myceloom" concept.
+                    Visit <a href="https://myceloom.com" target="_blank" rel="noopener noreferrer"
+                        class="text-teal-300 hover:text-teal-200 underline">myceloom.com</a> for a more substantial
+                    artist statement and an essay on the "myceloom" concept.
                 </p>
             </div>
         </div>
@@ -263,34 +294,34 @@
             function initAudio() {
                 // Create audio context
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                
+
                 // Create main gain
                 mainGain = audioCtx.createGain();
                 // UPDATED: Set initial gain based on mute state
-                mainGain.gain.value = isMuted ? 0 : 0.5; 
-                
+                mainGain.gain.value = isMuted ? 0 : 0.5;
+
                 // Create a simple "reverb" (echo) effect
                 reverbDelay = audioCtx.createDelay(0.8);
                 feedback = audioCtx.createGain();
                 feedback.gain.value = 0.4; // Feedback amount
-                
+
                 // Create a filter for the reverb to make it darker
                 const reverbFilter = audioCtx.createBiquadFilter();
                 reverbFilter.type = 'lowpass';
                 reverbFilter.frequency.value = 2500;
-                
+
                 // Route the reverb
                 reverbDelay.connect(reverbFilter);
                 reverbFilter.connect(feedback);
                 feedback.connect(reverbDelay);
-                
+
                 // Connect main gain to reverb and destination
                 mainGain.connect(reverbDelay);
                 mainGain.connect(audioCtx.destination); // Dry signal
                 reverbDelay.connect(audioCtx.destination); // Wet signal
-                
+
                 isAudioInitialized = true;
-                
+
                 // Start the drone loop
                 droneLoop();
             }
@@ -317,17 +348,17 @@
                 const now = audioCtx.currentTime;
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
-                
+
                 osc.type = 'triangle';
                 osc.frequency.setValueAtTime(freq, now);
-                
+
                 gain.gain.setValueAtTime(0, now);
                 gain.gain.linearRampToValueAtTime(0.4, now + 0.01); // Attack
                 gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7); // Decay
-                
+
                 osc.connect(gain);
                 gain.connect(mainGain);
-                
+
                 osc.start(now);
                 osc.stop(now + 0.7);
             }
@@ -337,17 +368,17 @@
                 const now = audioCtx.currentTime;
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
-                
+
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(freq, now);
-                
+
                 gain.gain.setValueAtTime(0, now);
                 gain.gain.linearRampToValueAtTime(0.3, now + 0.01); // Attack
                 gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5); // Decay
-                
+
                 osc.connect(gain);
                 gain.connect(mainGain);
-                
+
                 osc.start(now);
                 osc.stop(now + 0.5);
             }
@@ -358,17 +389,17 @@
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 const freq = pentatonicScale[Math.floor(Math.random() * pentatonicScale.length)];
-                
+
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(freq, now);
-                
+
                 gain.gain.setValueAtTime(0, now);
                 gain.gain.linearRampToValueAtTime(0.1, now + 0.5); // Slow attack
                 gain.gain.linearRampToValueAtTime(0.0001, now + 2.5); // Slow decay
-                
+
                 osc.connect(gain);
                 gain.connect(mainGain);
-                
+
                 osc.start(now);
                 osc.stop(now + 2.5);
             }
@@ -400,7 +431,7 @@
                 reset(x, y) {
                     this.x = x || Math.random() * canvas.width;
                     this.y = y || Math.random() * canvas.height;
-                    
+
                     if (this.type !== 'mouse') {
                         this.vx = (Math.random() - 0.5) * particleSpeed;
                         this.vy = (Math.random() - 0.5) * particleSpeed;
@@ -424,7 +455,7 @@
                         if (this.life <= 0) {
                             this.reset(); // Respawn
                         }
-                        
+
                         // Flash decay
                         if (this.flash > 0) this.flash -= 0.05;
                     }
@@ -434,7 +465,7 @@
                     ctx.save();
                     // Fade out based on life
                     ctx.globalAlpha = this.life;
-                    
+
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                     ctx.fillStyle = this.color;
@@ -448,7 +479,7 @@
                         ctx.arc(this.x, this.y, this.radius + this.flash * 5, 0, Math.PI * 2);
                         ctx.fill();
                     }
-                    
+
                     ctx.restore();
                 }
             }
@@ -490,7 +521,7 @@
             // Create particles
             function init() {
                 particles = [];
-                
+
                 // Create the mouse particle first (index 0)
                 particles.push(new Particle('mouse', -100, -100));
 
@@ -504,7 +535,7 @@
             function drawConnections() {
                 for (let i = 0; i < particles.length; i++) {
                     // Don't draw connections from dying particles
-                    if (particles[i].life < 0.2) continue; 
+                    if (particles[i].life < 0.2) continue;
 
                     for (let j = i + 1; j < particles.length; j++) {
                         if (particles[j].life < 0.2) continue;
@@ -515,7 +546,7 @@
 
                         if (dist < connectDistance) {
                             const opacity = (1 - (dist / connectDistance)) * particles[i].life * particles[j].life;
-                            
+
                             // Check if user (particle 0) is involved
                             if (i === 0 || j === 0) {
                                 ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.7})`;
@@ -538,7 +569,7 @@
                                 ctx.strokeStyle = `rgba(${hexToRgb(particles[i].color)}, ${opacity * 0.5})`;
                                 ctx.lineWidth = 0.5;
                             }
-                            
+
                             ctx.beginPath();
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
@@ -558,7 +589,7 @@
                     p.update();
                     p.draw();
                 });
-                
+
                 drawConnections();
 
                 // Update and draw sparkles
@@ -624,8 +655,8 @@
 
             async function toggleMute() {
                 // Ensure audio context is running before trying to change gain
-                await startAudio(); 
-                
+                await startAudio();
+
                 isMuted = !isMuted;
                 if (isMuted) {
                     if (mainGain) mainGain.gain.value = 0; // Mute
@@ -653,7 +684,7 @@
                     x = e.clientX;
                     y = e.clientY;
                 }
-                
+
                 if (particles[0]) {
                     particles[0].x = x;
                     particles[0].y = y;
@@ -673,7 +704,7 @@
                 if (particles.length > maxParticles) {
                     // --- OPTIMIZED LOGIC ---
                     if (particles.length > 1) { // Ensure mouse particle isn't alone
-                        particles.splice(1, 1); 
+                        particles.splice(1, 1);
                     }
                     // --- END OPTIMIZED LOGIC ---
                 }
@@ -691,14 +722,14 @@
                     for (let i = 0; i < numSparkles; i++) {
                         sparkles.push(new Sparkle(x, y));
                     }
-                    
+
                     // Trigger "Pluck" sound
                     if (isAudioInitialized) {
                         const noteIndex = Math.floor((1 - (y / window.innerHeight)) * pentatonicScale.length);
                         const freq = pentatonicScale[Math.max(0, Math.min(noteIndex, pentatonicScale.length - 1))];
                         playUserPluck(freq);
                     }
-                } 
+                }
                 else if (type === 'branch') {
                     // Trigger "Branch" sound
                     if (isAudioInitialized) {
@@ -733,7 +764,7 @@
 
             window.addEventListener('click', handleUserSpawn);
             window.addEventListener('touchstart', (e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 handleUserSpawn(e);
                 updateMouseParticle(e);
             }, { passive: false });
@@ -746,4 +777,5 @@
     </script>
 
 </body>
+
 </html>

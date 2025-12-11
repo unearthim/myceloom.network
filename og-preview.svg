@@ -21,5 +21,5 @@
 
   <!-- Text -->
   <text x="600" y="315" font-family="Inter, sans-serif" font-size="72" font-weight="300" fill="#E5E7EB" text-anchor="middle" letter-spacing="-2">myceloom.network</text>
-  <text x="600" y="375" font-family="Inter, sans-serif" font-size="24" font-weight="400" fill="#9CA3AF" text-anchor="middle" letter-spacing="1">An interactive generative artwork by unearth.im</text>
+  <text x="600" y="375" font-family="Inter, sans-serif" font-size="24" font-weight="400" fill="#9CA3AF" text-anchor="middle" letter-spacing="1">An interactive generative artwork by unearth heritage foundry | archive & anvil</text>
 </svg>
