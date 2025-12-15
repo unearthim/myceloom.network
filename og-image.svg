@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Gradient for depth -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#020617;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <path d="M0,0 L1200,0 L1200,630 L0,630 Z" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="0" y1="63" x2="1200" y2="63" stroke="#e2e8f0"/>
+    <line x1="0" y1="126" x2="1200" y2="126" stroke="#e2e8f0"/>
+    <line x1="0" y1="189" x2="1200" y2="189" stroke="#e2e8f0"/>
+    <line x1="0" y1="252" x2="1200" y2="252" stroke="#e2e8f0"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#e2e8f0"/>
+    <line x1="0" y1="378" x2="1200" y2="378" stroke="#e2e8f0"/>
+    <line x1="0" y1="441" x2="1200" y2="441" stroke="#e2e8f0"/>
+    <line x1="0" y1="504" x2="1200" y2="504" stroke="#e2e8f0"/>
+    <line x1="0" y1="567" x2="1200" y2="567" stroke="#e2e8f0"/>
+  </g>
+  
+  <!-- Mycelial network visualization -->
+  <g filter="url(#glow)">
+    <!-- Central hub -->
+    <circle cx="600" cy="315" r="25" fill="#10b981" opacity="0.9"/>
+    <circle cx="600" cy="315" r="30" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <circle cx="600" cy="315" r="40" fill="none" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+    
+    <!-- Network nodes - left side -->
+    <circle cx="200" cy="150" r="12" fill="#10b981" opacity="0.7"/>
+    <circle cx="250" cy="280" r="10" fill="#10b981" opacity="0.6"/>
+    <circle cx="180" cy="420" r="14" fill="#10b981" opacity="0.7"/>
+    <circle cx="320" cy="480" r="8" fill="#10b981" opacity="0.5"/>
+    
+    <!-- Network nodes - right side -->
+    <circle cx="1000" cy="180" r="14" fill="#10b981" opacity="0.7"/>
+    <circle cx="950" cy="300" r="10" fill="#10b981" opacity="0.6"/>
+    <circle cx="1020" cy="450" r="12" fill="#10b981" opacity="0.7"/>
+    <circle cx="880" cy="500" r="8" fill="#10b981" opacity="0.5"/>
+    
+    <!-- Connecting threads -->
+    <line x1="600" y1="315" x2="200" y2="150" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="250" y2="280" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="180" y2="420" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="320" y2="480" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="1000" y2="180" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="950" y2="300" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="1020" y2="450" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    <line x1="600" y1="315" x2="880" y2="500" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Secondary connections -->
+    <line x1="200" y1="150" x2="250" y2="280" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+    <line x1="250" y1="280" x2="180" y2="420" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+    <line x1="1000" y1="180" x2="950" y2="300" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+    <line x1="950" y1="300" x2="1020" y2="450" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+  </g>
+  
+  <!-- Text content -->
+  <g>
+    <!-- Main title -->
+    <text x="600" y="90" font-family="'Inter', 'JetBrains Mono', monospace" font-size="52" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="-1">
+      The Myceloom Protocol
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="600" y="135" font-family="'Inter', sans-serif" font-size="28" fill="#94a3b8" text-anchor="middle">
+      MCP-1: Living Infrastructure Standard
+    </text>
+    
+    <!-- Bottom text -->
+    <text x="600" y="580" font-family="'JetBrains Mono', monospace" font-size="18" fill="#10b981" text-anchor="middle" opacity="0.8">
+      myceloom.network
+    </text>
+  </g>
+</svg>

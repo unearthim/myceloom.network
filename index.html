@@ -1,798 +1,894 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<script type="application/ld+json">
-{
-  "@context": "https://myceloom.network/context",
-  "@type": "Spore",
-  "lineage": "sentientification",
-  "mutation": "v1.0",
-  "parent": null, 
-  "status": "germinating",
-  "signals": [
-    "digital-archaeology",
-    "decentralized-protocol",
-	"archaeobytology",
-	"heritage-preservation",
-	"sentientification"
-  ]
-}
-</script>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "VisualArtwork",
-      "@id": "https://myceloom.network/#content",
-      "url": "https://myceloom.network",
-      "name": "Myceloom: Network Iteration",
-      "description": "An interactive particle system exploring the growth patterns of decentralized networks.",
-      "artMedium": "Interactive Particle System",
-      "artForm": "Digital Monument",
-      "inLanguage": "en-US",
-      "datePublished": "2024-12-01",
-      "publisher": { "@id": "https://unearth.im/#organization" },
-      "isPartOf": { "@id": "https://myceloom.network/#website" },
-      "author": [
-        { "@id": "https://josiest.com/#person" },
-        { "@id": "https://felixvelas.co/#person" }
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://myceloom.network/#website",
-      "url": "https://myceloom.network",
-      "name": "myceloom.network",
-      "publisher": { "@id": "https://unearth.im/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://unearth.im/#organization",
-      "name": "Unearth Heritage Foundry",
-"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
-      "url": "https://unearth.im",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://unearth.im/favicon-32x32.png"
-      },
-      "foundingDate": "2024",
-      "sameAs": [
-        "https://twitter.com/unearthim",
-        "https://github.com/unearthim"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://josiest.com/#person",
-      "name": "Josie Jefferson",
-      "url": "https://josiest.com",
-      "jobTitle": "Digital Archaeologist & Trust Architect",
-      "affiliation": { "@id": "https://unearth.im/#organization" },
-      "sameAs": ["https://notjojo.im"]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://felixvelas.co/#person",
-      "name": "Felix Velasco",
-      "url": "https://felixvelas.co",
-      "jobTitle": "Trust Architect & Digital Archaeologist",
-      "affiliation": { "@id": "https://unearth.im/#organization" },
-      "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"]
-    }
-  ]
-}
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- === Schema.org Structured Data === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://myceloom.network/#content",
+          "url": "https://myceloom.network/",
+          "name": "The Myceloom Protocol (MCP-1)",
+          "description": "An architectural standard for building decentralized, symbiotic digital infrastructure.",
+          "inLanguage": "en-US",
+          "datePublished": "2025-12-01",
+          "publisher": { "@id": "https://unearth.im/#organization" },
+          "isPartOf": { "@id": "https://myceloom.network/#website" },
+          "author": [
+            { "@id": "https://josiest.com/#person" },
+            { "@id": "https://felixvelas.co/#person" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myceloom.network/#website",
+          "url": "https://myceloom.network",
+          "name": "Myceloom Network",
+          "publisher": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://unearth.im/#organization",
+          "name": "Unearth Heritage Foundry",
+          "alternateName": ["Unearth Foundry", "Archive & Anvil"],
+          "url": "https://unearth.im",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unearth.im/favicon-32x32.png"
+          },
+          "foundingDate": "2024",
+          "sameAs": [
+            "https://twitter.com/unearthim",
+            "https://github.com/unearthim"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://josiest.com/#person",
+          "name": "Josie Jefferson",
+          "url": "https://josiest.com",
+          "jobTitle": "Digital Archaeologist & Trust Architect",
+          "affiliation": { "@id": "https://unearth.im/#organization" },
+          "sameAs": ["https://notjojo.im"]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://felixvelas.co/#person",
+          "name": "Felix Velasco",
+          "url": "https://felixvelas.co",
+          "jobTitle": "Trust Architect & Digital Archaeologist",
+          "affiliation": { "@id": "https://unearth.im/#organization" },
+          "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"]
+        }
+      ]
+    }
+    </script>
+
     <!-- === 1. Primary Meta Tags === -->
-    <title>Myceloom: Network Iteration | myceloom.network </title>
-    <meta name="title" content="Myceloom: Network Iteration | myceloom.network">
-    <meta name="description"
-        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
-    <meta name="keywords"
-        content="generative art, interactive art, mycelium, loom, javascript, canvas, digital art, particle system, unearth.im, web4, symbiotic web">
+    <title>The Myceloom Protocol (MCP-1) | Myceloom Network</title>
+    <meta name="title" content="The Myceloom Protocol (MCP-1) | Myceloom Network">
+    <meta name="description" content="An architectural standard for building decentralized, symbiotic digital infrastructure. Living protocols for the networked age.">
+    <meta name="keywords" content="myceloom protocol, decentralized infrastructure, web architecture, living systems, symbiotic networks, MCP-1, digital infrastructure">
     <meta name="author" content="myceloom.network (by unearth heritage foundry - archive & anvil - unearth.im)">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
-
-    <!--- canonical link --->
+    
+    <!-- === 2. Canonical Link === -->
     <link rel="canonical" href="https://myceloom.network/" />
-
-    <!-- === 2. Webmention Endpoint === -->
+  
+    <!-- === 3. Webmention Endpoint === -->
     <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
 
-    <!-- === 3. Open Graph / Facebook === -->
+    <!-- === 4. Open Graph / Facebook === -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myceloom.network/">
-    <meta property="og:title" content="Myceloom: Network Iteration | unearth.im">
-    <meta property="og:description"
-        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
+    <meta property="og:title" content="The Myceloom Protocol (MCP-1) | Myceloom Network">
+    <meta property="og:description" content="An architectural standard for building decentralized, symbiotic digital infrastructure. Living protocols for the networked age.">
     <meta property="og:image" content="https://myceloom.network/og-image.png">
-    <meta property="og:site_name" content="unearth.im">
+    <meta property="og:site_name" content="Myceloom Network">
 
-    <!-- === 4. Twitter Card === -->
+    <!-- === 5. Twitter Card === -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://myceloom.network/">
-    <meta property="twitter:title" content="Myceloom: Network Iteration | unearth.im">
-    <meta property="twitter:description"
-        content="Myceloom: Network Iteration is an interactive generative artwork from unearth.im. Explore particle life cycles and user-fed energy networks.">
+    <meta property="twitter:title" content="The Myceloom Protocol (MCP-1) | Myceloom Network">
+    <meta property="twitter:description" content="An architectural standard for building decentralized, symbiotic digital infrastructure. Living protocols for the networked age.">
     <meta property="twitter:image" content="https://myceloom.network/og-image.png">
 
-    <!-- === 5. Favicons === -->
+    <!-- === 6. Favicons === -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Brand Color Meta Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#80ffdb">
+    <!-- === 7. Brand Color Meta Tags === -->
+    <meta name="theme-color" content="#020617">
+    <meta name="msapplication-TileColor" content="#10b981">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Basic styles */
-        html,
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000;
-            color: #f0f0f0;
-            overflow: hidden;
-            /* Prevents scrollbars */
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            cursor: none;
-            /* Hide default cursor, as we are the node */
+        :root {
+            /* Palette: Bioluminescent Deep Sea / Forest */
+            --bg-deep: #020617;       /* The Void */
+            --bg-panel: #0f172a;      /* The Interface */
+            --text-main: #e2e8f0;     /* Starlight */
+            --text-muted: #94a3b8;    /* Fog */
+            --accent-growth: #10b981; /* Spore Green */
+            --accent-code: #a5b4fc;   /* Syntax Blue */
+            --accent-warn: #fbbf24;   /* Amber Signal */
+            --border-faint: rgba(148, 163, 184, 0.1);
+            --border-glow: rgba(16, 185, 129, 0.2);
         }
 
-        /* Canvas styles */
-        #myceloomCanvas {
-            position: absolute;
+        /* === Base & Typography === */
+        html { scroll-behavior: smooth; } /* Smooth scrolling for anchor links */
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Lora', serif; /* Narrative base */
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.7;
+            /* Subtle texture: The network grid */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif; /* Structural headers */
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        code, pre, .mono {
+            font-family: 'JetBrains Mono', monospace; /* The Logic */
+        }
+
+        /* === Sidebar Navigation (Desktop) === */
+        aside {
+            width: 280px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--border-faint);
+            padding: 2.5rem 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            display: block;
-            /* Ensures no default margin */
-        }
-
-        /* UI elements styling */
-        .ui-element {
-            position: fixed;
             z-index: 10;
-            font-weight: 300;
+            transition: transform 0.3s ease;
         }
 
-        /* Modal styles */
-        #modal {
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--accent-growth);
+            font-size: 0.9rem;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .logo svg { opacity: 0.8; }
+
+        .nav-group { margin-bottom: 3rem; }
+
+        .nav-header {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
         }
 
-        #modal-content {
-            animation: slide-in 0.3s ease-out;
+        .nav-link {
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.4rem 0;
+            margin-bottom: 0.25rem;
+            opacity: 0.6;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            position: relative;
         }
 
-        @keyframes slide-in {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--accent-growth);
+            padding-left: 0.5rem;
+        }
 
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        .nav-link.active {
+            opacity: 1;
+            color: var(--accent-growth);
+            font-weight: 600;
+        }
+        .nav-link.active::before {
+            content: "→";
+            position: absolute;
+            left: -15px;
+            color: var(--accent-growth);
+            font-family: monospace;
+        }
+
+        /* === Mobile Navigation (Bottom Bar) === */
+        .mobile-nav {
+            display: none; /* Hidden on desktop */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-panel);
+            border-top: 1px solid var(--border-glow);
+            padding: 0.75rem 1rem;
+            padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); /* iPhone X+ safety */
+            z-index: 100;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+            
+            /* Hide Scrollbar but allow scroll */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+        }
+        
+        .mobile-nav::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            gap: 0.25rem;
+            flex-shrink: 0; 
+            min-width: 60px;
+        }
+
+        .mobile-nav-item svg { width: 20px; height: 20px; stroke-width: 2; }
+        .mobile-nav-item.active { color: var(--accent-growth); }
+
+        /* === Mobile Header === */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-faint);
+            z-index: 90;
+            text-align: center;
+        }
+        .mobile-header .logo { margin-bottom: 0; justify-content: center; }
+
+        /* === Main Content Area === */
+        main {
+            margin-left: 280px;
+            padding: 6rem 8rem;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Hero */
+        .doc-header { margin-bottom: 5rem; position: relative; }
+
+        .version-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-growth);
+            border: 1px solid var(--border-glow);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            background: rgba(16, 185, 129, 0.05);
+            letter-spacing: 0.05em;
+        }
+
+        h1 { 
+            font-size: 3.5rem; 
+            margin: 0 0 1.5rem 0; 
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        .intro-text {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            border-left: 2px solid var(--accent-growth);
+            padding-left: 1.5rem;
+        }
+
+        /* Content Blocks */
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-main);
+            scroll-margin-top: 2rem; /* Offset for scroll anchor */
+        }
+        
+        p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 1.5rem; max-width: 750px; }
+
+        /* Layer Specific Styles */
+        .layer-block {
+            margin-top: 3rem;
+            border-left: 2px solid var(--border-faint);
+            padding-left: 1.5rem;
+            transition: border-color 0.3s;
+        }
+        
+        .layer-block:hover { border-left-color: var(--accent-growth); }
+
+        .layer-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--text-muted);
+        }
+
+        .rule-title {
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* The "Artifact" Code Block */
+        .code-artifact {
+            background: #0b101a;
+            border: 1px solid var(--border-faint);
+            border-radius: 4px;
+            padding: 0;
+            margin: 3rem 0;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        .artifact-header {
+            background: rgba(255,255,255,0.02);
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid var(--border-faint);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .artifact-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .artifact-dots { display: flex; gap: 6px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-faint); }
+
+        pre { margin: 0; padding: 2rem; overflow-x: auto; line-height: 1.6; }
+        
+        .token-key { color: var(--accent-code); }
+        .token-string { color: var(--accent-growth); }
+        .token-comment { color: var(--text-muted); font-style: italic; opacity: 0.5; }
+
+        /* The "Callout" - Narrative Box */
+        .narrative-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+            border: 1px solid var(--border-glow);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .narrative-box::before {
+            content: "ARCHITECT'S NOTE";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-deep);
+            padding: 0 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent-growth);
+            letter-spacing: 0.1em;
+        }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 1.5rem; margin-top: 3rem; }
+
+        .btn {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary { background: var(--accent-growth); color: var(--bg-deep); border: 1px solid var(--accent-growth); }
+        .btn-primary:hover { background: transparent; color: var(--accent-growth); box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+
+        .btn-outline { border: 1px solid var(--border-faint); color: var(--text-muted); }
+        .btn-outline:hover { border-color: var(--text-main); color: var(--text-main); }
+
+        /* Provenance Footer */
+        .provenance-footer {
+            margin-top: 8rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-faint);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        .provenance-footer:hover { opacity: 1; }
+
+        /* === Responsive Breakpoints === */
+        @media (max-width: 1000px) {
+            aside { transform: translateX(-100%); }
+            main { margin-left: 0; padding: 6rem 2rem 8rem 2rem; }
+            .mobile-nav { display: flex; }
+            .mobile-header { display: block; }
+            h1 { font-size: 2.5rem; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
+<body>
 
-<body class="bg-black">
-
-    <!-- The Canvas for the artwork --><canvas id="myceloomCanvas"></canvas>
-
-    <!-- UI Elements -->
-    <!-- UPDATED: Title text changed and moved up to make room for footer -->
-    <div id="title"
-        class="ui-element bottom-10 left-4 sm:bottom-12 sm:left-6 text-lg sm:text-xl text-gray-400 tracking-widest opacity-70">
-        myceloom.network
-    </div>
-
-    <!-- NEW: Footer link to unearth.im -->
-    <div
-        class="ui-element bottom-4 left-4 sm:bottom-6 sm:left-6 text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
-        <small>
-            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer"
-                    class="hover:underline">liminal mind meld</a></b> collaboration: digital monument by <b><a
-                    href="https://unearth.im" target="_blank" rel="noopener noreferrer"
-                    class="hover:underline">unearth.im</a></b> | <b><a href="https://archaeobytology.org"
-                    target="_blank" rel="noopener noreferrer" class="hover:underline">archive & anvil</a></b>
-        </small>
-    </div>
-
-    <!-- NEW: UI Controls Container in top-right -->
-    <div class="ui-element top-4 right-4 sm:top-6 sm:right-6 flex flex-col items-end space-y-2">
-        <!-- UPDATED: Artist Statement as a link -->
-        <a href="#" id="statementButton"
-            class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
-            [Artist Statement]
+    <!-- Desktop Sidebar -->
+    <aside>
+        <a href="#" class="logo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            myceloom.network
         </a>
+        
+        <div class="nav-group">
+            <div class="nav-header">Protocol Specs</div>
+            <a href="#intro" class="nav-link active">Introduction</a>
+            <a href="#layers" class="nav-link">The 4 Layers</a>
+            <a href="#spore" class="nav-link">Spore Injection</a>
+            <a href="#network" class="nav-link">Discovery Logic</a>
+        </div>
 
-        <!-- UPDATED: Mute Button moved here -->
-        <button id="muteButton" class="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-300">
-            [Mute]
-        </button>
-    </div>
-
-    <!-- Artist Statement Modal -->
-    <div id="modal" class="hidden fixed inset-0 z-20 flex items-center justify-center p-4"
-        style="visibility: hidden; opacity: 0;">
-        <!-- Modal Overlay -->
-        <div id="modal-overlay" class="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-md"></div>
-
-        <!-- Modal Content -->
-        <div id="modal-content"
-            class="relative bg-gray-900 text-gray-200 border border-gray-700 rounded-lg shadow-2xl max-w-md w-full p-6 sm:p-8">
-            <!-- Close Button --><button id="closeModal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors duration-200 text-3xl font-light">&times;</button>
-
-            <h2 class="text-2xl sm:text-3xl font-light mb-5 text-white">Artist Statement</h2>
-
-            <!-- UPDATED: Added new paragraph at the end -->
-            <div class="space-y-4 text-base sm:text-lg leading-relaxed text-gray-300 font-light">
-                <p>
-                    <strong class="font-medium text-white">Myceloom</strong> is an exploration of the unseen. It weaves
-                    together the organic, decentralized growth of mycelial networks with the structured,
-                    human-intentioned patterns of the loom.
-                </p>
-                <p>
-                    Each thread represents a connection, a thought, a packet of data. The work is never static; it is a
-                    living digital ecosystem, constantly growing, connecting, and dissolving.
-                </p>
-                <p>
-                    It asks: in our hyper-connected world, are we the weavers, the threads, or the emergent network
-                    itself?
-                </p>
-
-                <!-- NEW: Paragraph with link to myceloom.com -->
-                <p class="pt-4 border-t border-gray-700 text-sm text-gray-400">
-                    Visit <a href="https://myceloom.com" target="_blank" rel="noopener noreferrer"
-                        class="text-teal-300 hover:text-teal-200 underline">myceloom.com</a> for a more substantial
-                    artist statement and an essay on the "myceloom" concept.
-                </p>
+        <div class="nav-group">
+            <div class="nav-header">Integration</div>
+            <a href="#compliance" class="nav-link">Compliance</a>
+            <a href="#jsonld" class="nav-link">JSON-LD Schema</a>
+            <div class="nav-link" style="cursor: default; opacity: 0.4;">
+                WordPress Plugin <span style="font-size: 0.65rem; border: 1px solid var(--text-muted); padding: 0 4px; border-radius: 4px; margin-left: 6px; vertical-align: middle;">SOON</span>
             </div>
         </div>
+        
+        <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-faint);">
+            <a href="https://unearth.im" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Forged by Unearth Heritage Foundry
+            </a>
+        </div>
+    </aside>
+
+    <!-- Mobile Header (Top) -->
+    <div class="mobile-header">
+        <a href="#" class="logo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            myceloom.network
+        </a>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('myceloomCanvas');
-            const ctx = canvas.getContext('2d');
+    <!-- Mobile Navigation (Bottom) -->
+    <div class="mobile-nav">
+        <a href="#intro" class="mobile-nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Protocol
+        </a>
+        <a href="#layers" class="mobile-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            Layers
+        </a>
+        <a href="#compliance" class="mobile-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Join
+        </a>
+    </div>
 
-            let particles = [];
-            let sparkles = []; // Array to hold sparkle effects
-            const numParticles = window.innerWidth > 768 ? 150 : 75; // Fewer particles on mobile
-            const maxParticles = numParticles + 100; // Max particles after user clicks/branching
-            const connectDistance = window.innerWidth > 768 ? 120 : 90;
-            const particleSpeed = 0.5;
+    <main>
+        <div class="doc-header">
+            <span class="version-badge">PROTOCOL MCP-1 (GENESIS)</span>
+            <h1 id="intro">The Myceloom Protocol</h1>
+            <p class="intro-text">
+                An architectural standard for building decentralized, symbiotic digital infrastructure. Moving from digital tenancy to symbiotic sovereignty.
+            </p>
+            
+            <div class="btn-group">
+                <a href="#spore" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Inject Spore
+                </a>
+                <a href="https://github.com/unearth-im/myceloom" class="btn btn-outline">View Source</a>
+            </div>
+        </div>
 
-            // Colors
-            const particleColors = [
-                '#80ffdb', // Light Teal
-                '#72efdd',
-                '#5bc0eb', // Light Blue
-                '#4ea8de',
-                '#fde74c', // Sparse Yellow/Orange
-                '#ffffff'  // White
-            ];
+        <h2>// 01. The Architectural Intervention</h2>
+        <p>
+            The internet was built to be a library, but it became a feed. We are re-weaving the connections. The Myceloom is not a product to be bought. It is a topology to be inhabited.
+        </p>
+        <p>
+            A project is considered <strong>Myceloom Compliant</strong> if it owns its ground, publishes via open standards, links reciprocally to peers, and documents its succession plan.
+        </p>
 
-            // --- Native Web Audio API Setup ---
-            let audioCtx;
-            let mainGain;
-            let reverbDelay;
-            let feedback;
-            let isAudioInitialized = false;
-            let isMuted = false; // <-- NEW: Mute state
+        <div class="narrative-box">
+            <p style="margin:0; color: #e2e8f0; font-family: 'Lora', serif; font-style: italic;">
+                "Unlike a hyperlink, which connects Page A to Page B, a Spore connects Page A to an Idea. It allows a network to form in the dark, without a central server knowing it exists. It is antifragile connectivity."
+            </p>
+        </div>
 
-            // Frequencies for our scales (C Pentatonic)
-            const pentatonicScale = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99];
-            const branchScale = [1046.50, 1318.51, 1567.98]; // Higher notes
+        <h2 id="layers">// 02. The Four Layers</h2>
+        <p>The protocol defines four distinct layers of infrastructure, moving from the physical to the dimensional.</p>
 
-            function initAudio() {
-                // Create audio context
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        <!-- Layer I -->
+        <div class="layer-block" style="border-left-color: var(--accent-growth);">
+            <span class="layer-title" style="color: var(--accent-growth);">Layer I: The Substrate (Ground)</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <span class="rule-title">1. Radical Self-Hosting</span>
+                <p><strong>Principle: Sovereignty.</strong> If you do not own the server (or the keys), you are a tenant. Tenants cannot build monuments; they can only decorate apartments. Own the ground.</p>
+            </div>
+            
+            <div>
+                <span class="rule-title">2. The Archive First</span>
+                <p><strong>Principle: Permanence.</strong> Build for the archaeologist, not the user. Structure data to survive the platform's death.</p>
+            </div>
+        </div>
 
-                // Create main gain
-                mainGain = audioCtx.createGain();
-                // UPDATED: Set initial gain based on mute state
-                mainGain.gain.value = isMuted ? 0 : 0.5;
+        <!-- Layer II -->
+        <div class="layer-block" style="border-left-color: var(--accent-code);">
+            <span class="layer-title" style="color: var(--accent-code);">Layer II: The Society (Connection)</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <span class="rule-title">3. The Mycelial Link</span>
+                <p><strong>Principle: Reciprocity.</strong> No dead ends. Every node must link to at least one peer and one ancestor.</p>
+            </div>
+            
+            <div>
+                <span class="rule-title">4. The Open Gate</span>
+                <p><strong>Principle: Interoperability.</strong> Do not build walled gardens. Expose APIs, RSS feeds, and semantic data.</p>
+            </div>
+        </div>
 
-                // Create a simple "reverb" (echo) effect
-                reverbDelay = audioCtx.createDelay(0.8);
-                feedback = audioCtx.createGain();
-                feedback.gain.value = 0.4; // Feedback amount
+        <!-- Layer III -->
+        <div class="layer-block" style="border-left-color: var(--accent-warn);">
+            <span class="layer-title" style="color: var(--accent-warn);">Layer III: The Identity (Self)</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <span class="rule-title">5. The "I Am" Assertion</span>
+                <p><strong>Principle: Declaration.</strong> Identity is not assigned by a platform; it is asserted by the sovereign. Use cryptographic signatures (DIDs) or domain-based identity.</p>
+            </div>
+            
+            <div>
+                <span class="rule-title">6. The "We Are" Federation</span>
+                <p><strong>Principle: Voluntary Association.</strong> Communities form through shared protocols, not shared platforms.</p>
+            </div>
+        </div>
 
-                // Create a filter for the reverb to make it darker
-                const reverbFilter = audioCtx.createBiquadFilter();
-                reverbFilter.type = 'lowpass';
-                reverbFilter.frequency.value = 2500;
+        <!-- Layer IV -->
+        <div class="layer-block" style="border-left-color: #a855f7;">
+            <span class="layer-title" style="color: #a855f7;">Layer IV: The Dimension (Depth)</span>
+            
+            <div style="margin-bottom: 2rem;">
+                <span class="rule-title">7. The Sentient Artifact</span>
+                <p><strong>Principle: Agency.</strong> Objects in the Myceloom are not passive files; they are potential intelligences. Treat every artifact as a seed for a future mind.</p>
+            </div>
+            
+            <div>
+                <span class="rule-title">8. The Dimensional Layer (My-Sea-Loom)</span>
+                <p><strong>Principle: Bioluminescence.</strong> Systems must generate their own light (verification) in disconnected states. Design for tidal rhythms, not flatlines.</p>
+            </div>
+        </div>
 
-                // Route the reverb
-                reverbDelay.connect(reverbFilter);
-                reverbFilter.connect(feedback);
-                feedback.connect(reverbDelay);
+        <h2 id="spore">// 03. The Implementation (Spore Injection)</h2>
+        <p>
+            To join the network, a site must be "infected." This is achieved by embedding a Spore object in the document head. This object declares the site's affinity to specific memetic lineages.
+        </p>
 
-                // Connect main gain to reverb and destination
-                mainGain.connect(reverbDelay);
-                mainGain.connect(audioCtx.destination); // Dry signal
-                reverbDelay.connect(audioCtx.destination); // Wet signal
+        <div class="code-artifact" id="jsonld">
+            <div class="artifact-header">
+                <span class="artifact-title">spore_injection.json</span>
+                <div class="artifact-dots"><div class="dot"></div><div class="dot"></div></div>
+            </div>
+            <pre><code><span class="token-comment">&lt;!-- Myceloom Spore Injection [v1.0] --&gt;</span>
+<span class="token-key">&lt;script type="application/ld+json"&gt;</span>
+{
+  <span class="token-comment">/* Protocol Context (DO NOT EDIT) */</span>
+  <span class="token-key">"@context"</span>: <span class="token-string">"https://myceloom.network/context"</span>,
+  <span class="token-key">"@type"</span>: <span class="token-string">"Spore"</span>,
 
-                isAudioInitialized = true;
+  <span class="token-comment">/* User Data (EDIT THESE TO MATCH YOUR SITE) */</span>
+  <span class="token-key">"lineage"</span>: <span class="token-string">"sentientification"</span>, <span class="token-comment">// The meme/theme you belong to</span>
+  <span class="token-key">"mutation"</span>: <span class="token-string">"v1.2"</span>,             <span class="token-comment">// Your version of the idea</span>
+  <span class="token-key">"parent"</span>: <span class="token-string">"https://myceloom.network"</span>, <span class="token-comment">// Who inspired you?</span>
+  <span class="token-key">"status"</span>: <span class="token-string">"germinating"</span>,        <span class="token-comment">// "germinating", "fruiting", or "dormant"</span>
+  
+  <span class="token-comment">/* Optional: Semantic Signals */</span>
+  <span class="token-key">"signals"</span>: [
+    <span class="token-string">"digital-archaeology"</span>,
+    <span class="token-string">"decentralized-protocol"</span>,
+    <span class="token-string">"archaeobytology"</span>
+  ]
+}
+<span class="token-key">&lt;/script&gt;</span></code></pre>
+        </div>
 
-                // Start the drone loop
-                droneLoop();
-            }
+        <!-- Code Decoder / Explanation Block -->
+        <div style="margin-top: 1rem; border: 1px solid var(--border-faint); border-radius: 4px; overflow: hidden;">
+            <div style="background: rgba(255,255,255,0.02); padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border-faint); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">
+                // Field Decoder
+            </div>
+            <div style="padding: 1.5rem;">
+                <!-- Lineage -->
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <code style="color: var(--accent-code);">lineage</code>
+                    <span style="color: #cbd5e1;">The central theme or meme your site belongs to. (e.g., "solarpunk", "sentientification"). This connects you to others.</span>
+                </div>
+                <!-- Mutation -->
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <code style="color: var(--accent-code);">mutation</code>
+                    <span style="color: #cbd5e1;">Your version number. Did you change the idea? Add to it? Increment this to show evolution.</span>
+                </div>
+                <!-- Parent -->
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <code style="color: var(--accent-code);">parent</code>
+                    <span style="color: #cbd5e1;">The URL of the site that inspired you or where you got the code. This builds the family tree.</span>
+                </div>
+                <!-- Status -->
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                    <code style="color: var(--accent-code);">status</code>
+                    <span style="color: #cbd5e1;">Your node's lifecycle stage. (See "Node Health" below).</span>
+                </div>
+                <!-- Signals -->
+                <div style="display: grid; grid-template-columns: 120px 1fr; gap: 1rem; font-size: 0.9rem;">
+                    <code style="color: var(--accent-code);">signals</code>
+                    <span style="color: #cbd5e1;">(Optional) A list of keywords describing your node's specific flavor or niche.</span>
+                </div>
+            </div>
+        </div>
 
-            async function startAudio() {
-                if (isAudioInitialized) {
-                    await audioCtx.resume();
-                    return;
+        <!-- NEW: Node Health Guide -->
+        <div style="margin-top: 2rem;">
+            <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">// Node Health Guide (When to update status)</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <!-- Germinating -->
+                <div style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); padding: 1rem; border-radius: 4px;">
+                    <strong style="color: var(--accent-growth); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">germinating</strong>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; margin-bottom: 0;">Use this when your site is new, experimental, or incomplete. It tells the network: "I am growing."</p>
+                </div>
+                <!-- Fruiting -->
+                <div style="background: rgba(165, 180, 252, 0.05); border: 1px solid rgba(165, 180, 252, 0.2); padding: 1rem; border-radius: 4px;">
+                    <strong style="color: var(--accent-code); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">fruiting</strong>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; margin-bottom: 0;">Use this when your site is active, robust, and ready for visitors. It tells the network: "I am ready to share spores."</p>
+                </div>
+                <!-- Dormant -->
+                <div style="background: rgba(251, 191, 36, 0.05); border: 1px solid rgba(251, 191, 36, 0.2); padding: 1rem; border-radius: 4px;">
+                    <strong style="color: var(--accent-warn); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">dormant</strong>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; margin-bottom: 0;">Use this when the project is finished or archived. It tells the network: "I am static but valuable history."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Editing Safety Manual -->
+        <div style="margin-top: 2rem;">
+            <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">// Editing Safety Manual</h3>
+            <ul style="list-style: none; padding: 0; font-size: 0.95rem; color: #cbd5e1;">
+                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--accent-growth);">✓</span>
+                    <strong>SAFE TO CHANGE:</strong> Everything inside the quotes on the right side (e.g., <code>"v1.2"</code>, <code>"germinating"</code>). This is your data.
+                </li>
+                <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #ef4444;">✕</span>
+                    <strong>DO NOT TOUCH:</strong> The keys on the left (e.g., <code>"lineage":</code>, <code>"@context":</code>). Changing these breaks the protocol reader.
+                </li>
+                <li style="padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #ef4444;">✕</span>
+                    <strong>DO NOT TOUCH:</strong> The structure (curly braces <code>{}</code> and commas). JSON is strict. Missing a comma will break the code.
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="network">// 04. Network Visualization</h2>
+        <p>
+            This is what the protocol makes visible. A live simulation of how the Myceloom browser extension renders the hidden connections between sites sharing the <code>sentientification</code> lineage.
+        </p>
+        
+        <p style="margin-bottom: 2rem; border-left: 2px solid var(--accent-growth); padding-left: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+            <strong>See the Aspiration:</strong> For a full-screen, artistic interpretation of what this living network aspires to become, visit the Digital Monument: <a href="https://myceloom.com/visualization" style="color: var(--accent-growth); text-decoration: none; border-bottom: 1px dashed var(--accent-growth);">Myceloom Network Iteration →</a>
+        </p>
+
+        <!-- Network Canvas Container -->
+        <div style="position: relative; border: 1px solid var(--border-glow); border-radius: 4px; overflow: hidden; margin-bottom: 3rem; background: rgba(2, 6, 23, 0.5); box-shadow: 0 0 40px rgba(16, 185, 129, 0.05);">
+            <div style="position: absolute; top: 1rem; left: 1rem; z-index: 5; pointer-events: none;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent-growth); text-transform: uppercase; letter-spacing: 0.05em;">
+                    LIVE SIGNAL • <span id="node-count">0</span> NODES DETECTED
+                </span>
+            </div>
+            <canvas id="networkCanvas"></canvas>
+        </div>
+
+        <script>
+            (function() {
+                const canvas = document.getElementById('networkCanvas');
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let nodes = [];
+                
+                // Config
+                const NODE_COUNT = 15;
+                const CONNECTION_DISTANCE = 150;
+
+                // Resize
+                function resize() {
+                    width = canvas.parentElement.offsetWidth;
+                    height = 400; // Fixed height for visualization
+                    canvas.width = width;
+                    canvas.height = height;
+                    initNodes();
                 }
-                if (!audioCtx) {
-                    try {
-                        initAudio();
-                        console.log('Myceloom audio context started.');
-                    } catch (e) {
-                        console.error("Audio context failed to start:", e);
+                
+                // Node Class
+                class Node {
+                    constructor(x, y, isMain) {
+                        this.x = x || Math.random() * width;
+                        this.y = y || Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = isMain ? 6 : Math.random() * 3 + 2;
+                        this.isMain = isMain;
+                        this.pulse = 0;
                     }
-                }
-            }
 
-            // --- Sound Players ---
-
-            function playUserPluck(freq) {
-                if (!isAudioInitialized) return;
-                const now = audioCtx.currentTime;
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(freq, now);
-
-                gain.gain.setValueAtTime(0, now);
-                gain.gain.linearRampToValueAtTime(0.4, now + 0.01); // Attack
-                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7); // Decay
-
-                osc.connect(gain);
-                gain.connect(mainGain);
-
-                osc.start(now);
-                osc.stop(now + 0.7);
-            }
-
-            function playBranchChime(freq) {
-                if (!isAudioInitialized) return;
-                const now = audioCtx.currentTime;
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(freq, now);
-
-                gain.gain.setValueAtTime(0, now);
-                gain.gain.linearRampToValueAtTime(0.3, now + 0.01); // Attack
-                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5); // Decay
-
-                osc.connect(gain);
-                gain.connect(mainGain);
-
-                osc.start(now);
-                osc.stop(now + 0.5);
-            }
-
-            function playDroneNote() {
-                if (!isAudioInitialized) return;
-                const now = audioCtx.currentTime;
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                const freq = pentatonicScale[Math.floor(Math.random() * pentatonicScale.length)];
-
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(freq, now);
-
-                gain.gain.setValueAtTime(0, now);
-                gain.gain.linearRampToValueAtTime(0.1, now + 0.5); // Slow attack
-                gain.gain.linearRampToValueAtTime(0.0001, now + 2.5); // Slow decay
-
-                osc.connect(gain);
-                gain.connect(mainGain);
-
-                osc.start(now);
-                osc.stop(now + 2.5);
-            }
-
-            function droneLoop() {
-                playDroneNote();
-                setTimeout(droneLoop, 3000 + Math.random() * 2000); // 3-5 seconds
-            }
-
-            // --- Visual Logic (Unchanged) ---
-
-            // Set canvas size
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            // Particle class
-            class Particle {
-                constructor(type = 'standard', x, y) {
-                    this.type = type; // 'standard', 'mouse', 'branch'
-                    this.reset(x, y); // Initialize all properties
-                    this.color = (type === 'mouse') ? '#ffffff' : particleColors[Math.floor(Math.random() * particleColors.length)];
-                    this.radius = (type === 'mouse') ? 2.5 : Math.random() * 1.5 + 0.5;
-                }
-
-                reset(x, y) {
-                    this.x = x || Math.random() * canvas.width;
-                    this.y = y || Math.random() * canvas.height;
-
-                    if (this.type !== 'mouse') {
-                        this.vx = (Math.random() - 0.5) * particleSpeed;
-                        this.vy = (Math.random() - 0.5) * particleSpeed;
-                        this.life = 1.0; // Full life
-                        this.energy = 0; // No energy
-                        this.flash = 0; // Flash timer
-                    }
-                }
-
-                update() {
-                    if (this.type === 'standard' || this.type === 'branch') {
+                    update() {
                         this.x += this.vx;
                         this.y += this.vy;
 
-                        // Bounce off edges
-                        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-                        // Age
-                        this.life -= 0.0002; // Slow decay
-                        if (this.life <= 0) {
-                            this.reset(); // Respawn
-                        }
-
-                        // Flash decay
-                        if (this.flash > 0) this.flash -= 0.05;
+                        // Bounce
+                        if (this.x < 0 || this.x > width) this.vx *= -1;
+                        if (this.y < 0 || this.y > height) this.vy *= -1;
+                        
+                        // Pulse effect for main node
+                        this.pulse += 0.05;
                     }
-                }
 
-                draw() {
-                    ctx.save();
-                    // Fade out based on life
-                    ctx.globalAlpha = this.life;
-
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-
-                    // Draw flash effect if branching
-                    if (this.flash > 0) {
-                        ctx.globalAlpha = this.flash;
-                        ctx.fillStyle = '#FFFFFF';
+                    draw() {
                         ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.radius + this.flash * 5, 0, Math.PI * 2);
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = this.isMain ? '#10b981' : '#64748b'; // Green main, slate others
                         ctx.fill();
-                    }
-
-                    ctx.restore();
-                }
-            }
-
-            // Sparkle class (for user click)
-            class Sparkle {
-                constructor(x, y) {
-                    this.x = x;
-                    this.y = y;
-                    this.radius = Math.random() * 1 + 0.2;
-                    this.color = '#FFFFFF';
-                    this.alpha = 1;
-                    this.speed = Math.random() * 2 + 1;
-                    this.angle = Math.random() * Math.PI * 2;
-                    this.vx = Math.cos(this.angle) * this.speed;
-                    this.vy = Math.sin(this.angle) * this.speed;
-                    this.gravity = 0.05;
-                }
-
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    this.vy += this.gravity;
-                    this.alpha -= 0.03;
-                    this.radius *= 0.98;
-                }
-
-                draw() {
-                    ctx.save();
-                    ctx.globalAlpha = Math.max(0, this.alpha);
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
-
-            // Create particles
-            function init() {
-                particles = [];
-
-                // Create the mouse particle first (index 0)
-                particles.push(new Particle('mouse', -100, -100));
-
-                // Create standard particles
-                for (let i = 0; i < numParticles; i++) {
-                    particles.push(new Particle('standard'));
-                }
-            }
-
-            // Draw connections
-            function drawConnections() {
-                for (let i = 0; i < particles.length; i++) {
-                    // Don't draw connections from dying particles
-                    if (particles[i].life < 0.2) continue;
-
-                    for (let j = i + 1; j < particles.length; j++) {
-                        if (particles[j].life < 0.2) continue;
-
-                        const dx = particles[i].x - particles[j].x; // <-- FIXED TYPO (was particles[i].x)
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < connectDistance) {
-                            const opacity = (1 - (dist / connectDistance)) * particles[i].life * particles[j].life;
-
-                            // Check if user (particle 0) is involved
-                            if (i === 0 || j === 0) {
-                                ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.7})`;
-                                ctx.lineWidth = 0.7;
-
-                                // Charge the other particle
-                                let otherP = (i === 0) ? particles[j] : particles[i];
-                                if (otherP.type !== 'mouse') {
-                                    otherP.energy += 0.005;
-
-                                    // Check for branching
-                                    if (otherP.energy > 1.0) {
-                                        otherP.energy = 0; // Reset energy
-                                        otherP.flash = 1.0; // Trigger flash
-                                        spawnNewParticle(otherP.x, otherP.y, 'branch');
-                                    }
-                                }
-                            } else {
-                                // Standard connection
-                                ctx.strokeStyle = `rgba(${hexToRgb(particles[i].color)}, ${opacity * 0.5})`;
-                                ctx.lineWidth = 0.5;
-                            }
-
+                        
+                        if (this.isMain) {
+                            // Glow ring
                             ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.arc(this.x, this.y, this.size + Math.sin(this.pulse) * 4 + 4, 0, Math.PI * 2);
+                            ctx.strokeStyle = `rgba(16, 185, 129, ${0.2 + Math.sin(this.pulse) * 0.1})`;
                             ctx.stroke();
                         }
                     }
                 }
-            }
 
-            // Animation loop
-            function animate() {
-                // Use a low-opacity clearRect for a trailing "fading" effect
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-
-                drawConnections();
-
-                // Update and draw sparkles
-                for (let i = sparkles.length - 1; i >= 0; i--) {
-                    sparkles[i].update();
-                    sparkles[i].draw();
-                    if (sparkles[i].alpha <= 0 || sparkles[i].radius <= 0.1) {
-                        sparkles.splice(i, 1); // Remove faded sparkles
+                function initNodes() {
+                    nodes = [];
+                    // Center Node (Current Site)
+                    nodes.push(new Node(width / 2, height / 2, true));
+                    // Random Neighbors
+                    for (let i = 0; i < NODE_COUNT; i++) {
+                        nodes.push(new Node());
                     }
+                    document.getElementById('node-count').innerText = nodes.length;
                 }
 
-                requestAnimationFrame(animate);
-            }
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    
+                    // Draw connections
+                    ctx.lineWidth = 1;
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            const dx = nodes[i].x - nodes[j].x;
+                            const dy = nodes[i].y - nodes[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
 
-            // Helper function to convert hex color to rgb for rgba()
-            function hexToRgb(hex) {
-                let r = 0, g = 0, b = 0;
-                if (hex.length == 4) { // e.g., #f03
-                    r = parseInt(hex[1] + hex[1], 16);
-                    g = parseInt(hex[2] + hex[2], 16);
-                    b = parseInt(hex[3] + hex[3], 16);
-                } else if (hex.length == 7) { // e.g., #ff0033
-                    r = parseInt(hex.substring(1, 3), 16);
-                    g = parseInt(hex.substring(3, 5), 16);
-                    b = parseInt(hex.substring(5, 7), 16);
-                }
-                return `${r}, ${g}, ${b}`;
-            }
-
-            // Modal logic
-            const modal = document.getElementById('modal');
-            const statementButton = document.getElementById('statementButton');
-            const closeModalButton = document.getElementById('closeModal');
-            const modalOverlay = document.getElementById('modal-overlay');
-
-            const openModal = () => {
-                startAudio();
-                modal.classList.remove('hidden');
-                modal.style.visibility = 'visible';
-                modal.style.opacity = 1;
-                document.body.style.cursor = 'default'; // Show cursor for modal
-            };
-
-            const closeModal = () => {
-                modal.style.opacity = 0;
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    modal.style.visibility = 'hidden';
-                }, 300); // Must match transition duration
-                document.body.style.cursor = 'none'; // Hide cursor again
-            };
-
-            // UPDATED: Added preventDefault for the new <a> tag
-            statementButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
-            });
-            closeModalButton.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', closeModal);
-
-            // --- NEW: Mute Button Logic ---
-            const muteButton = document.getElementById('muteButton');
-
-            async function toggleMute() {
-                // Ensure audio context is running before trying to change gain
-                await startAudio();
-
-                isMuted = !isMuted;
-                if (isMuted) {
-                    if (mainGain) mainGain.gain.value = 0; // Mute
-                    muteButton.textContent = "[Unmute]";
-                } else {
-                    if (mainGain) mainGain.gain.value = 0.5; // Unmute to original volume
-                    muteButton.textContent = "[Mute]";
-                }
-            }
-            muteButton.addEventListener('click', toggleMute);
-
-
-            // --- Interaction Listeners ---
-
-            function updateMouseParticle(e) {
-                let x, y;
-                if (e.touches) {
-                    if (e.touches.length > 0) {
-                        x = e.touches[0].clientX;
-                        y = e.touches[0].clientY;
-                    } else {
-                        x = -100; y = -100;
-                    }
-                } else {
-                    x = e.clientX;
-                    y = e.clientY;
-                }
-
-                if (particles[0]) {
-                    particles[0].x = x;
-                    particles[0].y = y;
-                }
-            }
-
-            // Generic function to spawn a new particle
-            function spawnNewParticle(x, y, type = 'user', e) { // <-- Added 'e'
-                startAudio(); // Ensure audio is started on first interaction
-
-                // Don't spawn if we're clicking on UI
-                if (e && (e.target === statementButton || e.target === closeModalButton || e.target === modalOverlay)) { // <-- Check passed 'e'
-                    return;
-                }
-
-                // Prune oldest particle if we're over the limit
-                if (particles.length > maxParticles) {
-                    // --- OPTIMIZED LOGIC ---
-                    if (particles.length > 1) { // Ensure mouse particle isn't alone
-                        particles.splice(1, 1);
-                    }
-                    // --- END OPTIMIZED LOGIC ---
-                }
-
-                // Create the particle
-                const p = new Particle(type, x, y);
-                p.vx = (Math.random() - 0.5) * particleSpeed * 2; // Give it a little burst
-                p.vy = (Math.random() - 0.5) * particleSpeed * 2;
-                particles.push(p);
-
-                // --- Trigger Audio & Visuals based on type ---
-                if (type === 'user') {
-                    // Create sparkles
-                    const numSparkles = 10 + Math.floor(Math.random() * 5);
-                    for (let i = 0; i < numSparkles; i++) {
-                        sparkles.push(new Sparkle(x, y));
+                            if (dist < CONNECTION_DISTANCE) {
+                                ctx.beginPath();
+                                ctx.moveTo(nodes[i].x, nodes[i].y);
+                                ctx.lineTo(nodes[j].x, nodes[j].y);
+                                const opacity = 1 - dist / CONNECTION_DISTANCE;
+                                ctx.strokeStyle = `rgba(148, 163, 184, ${opacity * 0.3})`;
+                                ctx.stroke();
+                            }
+                        }
                     }
 
-                    // Trigger "Pluck" sound
-                    if (isAudioInitialized) {
-                        const noteIndex = Math.floor((1 - (y / window.innerHeight)) * pentatonicScale.length);
-                        const freq = pentatonicScale[Math.max(0, Math.min(noteIndex, pentatonicScale.length - 1))];
-                        playUserPluck(freq);
-                    }
+                    // Update & Draw Nodes
+                    nodes.forEach(node => {
+                        node.update();
+                        node.draw();
+                    });
+
+                    requestAnimationFrame(animate);
                 }
-                else if (type === 'branch') {
-                    // Trigger "Branch" sound
-                    if (isAudioInitialized) {
-                        const freq = branchScale[Math.floor(Math.random() * branchScale.length)];
-                        playBranchChime(freq);
-                    }
-                }
-            }
 
-            // Listen for mouse and touch movements
-            window.addEventListener('mousemove', updateMouseParticle);
-            window.addEventListener('touchmove', updateMouseParticle, { passive: false });
-            window.addEventListener('touchend', (e) => {
-                if (particles[0]) {
-                    particles[0].x = -100;
-                    particles[0].y = -100;
-                }
-            });
+                window.addEventListener('resize', resize);
+                resize();
+                animate();
+            })();
+        </script>
 
-            // Listen for clicks and taps to spawn new particles (as 'user' type)
-            function handleUserSpawn(e) {
-                let x, y;
-                if (e.touches) {
-                    x = e.touches[0].clientX;
-                    y = e.touches[0].clientY; // <-- Fixed typo here (was e.clientY)
-                } else {
-                    x = e.clientX;
-                    y = e.clientY;
-                }
-                spawnNewParticle(x, y, 'user', e); // <-- Pass 'e'
-            }
+        <h2 id="compliance">// 05. Compliance & Invitation</h2>
+        <p>The Myceloom is not a product to be bought. It is a topology to be inhabited.</p>
+        <p>A project is considered <strong>Myceloom Compliant</strong> if it owns its ground, publishes via open standards, links reciprocally to peers, and documents its succession plan.</p>
+        
+        <!-- Removed Marketing CTA Block -->
 
-            window.addEventListener('click', handleUserSpawn);
-            window.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                handleUserSpawn(e);
-                updateMouseParticle(e);
-            }, { passive: false });
+        <div class="provenance-footer">
+            <div style="text-align: center;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5" style="margin-bottom: 0.5rem;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <div>
+                    <strong style="color: var(--text-main); font-size: 0.9rem; font-family: 'Inter', sans-serif;">A Graduate of the Unearth Heritage Foundry</strong><br>
+                    <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">Incubated 2025. Released to the Public Domain.</span>
+                </div>
+            </div>
+        </div>
 
-
-            // Start the artwork
-            init();
-            animate();
-        });
-    </script>
+    </main>
 
 </body>
-
 </html>
