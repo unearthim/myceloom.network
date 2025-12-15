@@ -648,12 +648,15 @@
             The Myceloom is not a product to be bought. It is a topology to be inhabited.
         </p>
         <p>
-            A project is considered <strong>Myceloom Compliant</strong> if it owns its ground, publishes via open standards, links reciprocally to peers, and documents its succession plan.
+            A project is considered <strong>Myceloom Compliant</strong> if it owns its ground, publishes via open standards, links reciprocally to peers, and documents its succession plan. <strong>No code injection is required.</strong> Compliance is measured by principle, not implementation.
         </p>
 
-        <h2 id="spore">// 04. The Implementation (Spore Injection)</h2>
+        <h2 id="spore">// 04. Optional: The Spore (Network Discovery)</h2>
         <p>
-            To join the network, a site must be "infected." This is achieved by embedding a Spore object in the document head. This object declares the site's affinity to specific memetic lineages.
+            If you want to make your site <strong>discoverable</strong> to other nodes in the mycelial network, you can optionally embed a Spore declaration. This is a copyable JSON-LD schema that you can self-host or modify. The <code>@context</code> field can point to your own vocabulary—you are not required to reference myceloom.network.
+        </p>
+        <p>
+            Think of this as a <strong>reference implementation</strong>, not a dependency.
         </p>
 
         <div class="code-artifact" id="jsonld">
@@ -661,17 +664,17 @@
                 <span class="artifact-title">spore_injection.json</span>
                 <div class="artifact-dots"><div class="dot"></div><div class="dot"></div></div>
             </div>
-            <pre><code><span class="token-comment">&lt;!-- Myceloom Spore Injection [v1.0] --&gt;</span>
+            <pre><code><span class="token-comment">&lt;!-- Myceloom Spore (Optional Reference Implementation) --&gt;</span>
 <span class="token-key">&lt;script type="application/ld+json"&gt;</span>
 {
-  <span class="token-comment">/* Protocol Context (DO NOT EDIT) */</span>
-  <span class="token-key">"@context"</span>: <span class="token-string">"https://myceloom.network/context"</span>,
+  <span class="token-comment">/* You can self-host this context or create your own */</span>
+  <span class="token-key">"@context"</span>: <span class="token-string">"https://your-domain.com/context"</span>,
   <span class="token-key">"@type"</span>: <span class="token-string">"Spore"</span>,
 
-  <span class="token-comment">/* User Data (EDIT THESE TO MATCH YOUR SITE) */</span>
+  <span class="token-comment">/* Customize these fields */</span>
   <span class="token-key">"lineage"</span>: <span class="token-string">"sentientification"</span>, <span class="token-comment">// The meme/theme you belong to</span>
   <span class="token-key">"mutation"</span>: <span class="token-string">"v1.2"</span>,             <span class="token-comment">// Your version of the idea</span>
-  <span class="token-key">"parent"</span>: <span class="token-string">"https://myceloom.network"</span>, <span class="token-comment">// Who inspired you?</span>
+  <span class="token-key">"parent"</span>: <span class="token-string">"https://site-that-inspired-you.com"</span>, <span class="token-comment">// Who inspired you?</span>
   <span class="token-key">"status"</span>: <span class="token-string">"germinating"</span>,        <span class="token-comment">// "germinating", "fruiting", or "dormant"</span>
   
   <span class="token-comment">/* Optional: Semantic Signals */</span>
