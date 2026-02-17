@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SVG to PNG Converter</title>
+</head>
+<body>
+    <h2>SVG to PNG Converter</h2>
+    <p>Instructions:</p>
+    <ol>
+        <li>Open this file in a browser</li>
+        <li>The conversion will happen automatically</li>
+        <li>Right-click the image below and "Save Image As..." to save as PNG</li>
+    </ol>
+    
+    <canvas id="canvas" width="1200" height="630" style="border: 1px solid #ccc;"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+            
+            // Automatically trigger download
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'og-image.png';
+                a.textContent = 'Click here to download og-image.png';
+                document.body.appendChild(a);
+                console.log('Canvas converted to PNG. Click the link above to download.');
+            });
+        };
+        
+        // Load the SVG file
+        img.src = 'og-image.svg';
+    </script>
+</body>
+</html>
