@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myceloom Network | Protocol Canon</title>
-  <meta name="title" content="Myceloom Network | Protocol Canon">
-  <meta name="description"
-    content="Canonical home of the Myceloom Protocol on myceloom.network. Access the full specification, visual simulation, and protocol context.">
-  <meta name="keywords"
-    content="myceloom network, myceloom protocol, mcp-1, protocol canon, living infrastructure, distributed systems, web4">
-  <meta name="author" content="unearth.im">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://myceloom.network/">
-
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP-1 Core | Myceloom Protocol</title>
+  <meta name="description" content="Actual MCP-1 core sections: foundational axioms, synthesis, and architecture overview.">
+  <link rel="canonical" href="https://myceloom.network/protocol/mcp-1/">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -304,288 +295,105 @@
   ]
 }
   </script>
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://myceloom.network/">
-  <meta property="og:title" content="Myceloom Network | Protocol Canon">
-  <meta property="og:description"
-    content="Canonical home of the Myceloom Protocol on myceloom.network. Access the full specification, visual simulation, and protocol context.">
-  <meta property="og:image" content="https://myceloom.network/og-image.png">
-  <meta property="og:site_name" content="Myceloom Network">
-
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://myceloom.network/">
-  <meta property="twitter:title" content="Myceloom Network | Protocol Canon">
-  <meta property="twitter:description"
-    content="Canonical home of the Myceloom Protocol on myceloom.network. Access the full specification, visual simulation, and protocol context.">
-  <meta property="twitter:image" content="https://myceloom.network/og-image.png">
-
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0A0E1B">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-color: #0A0E1B;
-      --text-color: #E2E8F0;
-      --meta-color: #9CA3AF;
-      --accent-color: #FF8A00;
-      --accent-secondary: #22D3EE;
-      --border-color: #2d3748;
-      --card-bg: #1D2434;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Lora', serif;
-      line-height: 1.72;
-      background-image:
-        radial-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
-        linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
-      background-size: 32px 32px, 40px 40px, 40px 40px;
-      background-attachment: fixed;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.9rem;
-      margin-bottom: 2.5rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.82rem;
-    }
-
-    nav a {
-      color: var(--meta-color);
-      text-decoration: none;
-    }
-
-    nav a:visited {
-      color: var(--meta-color);
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: 'Lora', serif;
-      margin: 0;
-      color: #F8FAFC;
-      font-weight: 400;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      line-height: 1.16;
-      letter-spacing: -0.02em;
-    }
-
-    .lede {
-      margin-top: 1rem;
-      max-width: 44rem;
-      color: var(--meta-color);
-      font-size: 1.15rem;
-    }
-
-    .meta-block {
-      margin-top: 1.7rem;
-      border: 1px solid var(--border-color);
-      background: rgba(29, 36, 52, 0.56);
-      padding: 0.9rem 1rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--meta-color);
-      display: grid;
-      gap: 0.45rem;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    }
-
-    .meta-block strong {
-      color: var(--text-color);
-      font-weight: 400;
-    }
-
-    section {
-      margin-top: 3rem;
-    }
-
-    .heading {
-      font-family: 'Space Mono', monospace;
-      font-size: clamp(1.15rem, 2.1vw, 1.4rem);
-      margin-bottom: 1rem;
-      color: var(--text-color);
-      letter-spacing: 0.01em;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      display: block;
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      background: rgba(29, 36, 52, 0.72);
-      padding: 1.1rem;
-      color: var(--text-color);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .card:visited {
-      color: var(--text-color);
-    }
-
-    .card:hover {
-      border-color: var(--accent-secondary);
-      transform: translateY(-2px);
-    }
-
-    .card .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--accent-secondary);
-      margin-bottom: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--meta-color);
-      font-size: 0.95rem;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .note {
-      border-left: 2px solid var(--accent-color);
-      padding-left: 0.85rem;
-      color: var(--meta-color);
-      font-size: 1rem;
-      margin-top: 0.35rem;
-    }
-
-    footer {
-      margin-top: 3.4rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 1rem;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.74rem;
-      color: var(--meta-color);
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: var(--meta-color);
-      text-decoration: none;
-    }
-
-    footer a:visited {
-      color: var(--meta-color);
-    }
-
-    footer a:hover {
-      color: var(--accent-color);
-    }
+    :root{--bg:#0A0E1B;--panel:#1D2434;--text:#E2E8F0;--muted:#9CA3AF;--accent:#FF8A00;--accent2:#22D3EE;--border:#2d3748}
+    *{box-sizing:border-box} body{margin:0;display:flex;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Lora',serif;line-height:1.75}
+    aside{width:290px;position:fixed;inset:0 auto 0 0;background:rgba(29,36,52,.9);border-right:1px solid var(--border);padding:2rem 1.4rem;overflow:auto}
+    .logo{display:inline-block;color:var(--accent);text-decoration:none;font:700 .8rem 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.8rem}
+    .nav-header{font:.66rem 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);opacity:.7;margin:1rem 0 .6rem}
+    .nav-link{display:block;color:var(--text);text-decoration:none;font:.92rem 'Inter',sans-serif;margin:.33rem 0;opacity:.9}.nav-link:hover,.nav-link.active{color:var(--accent);transform:translateX(4px)}.nav-link:visited{color:var(--text)}.nav-link.active:visited{color:var(--accent)}
+    main{margin-left:290px;width:calc(100% - 290px);padding:2.3rem 2.2rem 4rem;max-width:980px}
+    .hero,.section{border:1px solid var(--border);background:rgba(29,36,52,.45);padding:1.15rem;border-radius:10px;margin-bottom:1rem}
+    h1{margin:0;font-weight:400;font-size:clamp(1.9rem,4vw,2.7rem)} h2{font:1.08rem 'Space Mono',monospace;margin:0 0 .7rem;color:var(--accent)} h2::before{content:'## ';color:var(--text)} h3{font:600 1.05rem 'Inter',sans-serif;margin:1rem 0 .4rem}
+    p,li{font-size:1.02rem} ul,ol{margin:.5rem 0 .2rem 1.2rem} .muted{font: .92rem 'Inter',sans-serif;color:var(--muted)}
+    .jump{display:inline-block;margin-top:.8rem;color:var(--accent2);font: .78rem 'Space Mono',monospace;text-decoration:none}.jump:visited{color:var(--accent2)}
+    code,pre{font-family:'Space Mono',monospace} pre{background:#111827;border:1px solid var(--border);padding:.75rem;border-radius:8px;overflow:auto}
+    @media (max-width:980px){body{display:block}aside{position:static;width:100%;height:auto;border-right:none;border-bottom:1px solid var(--border)}main{margin:0;width:100%;padding:1rem 1rem 2.5rem}}
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <nav>
-      <div><a href="/">myceloom.network</a> / protocol canon</div>
-      <div>
-        <a href="https://myceloom.com/">essays</a>
-        <span style="opacity:0.35; margin: 0 0.4rem;">|</span>
-        <a href="/visualization/">visualization</a>
-      </div>
-    </nav>
-
-    <header>
-      <h1>Myceloom Protocol Canon</h1>
-      <p class="lede">
-        myceloom.network is now the canonical protocol substrate. myceloom.com remains the essay and publication
-        constellation.
-      </p>
-      <div class="meta-block">
-        <div><strong>Specification:</strong> MCP-1 V2</div>
-        <div><strong>DOI:</strong> 10.5281/zenodo.18344231</div>
-        <div><strong>Status:</strong> Active Protocol Canon</div>
-      </div>
-    </header>
-
-    <section>
-      <h2 class="heading">## Start Here</h2>
-      <div class="cards">
-        <a class="card" href="/protocol/">
-          <div class="tag">Core Document</div>
-          <h3>Protocol Specification</h3>
-          <p>The complete technical standard for living infrastructure, preserved in full.</p>
-        </a>
-
-        <a class="card" href="/visualization/">
-          <div class="tag">Interactive Guide</div>
-          <h3>Network Visualization</h3>
-          <p>Explore the network model and watch protocol relationships as living topology.</p>
-        </a>
-
-        <a class="card" href="https://myceloom.com/publications/">
-          <div class="tag">Companion Essays</div>
-          <h3>Essay Library</h3>
-          <p>Read the interpretive and philosophical layers hosted on myceloom.com.</p>
-        </a>
-      </div>
+  <aside>
+    <a class="logo" href="/protocol/">myceloom protocol</a>
+    <div class="nav-header">Main</div>
+    <a class="nav-link" href="/protocol/">Protocol Hub</a>
+    <a class="nav-link" href="/protocol/spec-full/">Full Specification (Archive)</a>
+    <a class="nav-link" href="https://myceloom.network/visualization/">Visualization</a>
+    <a class="nav-link" href="https://myceloom.com/">Essays (myceloom.com)</a>
+    <div class="nav-header">Sections</div>
+    <a class="nav-link active" href="/protocol/mcp-1/">MCP-1 Core</a>
+    <a class="nav-link" href="/protocol/tap/">TAP v2</a>
+    <a class="nav-link" href="/protocol/ldp/">LDP V1 + Maverick</a>
+    <a class="nav-link" href="/protocol/tooling/">Tooling</a>
+  </aside>
+  <main>
+    <section class="hero">
+      <h1>MCP-1 Core</h1>
+      <p class="muted">This page contains actual sections from the MCP-1 portion of the full specification.</p>
+      <a class="jump" href="/protocol/spec-full/#foundational-axioms">Open full MCP-1 section in archive →</a>
     </section>
 
-    <section>
-      <h2 class="heading">## Division of Roles</h2>
-      <p class="note">
-        myceloom.network = canonical protocol and implementation context.<br>
-        myceloom.com = essays, etymology sequence, and publication-oriented narrative work.
-      </p>
+    <section class="section">
+      <h2>Foundational Axioms</h2>
+      <p>The Myceloom Protocol rests on foundational axioms. These are not merely design principles but constitutive requirements: systems violating these axioms cannot be considered myceloom-aligned.</p>
+
+      <h3>Axiom I: Sovereignty First</h3>
+      <p><strong>Statement:</strong> No node SHALL be built on rented land.</p>
+      <ul>
+        <li>Nodes MUST control their own data storage.</li>
+        <li>Nodes MUST control their own identity infrastructure.</li>
+        <li>Nodes MUST support independent operation without third-party platform dependence.</li>
+      </ul>
+
+      <h3>Axiom II: Reciprocal Nourishment</h3>
+      <p><strong>Statement:</strong> A link is not a transaction; it is a root system. Value MUST flow bidirectionally.</p>
+      <ul>
+        <li>Inter-node connections MUST provide value to both parties.</li>
+        <li>Systems MUST NOT extract value from participation without contribution.</li>
+        <li>Resource sharing SHOULD include reciprocity mechanisms.</li>
+      </ul>
+
+      <h3>Axiom III: Emergent Intelligence</h3>
+      <p><strong>Statement:</strong> Intelligence is not a property of the center; it is a property of the edge.</p>
+      <ul>
+        <li>Decision-making MUST occur at the lowest capable level.</li>
+        <li>Network behavior MUST emerge from local interactions.</li>
+        <li>Collective intelligence MUST enhance rather than replace node autonomy.</li>
+      </ul>
+
+      <h3>Axiom IV: Intentional Patterning</h3>
+      <p><strong>Statement:</strong> Structure MUST NOT be accidental; it MUST be the result of intentional craft.</p>
+      <p>Systems distinguish protocol as load-bearing structure and interface as adaptive expression.</p>
     </section>
 
-    <footer>
-      <div>unearth heritage foundry // archive & anvil // 2026</div>
-      <div>
-        <a href="/protocol/spec-full/">full archival spec</a>
-      </div>
-    </footer>
-  </div>
+    <section class="section">
+      <h2>The My-Sea-Loom Synthesis</h2>
+      <ol>
+        <li><strong>My (Sovereignty):</strong> Axiom I.</li>
+        <li><strong>Sea (Interconnection):</strong> Axioms II and III.</li>
+        <li><strong>Loom (Structure):</strong> Axiom IV.</li>
+        <li><strong>Heirloom (Time):</strong> persistence through sovereign structure.</li>
+      </ol>
+      <p><strong>Therefore:</strong> A system is myceloom-aligned when the Loom (Axiom IV) weaves the Sea (Axioms II/III) into the My (Axiom I).</p>
+    </section>
+
+    <section class="section">
+      <h2>Architecture Overview</h2>
+      <p>MCP-1 defines an eight-layer architecture organized into four functional domains: Substrate, Society, Human, and Dimension.</p>
+      <pre>DOMAIN IV: DIMENSION  → Layer 8
+DOMAIN III: HUMAN     → Layers 7, 6
+DOMAIN II: SOCIETY    → Layers 5, 4
+DOMAIN I: SUBSTRATE   → Layers 3, 2, 1</pre>
+      <p class="muted">Each layer builds on lower layers while remaining loosely coupled; higher layers may be implemented independently if functional requirements are satisfied.</p>
+      <a class="jump" href="/protocol/spec-full/#architecture-overview">Read full architecture details →</a>
+    </section>
+
+    <div style="margin-top:1.2rem;border-top:1px solid var(--border);padding-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--muted);display:flex;gap:.8rem;flex-wrap:wrap;">
+      <span>MCP-1 V2 Suite</span>
+      <span>DOI: <a href="https://doi.org/10.5281/zenodo.18344231" style="color:var(--accent2);text-decoration:none;">10.5281/zenodo.18344231</a></span>
+      <span>Last updated: Feb 2026</span>
+    </div>
+  </main>
 </body>
-
 </html>

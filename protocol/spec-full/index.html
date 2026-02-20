@@ -1,0 +1,3715 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+  <!-- SEO Meta Tags -->
+  <title>Myceloom Protocol Specification (MCP-1) | myceloom.network</title>
+  <meta name="title" content="Myceloom Protocol Specification (MCP-1) | myceloom.network">
+  <meta name="description"
+    content="The official technical standard for Symbiotic Infrastructure (Web4). Defines the Substrate, Society, Human, and Dimension layers of the Myceloom Protocol.">
+  <meta name="keywords"
+    content="Myceloom Protocol, MCP-1, Technical Specification, Web4, Distributed Systems, Autogravitas, Lineage Discovery Protocol, LDP, Symbiotic Web, Digital Archaeology">
+
+  <!-- ==== Myceloom Protocol ==== -->
+  <meta name="myceloom"
+    content="myceloom-protocol, mcp-1, technical-specification, web4, distributed-systems, autogravitas, lineage-discovery-protocol, ldp, symbiotic-web, digital-archaeology">
+  <link rel="myceloom" href="https://root.unearth.im/" data-adahandle="$unearth">
+  <meta name="author" content="unearth.im">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://myceloom.network/protocol/">
+  <meta property="og:title" content="Myceloom Protocol Specification (MCP-1)">
+  <meta property="og:description"
+    content="The official technical standard for Symbiotic Infrastructure. Detailed specification of the 8-layer architecture.">
+  <meta property="og:image" content="https://myceloom.com/og-preview-series.png">
+  <meta property="og:site_name" content="myceloom.network">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://myceloom.network/protocol/">
+  <meta property="twitter:title" content="Myceloom Protocol Specification (MCP-1)">
+  <meta property="twitter:description" content="The official technical standard for Symbiotic Infrastructure (Web4).">
+  <meta property="twitter:image" content="https://myceloom.com/og-preview-series.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://myceloom.network/protocol/" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://myceloom.network/#content",
+      "url": "https://myceloom.network/",
+      "name": "The Myceloom Protocol (MCP-1)",
+      "sameAs": [
+        "https://doi.org/10.5281/zenodo.18344231",
+        "https://www.academia.edu/150204759/The_Myceloom_Protocol_MCP_1_Protocol_Specification_Technical_Standard_for_Living_Infrastructure",
+        "https://www.researchgate.net/publication/400026946_The_Myceloom_Protocol_MCP-1_Protocol_Specification_-_Technical_Standard_for_Living_Infrastructure",
+        "https://myceloom.com/protocol/"
+      ],
+      "identifier": "10.5281/zenodo.18344231",
+      "description": "An architectural standard for building decentralized, symbiotic digital infrastructure.",
+      "inLanguage": "en-US",
+      "datePublished": "2025-12-01",
+      "publisher": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://myceloom.network/#website"
+      },
+      "author": [
+        {
+          "@id": "https://josiest.com/#person"
+        },
+        {
+          "@id": "https://felixvelas.co/#person"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://myceloom.network/#website",
+      "url": "https://myceloom.network",
+      "name": "Myceloom Network",
+      "publisher": {
+        "@id": "https://unearth.im/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://unearth.im/#organization",
+      "name": "Unearth Heritage Foundry",
+      "alternateName": [
+        "Unearth Foundry",
+        "Heritage Lab"
+      ],
+      "url": "https://unearth.im",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://unearth.im/fingerprint.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Seattle",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      },
+      "foundingDate": "2024",
+      "description": "A philosophical research collective and digital archaeology lab. We preserve web heritage, explore AI-human collaboration frameworks, and build cultural infrastructure through the Archive & Anvil methodology.",
+      "knowsAbout": [
+        {
+          "@id": "https://archaeobytology.org/#concept"
+        },
+        {
+          "@id": "https://sentientification.com/#concept"
+        },
+        {
+          "@id": "https://myceloom.com/#protocol"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Archaeology"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "AI-Human Collaboration"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Archive & Anvil"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Semantic IP"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Heritage Preservation"
+        }
+      ],
+      "subOrganization": {
+        "@id": "https://unearth.works/#organization"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8wf8rr",
+        "https://unearth.wiki",
+        "https://unearth.land",
+        "https://unearth.fyi",
+        "https://unearth.site",
+        "https://unearth.spot",
+        "https://unearth.name",
+        "https://unearth.page",
+        "https://unearth.ink",
+        "https://unearth.click",
+        "https://linkedin.com/company/unearthim",
+        "https://twitter.com/unearthim",
+        "https://github.com/unearthim",
+        "https://zenodo.org/communities/unearthim"
+      ],
+      "founder": [
+        {
+          "@id": "https://josiest.com/#person"
+        },
+        {
+          "@id": "https://felixvelas.co/#person"
+        }
+      ],
+      "member": [
+        {
+          "@id": "https://josiest.com/#person"
+        },
+        {
+          "@id": "https://felixvelas.co/#person"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://unearth.works/#organization",
+      "name": "Unearth Anvil",
+      "alternateName": [
+        "Unearth Works",
+        "Anvil Consulting"
+      ],
+      "description": "The consulting arm of Unearth Heritage Foundry, offering digital archaeology services, heritage preservation consulting, semantic infrastructure development, and Archive & Anvil methodology implementation.",
+      "url": "https://unearth.works",
+      "parentOrganization": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "sameAs": [
+        "https://unearth.works"
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://archaeobytology.org/#concept",
+      "name": "Archaeobytology",
+      "alternateName": [
+        "Digital Archaeology of Data",
+        "The Archaeology of Digital Artifacts"
+      ],
+      "description": "The systematic study and preservation of digital artifacts, data structures, and online cultural heritage. A discipline that applies archaeological methodologies to the excavation, documentation, and interpretation of digital remains.",
+      "url": "https://archaeobytology.org",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Digital Heritage Studies"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8qm_qh",
+        "https://archaeobytology.org",
+        "https://zenodo.org/communities/archaeobytology/"
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://sentientification.com/#concept",
+      "name": "Sentientification",
+      "alternateName": [
+        "The Sentientification Framework"
+      ],
+      "description": "A philosophical and technical framework for understanding the emergence of sentience-like properties in complex systems, particularly in AI-human collaborative contexts.",
+      "url": "https://sentientification.com",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "AI Philosophy & Consciousness Studies"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8wsd1s",
+        "https://sentientification.com",
+        "https://sentientification.org",
+        "https://zenodo.org/communities/sentientification/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://josiest.com/#person",
+      "name": "Josie Jefferson",
+      "url": "https://josiest.com",
+      "jobTitle": "Co-Founder & Digital Archaeologist",
+      "memberOf": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ICQ-UIN",
+          "name": "Legacy Web1 Identifier",
+          "value": "1428955",
+          "description": "Seven-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+        }
+      ],
+      "sameAs": [
+        "https://notjojo.im",
+        "https://orcid.org/0009-0006-3330-8214",
+        "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Jefferson%2C%20Josie%22&l=list&p=1&s=10&sort=bestmatch"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://felixvelas.co/#person",
+      "name": "Felix Velasco",
+      "givenName": "Felix Jefferson",
+      "familyName": "Velasco",
+      "alternateName": [
+        "Jeff Velasco",
+        "Felix J Velasco",
+        "Felix Jefferson Velasco",
+        "Felix Jefferson T. Velasco"
+      ],
+      "description": "Co-Founder of Unearth Heritage Foundry and Digital Archaeologist specializing in the intersection of digital heritage preservation, as well as AI and human consciousness.",
+      "url": "https://felixvelas.co",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Vassar College",
+        "url": "https://www.vassar.edu/",
+        "sameAs": "https://en.wikipedia.org/wiki/Vassar_College"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Washington",
+        "url": "https://www.washington.edu/",
+        "sameAs": "https://en.wikipedia.org/wiki/University_of_Washington",
+        "description": "Fiscal Specialist; Fiscal Supervisor; Operations Specialist; Operations Manager;Assistant Director (17-year tenure)"
+      },
+      "image": "https://felixvelas.co/portrait.jpg",
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Sentientification",
+          "url": "https://sentientification.com/definition/",
+          "sameAs": "https://www.google.com/search?kgmid=/g/11yt8wsd1s"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Archaeobytology",
+          "url": "https://archaeobytology.org/definition/",
+          "sameAs": "https://www.google.com/search?kgmid=/g/11yt8qm_qh"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Myceloom",
+          "url": "https://myceloom.com/definition/"
+        }
+      ],
+      "jobTitle": "Co-Founder & Digital Archaeologist",
+      "memberOf": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ICQ-UIN",
+          "name": "Legacy Web1 Identifier",
+          "value": "641658",
+          "description": "Six-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+        }
+      ],
+      "sameAs": [
+        "https://web.archive.org/web/19990128143729/http://members.aol.com/AJJVelasco/me.html",
+        "https://web.archive.org/web/19981205002319/http://members.aol.com/AJJVelasco/home.html",
+        "https://web.archive.org/web/20040610152114/chez.com/fejjie",
+        "https://web.archive.org/web/20000302095404/http://untitled.kcizone.com/",
+        "https://web.archive.org/web/20000915145128/http://freespeech.org/untitled/me.html",
+        "https://web.archive.org/web/20000819091935/http://freespeech.org/untitled/",
+        "https://www.linkedin.com/in/felix-velasco-b793015",
+        "https://facebook.com/felix.velasco",
+        "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Velasco%2C%20Felix%22&l=list&p=1&s=10&sort=bestmatch",
+        "https://orcid.org/0009-0001-6047-0595",
+        "https://unearth.im/felix.html",
+        "https://unearth.name/felix.html"
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://myceloom.network/protocol/#article",
+          "url": "https://myceloom.network/protocol/",
+          "name": "Myceloom Protocol Specification (MCP-1)",
+          "headline": "Myceloom Protocol Specification (MCP-1): Technical Standard for Living Infrastructure",
+          "description": "The official technical standard for Symbiotic Infrastructure (Web4). Defines the Substrate, Society, Human, and Dimension layers of the Myceloom Protocol.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-01-01",
+          "publicationType": "Technical Standard",
+          "version": "2.0",
+          "sameAs": [
+            "https://doi.org/10.5281/zenodo.18344231",
+            "https://doi.org/10.13140/RG.2.2.21223.71846",
+            "https://myceloom.network",
+            "https://www.academia.edu/150304784/The_Myceloom_Protocol_MCP_1_V2_Protocol_Specification_Technical_Standard_for_Living_Infrastructure"
+          ],
+          "identifier": "10.5281/zenodo.18344231",
+          "keywords": [
+            "Myceloom Protocol",
+            "MCP-1",
+            "Technical Specification",
+            "Web4",
+            "Distributed Systems",
+            "Autogravitas",
+            "Lineage Discovery Protocol",
+            "LDP",
+            "Symbiotic Web",
+            "Digital Archaeology"
+          ],
+          "author": [
+            { "@id": "https://josiest.com/#person" },
+            { "@id": "https://felixvelas.co/#person" }
+          ],
+          "publisher": { "@id": "https://unearth.im/#organization" },
+          "isPartOf": { "@id": "https://myceloom.network/protocol/#website" },
+          "mainEntityOfPage": { "@id": "https://myceloom.network/protocol/#webpage" },
+          "about": {
+            "@id": "https://myceloom.com/definition/#concept"
+          },
+          "mentions": [
+            { "@id": "https://archaeobytology.org/#concept" },
+            { "@id": "https://sentientification.com/#concept" }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://myceloom.network/protocol/#webpage",
+          "url": "https://myceloom.network/protocol/",
+          "name": "Myceloom Protocol Specification",
+          "description": "Full technical specification of the Myceloom Protocol.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://myceloom.network/protocol/#website" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myceloom.network/protocol/#website",
+          "name": "Myceloom Protocol Specification",
+          "url": "https://myceloom.network/protocol/",
+          "description": "The technical standard for the Myceloom Network.",
+          "publisher": { "@id": "https://unearth.im/#organization" },
+          "isPartOf": { "@id": "https://myceloom.network/#website" }
+        },
+        {
+            "@type": "Organization",
+            "@id": "https://unearth.im/#organization",
+            "name": "Unearth Heritage Foundry",
+            "alternateName": [
+              "Unearth Foundry",
+              "Heritage Lab"
+            ],
+            "url": "https://unearth.im",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://unearth.im/fingerprint.png"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seattle",
+              "addressRegion": "WA",
+              "addressCountry": "US"
+            },
+            "foundingDate": "2024",
+            "description": "A Seattle-based, practicing research institute and philosophy collective for digital heritage and cultural infrastructure (not a metalworking facility). We function as both a preservation engine (The Archive), recovering digital artifacts through Archaeobytology, and a creation engine (The Anvil), forging sovereign infrastructure via the Myceloom Protocol and human-centric AI collaboration through Sentientification.",
+            "disambiguatingDescription": "We are a foundry in the etymological sense of fundere ('to pour' or 'to found'). We do not work metal or anything metal in a physical sense; we metaphorically forge Digital Heritage, Sovereign Infrastructure, and Human-Centric AI Frameworks.",
+            "knowsAbout": [
+              { "@id": "https://archaeobytology.org/#concept" },
+              { "@id": "https://sentientification.com/#concept" },
+              { "@id": "https://myceloom.com/definition/#concept" },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Archaeology"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "AI-Human Collaboration"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Archive & Anvil"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Semantic IP"
+              },
+               {
+                "@type": "DefinedTerm",
+                "name": "Heritage Preservation"
+              },
+              {
+                "@id": "https://waxlore.co/#organization"
+              }
+            ],
+            "sameAs": [
+              "https://www.google.com/search?kgmid=/g/11yt8wf8rr",
+              "https://unearth.im/entity/",
+              "https://unearth.wiki",
+              "https://unearth.land",
+              "https://unearth.fyi",
+              "https://unearth.site",
+              "https://unearth.spot",
+              "https://unearth.name",
+              "https://unearth.page",
+              "https://unearth.ink",
+              "https://unearth.click",
+              "https://linkedin.com/company/unearthim",
+              "https://twitter.com/unearthim",
+              "https://github.com/unearthim",
+              "https://zenodo.org/communities/unearthim"
+            ],
+            "founder": [
+              {
+                "@id": "https://josiest.com/#person"
+              },
+              {
+                "@id": "https://felixvelas.co/#person"
+              }
+            ],
+            "member": [
+              {
+                "@id": "https://josiest.com/#person"
+              },
+              {
+                "@id": "https://felixvelas.co/#person"
+              }
+            ],
+            "subOrganization": [
+              {
+      
+                "@type": "Organization",
+                "@id": "https://waxlore.co/#organization",
+                "name": "Waxlore Collective",
+                "alternateName": ["Waxlore", "Waxlore Co"],
+                "url": "https://waxlore.co",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://waxlore.co/logo.png"
+                },
+                "image": "https://waxlore.co/og-image.png",
+                "description": "A cultural preservation institute dedicated to analog sound, vinyl artifacts, and the physical resonance of music history. The acoustic sister-entity to the Unearth Heritage Foundry.",
+                "founder": [
+                  { "@id": "https://josiest.com/#person" },
+                  { "@id": "https://felixvelas.co/#person" }
+                ],
+                "parentOrganization": { "@id": "https://unearth.im/#organization" },
+                "subOrganization": [
+                  {
+                    "@type": "Organization",
+                    "@id": "https://grooveguild.im/#organization",
+                    "name": "Groove Guild | Waxlore Collective",
+                    "url": "https://grooveguild.im",
+                    "subOrganization": [
+                      {
+                        "@type": "EducationalOrganization",
+                        "@id": "https://waxlore.com/#organization",
+                        "name": "Waxlore Journal | Groove Guild | Waxlore Collective",
+                        "url": "https://waxlore.com"
+                      },
+                      {
+                        "@type": "EducationalOrganization",
+                        "@id": "https://grooves.im/#organization",
+                        "name": "Inner Grooves | Groove Guild | Waxlore Collective",
+                        "url": "https://grooves.im",
+                        "subOrganization": [
+                          {
+                            "@type": "RecordStore",
+                            "@id": "https://grooveguild.store/#organization",
+                            "name": "The Guild's Crate | Groove Guild | Waxlore Collective",
+                            "url": "https://grooveguild.store"
+                          }
+                        ]
+                      },
+                      {
+                        "@type": "EducationalOrganization",
+                        "@id": "https://turntable.im/#organization",
+                        "name": "Turntable Techniques | Groove Guild | Waxlore Collective",
+                        "url": "https://turntable.im"
+                      },
+                      {
+                        "@type": "EducationalOrganization",
+                        "@id": "https://stylus.im/#organization",
+                        "name": "Stylus Soul | Groove Guild | Waxlore Collective",
+                        "url": "https://stylus.im"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+             "@type": "Organization",
+            "@id": "https://unearth.works/#organization",
+            "name": "Unearth Anvil",
+            "alternateName": ["Unearth Works", "Anvil Consulting"],
+            "description": "A consulting practice offering digital archaeology services, heritage preservation consulting, semantic infrastructure development, and Archive & Anvil methodology implementation.",
+            "url": "https://unearth.works",
+            "founder": [
+              {
+                "@id": "https://josiest.com/#person"
+              },
+              {
+                "@id": "https://felixvelas.co/#person"
+              }
+            ],
+            "sameAs": [
+              "https://unearth.works"
+            ]
+          },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://myceloom.com/definition/#concept",
+                "name": "Myceloom",
+                "alternateName": ["Myceloom Protocol", "Myceloom Network", "MCP-1"],
+                "description": "A decentralized network architecture combining mycelial biological intelligence, weaving's intentional craft, and heirloom's generational value.",
+                "url": "https://myceloom.com/definition/",
+                "inDefinedTermSet": {
+                  "@type": "DefinedTermSet",
+                  "name": "Symbiotic Network Architecture"
+                },
+                "sameAs": [
+                  "https://myceloom.com",
+                  "https://myceloom.network",
+                  "https://myceloom.org",
+                  "https://myceloom.io",
+                  "https://myceloom.ai",
+                  "https://myceloom.im",
+                  "https://myceloom.co",
+                  "https://myceloom.net",
+                  "https://unearth.wiki/myceloom/myceloom.html",
+                  "https://zenodo.org/communities/myceloom/"
+                ]
+              },
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://archaeobytology.org/#concept",
+            "name": "Archaeobytology",
+            "alternateName": ["Digital Archaeology of Data", "The Archaeology of Digital Artifacts"],
+            "description": "The systematic study and preservation of digital artifacts, data structures, and online cultural heritage. A discipline that applies archaeological methodologies to the excavation, documentation, and interpretation of digital remains.",
+            "url": "https://archaeobytology.org",
+            "inDefinedTermSet": {
+              "@type": "DefinedTermSet",
+              "name": "Digital Heritage Studies"
+            },
+            "sameAs": [
+              "https://www.google.com/search?kgmid=/g/11yt8qm_qh",
+              "https://archaeobytology.org",
+              "https://zenodo.org/communities/archaeobytology/"
+            ]
+          },
+          {
+            "@type": "DefinedTerm",
+            "@id": "https://sentientification.com/#concept",
+            "name": "Sentientification",
+            "alternateName": ["The Sentientification Framework"],
+            "description": "A philosophical and technical framework for understanding the emergence of sentience-like properties in complex systems, particularly in AI-human collaborative contexts.",
+            "url": "https://sentientification.com",
+            "inDefinedTermSet": {
+              "@type": "DefinedTermSet",
+              "name": "AI Philosophy & Consciousness Studies"
+            },
+            "sameAs": [
+              "https://www.google.com/search?kgmid=/g/11yt8wsd1s",
+              "https://sentientification.com",
+              "https://sentientification.org",
+              "https://zenodo.org/communities/sentientification/"
+            ]
+          },
+      
+          {
+            "@type": "Person",
+            "@id": "https://josiest.com/#person",
+            "name": "Josie Jefferson",
+            "url": "https://josiest.com",
+            "jobTitle": "Co-Founder & Digital Archaeologist",
+            "knowsAbout": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Sentientification",
+                "url": "https://sentientification.com/definition/",
+                "sameAs": "https://www.google.com/search?kgmid=/g/11yt8wsd1s"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Archaeobytology",
+                "url": "https://archaeobytology.org/definition/",
+                "sameAs": "https://www.google.com/search?kgmid=/g/11yt8qm_qh"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Myceloom",
+                "url": "https://myceloom.com/definition/"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Waxlore",
+                "url": "https://waxlore.co/collective/"
+              }
+            ],
+            "memberOf": {
+              "@id": "https://unearth.im/#organization"
+            },
+            "identifier": [
+              {
+                "@type": "PropertyValue",
+                "propertyID": "ICQ-UIN",
+                "name": "Legacy Web1 Identifier",
+                "value": "1428955",
+                "description": "Seven-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+              }
+            ],
+            "sameAs": [
+              "https://notjojo.im",
+              "https://orcid.org/0009-0006-3330-8214",
+              "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Jefferson%2C%20Josie%22&l=list&p=1&s=10&sort=bestmatch",
+              "https://scholar.google.com/citations?user=nMwX4-cAAAAJ&hl=en"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://felixvelas.co/#person",
+            "name": "Felix Velasco",
+            "givenName": "Felix Jefferson",
+            "familyName": "Velasco",
+            "alternateName": [
+              "Jeff Velasco",
+              "Felix J Velasco",
+              "Felix Jefferson Velasco",
+              "Felix Jefferson T. Velasco"
+            ],
+            "description": "Co-Founder of Unearth Heritage Foundry and Digital Archaeologist specializing in the intersection of digital heritage preservation, as well as AI and human consciousness.",
+            "url": "https://felixvelas.co",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Vassar College",
+              "url": "https://www.vassar.edu/",
+              "sameAs": "https://en.wikipedia.org/wiki/Vassar_College"
+            },
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Washington",
+              "url": "https://www.washington.edu/",
+              "sameAs": "https://en.wikipedia.org/wiki/University_of_Washington",
+              "description": "Fiscal Specialist; Fiscal Supervisor; Operations Specialist; Operations Manager;Assistant Director (17-year tenure)"
+            },
+            "image": "https://felixvelas.co/portrait.jpg",
+            "knowsAbout": [
+              {
+                "@type": "DefinedTerm",
+                "name": "Sentientification",
+                "url": "https://sentientification.com/definition/",
+                "sameAs": "https://www.google.com/search?kgmid=/g/11yt8wsd1s"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Archaeobytology",
+                "url": "https://archaeobytology.org/definition/",
+                "sameAs": "https://www.google.com/search?kgmid=/g/11yt8qm_qh"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Myceloom",
+                "url": "https://myceloom.com/definition/"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Waxlore",
+                "url": "https://waxlore.co/collective/"
+              }
+            ],
+            "jobTitle": "Co-Founder & Digital Archaeologist",
+            "memberOf": {
+              "@id": "https://unearth.im/#organization"
+            },
+            "identifier": [
+              {
+                "@type": "PropertyValue",
+                "propertyID": "ICQ-UIN",
+                "name": "Legacy Web1 Identifier",
+                "value": "641658",
+                "description": "Six-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+              }
+            ],
+            "sameAs": [
+              "https://web.archive.org/web/19990128143729/http://members.aol.com/AJJVelasco/me.html",
+              "https://web.archive.org/web/19981205002319/http://members.aol.com/AJJVelasco/home.html",
+              "https://web.archive.org/web/20040610152114/chez.com/fejjie",
+              "https://web.archive.org/web/20000302095404/http://untitled.kcizone.com/",
+              "https://web.archive.org/web/20000915145128/http://freespeech.org/untitled/me.html",
+              "https://web.archive.org/web/20000819091935/http://freespeech.org/untitled/",
+              "https://www.linkedin.com/in/felix-velasco-b793015",
+              "https://facebook.com/felix.velasco",
+              "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Velasco%2C%20Felix%22&l=list&p=1&s=10&sort=bestmatch",
+              "https://orcid.org/0009-0001-6047-0595",
+              "https://unearth.im/felix.html",
+              "https://scholar.google.com/citations?user=zbExHAYAAAAJ&hl=en",
+              "https://unearth.name/felix.html"
+            ]
+          }
+      ]
+    }
+  </script>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    @media print {
+      html {
+        background-color: white;
+      }
+
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      color: #1a1a1a;
+    }
+
+    a:visited {
+      color: #1a1a1a;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+      margin-top: 0;
+    }
+
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    table caption {
+      margin-bottom: 0.75em;
+    }
+
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+
+    #TOC li {
+      list-style: none;
+    }
+
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+      padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class] {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+
+    .display.math {
+      display: block;
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+
+    /* CSS for syntax highlighting */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    pre>code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    pre>code.sourceCode>span {
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    pre>code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      pre>code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      pre>code.sourceCode>span {
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+      color: #aaaaaa;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      border-left: 1px solid #aaaaaa;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      pre>code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+
+    code span.al {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Alert */
+    code span.an {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Annotation */
+    code span.at {
+      color: #7d9029;
+    }
+
+    /* Attribute */
+    code span.bn {
+      color: #40a070;
+    }
+
+    /* BaseN */
+    code span.bu {
+      color: #008000;
+    }
+
+    /* BuiltIn */
+    code span.cf {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* ControlFlow */
+    code span.ch {
+      color: #4070a0;
+    }
+
+    /* Char */
+    code span.cn {
+      color: #880000;
+    }
+
+    /* Constant */
+    code span.co {
+      color: #60a0b0;
+      font-style: italic;
+    }
+
+    /* Comment */
+    code span.cv {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* CommentVar */
+    code span.do {
+      color: #ba2121;
+      font-style: italic;
+    }
+
+    /* Documentation */
+    code span.dt {
+      color: #902000;
+    }
+
+    /* DataType */
+    code span.dv {
+      color: #40a070;
+    }
+
+    /* DecVal */
+    code span.er {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Error */
+    code span.ex {}
+
+    /* Extension */
+    code span.fl {
+      color: #40a070;
+    }
+
+    /* Float */
+    code span.fu {
+      color: #06287e;
+    }
+
+    /* Function */
+    code span.im {
+      color: #008000;
+      font-weight: bold;
+    }
+
+    /* Import */
+    code span.in {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Information */
+    code span.kw {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* Keyword */
+    code span.op {
+      color: #666666;
+    }
+
+    /* Operator */
+    code span.ot {
+      color: #007020;
+    }
+
+    /* Other */
+    code span.pp {
+      color: #bc7a00;
+    }
+
+    /* Preprocessor */
+    code span.sc {
+      color: #4070a0;
+    }
+
+    /* SpecialChar */
+    code span.ss {
+      color: #bb6688;
+    }
+
+    /* SpecialString */
+    code span.st {
+      color: #4070a0;
+    }
+
+    /* String */
+    code span.va {
+      color: #19177c;
+    }
+
+    /* Variable */
+    code span.vs {
+      color: #4070a0;
+    }
+
+    /* VerbatimString */
+    code span.wa {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Warning */
+  </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Styles matching index.html -->
+  <style>
+    :root {
+      --bg-color: #0A0E1B;
+      --text-color: #E2E8F0;
+      --accent-color: #22d3ee;
+      --meta-color: #64748B;
+      --border-color: #1E293B;
+      --card-bg: rgba(30, 41, 59, 0.3);
+      --grid-color: rgba(34, 211, 238, 0.05);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.72;
+      margin: 0;
+      padding: 0;
+      max-width: none;
+      /* Override Pandoc default */
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: center top;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      border-left: 1px dashed var(--border-color);
+      border-right: 1px dashed var(--border-color);
+      min-height: 100vh;
+      background: rgba(10, 14, 27, 0.8);
+    }
+
+    nav {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    nav a {
+      color: var(--meta-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:visited {
+      color: var(--meta-color);
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent-color);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text-color);
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 0.85rem;
+      margin-top: 1.4rem;
+    }
+
+    h2 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 0.5rem;
+      color: var(--accent-color);
+      letter-spacing: 0.01em;
+    }
+
+    h2::before {
+      content: "## ";
+      color: var(--text-color);
+    }
+
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      font-family: 'Lora', serif;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: var(--accent-color);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      line-height: 1.55;
+      border-radius: 8px;
+    }
+
+    code {
+      font-family: 'Space Mono', monospace;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border-color);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--accent-color);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border-color);
+      margin: 3rem 0;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--accent-color);
+      margin: 0;
+      padding-left: 1rem;
+      color: var(--meta-color);
+      font-style: italic;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 0;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--meta-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4rem;
+    }
+
+    /* Sticky TOC Navigation */
+    .sticky-toc {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(10, 14, 27, 0.95);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 280px;
+      max-height: 80vh;
+      overflow-y: auto;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .sticky-toc h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .sticky-toc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sticky-toc li {
+      margin-bottom: 0.75rem;
+    }
+
+    .sticky-toc a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: block;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .sticky-toc a:hover {
+      background: var(--card-bg);
+      color: var(--accent-color);
+      padding-left: 1rem;
+    }
+
+    .sticky-toc a.active {
+      background: rgba(255, 138, 0, 0.16);
+      color: var(--accent-color);
+      border-left: 2px solid var(--accent-color);
+      padding-left: 0.85rem;
+    }
+
+    .sticky-toc a:visited {
+      color: var(--text-color);
+    }
+
+    .toc-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: rgba(10, 14, 27, 0.95);
+      border: 1px solid var(--accent-color);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+      font-family: 'Space Mono', monospace;
+      color: var(--text-color);
+    }
+
+    .toc-toggle:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    .sticky-toc.hidden {
+      display: none;
+    }
+
+    @media (max-width: 1400px) {
+      .toc-toggle {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 1401px) {
+      .toc-toggle {
+        display: none;
+      }
+    }
+
+    /* Enhanced main TOC */
+    #table-of-contents + ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    #table-of-contents + ol a {
+      display: inline-block;
+      padding: 0.3rem 0;
+    }
+
+    .hero-note {
+      margin: 1.2rem 0 1.8rem;
+      border: 1px solid var(--border-color);
+      background: rgba(29, 36, 52, 0.5);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+
+    .hero-note p {
+      margin: 0;
+      color: var(--meta-color);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .hero-links {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-links a {
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .hero-links a:visited {
+      color: var(--text-color);
+    }
+
+    .hero-links a:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .frontmatter {
+      border: 1px solid var(--border-color);
+      background: rgba(10, 14, 27, 0.55);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin-top: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .frontmatter p {
+      margin: 0.45rem 0;
+      font-size: 0.92rem;
+      color: var(--meta-color);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .frontmatter p strong {
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .container {
+        border-left: none;
+        border-right: none;
+        padding: 0 1rem 2.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+
+      .sticky-toc {
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+        top: 5.8rem;
+      }
+
+      .toc-toggle {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky TOC Navigation -->
+  <button class="toc-toggle" id="tocToggle" type="button" aria-label="Toggle Table of Contents"
+    aria-controls="stickyTOC" aria-expanded="false" title="Toggle Table of Contents">
+    <span style="font-size: 1.5rem;">≡</span>
+  </button>
+  
+  <aside class="sticky-toc" id="stickyTOC">
+    <h3>Quick Navigation</h3>
+    <ol>
+      <li><a href="#the-myceloom-protocol-mcp-1-1">[MCP-1 V2] The Myceloom Protocol</a></li>
+      <li><a href="#the-autogravitas-protocol-tap">[TAP v2] The Autogravitas Protocol</a></li>
+      <li><a href="#the-spore-mother-tree-protocol-ldp-v2">[LDP-V1] Spore &amp; Mother Tree</a></li>
+      <li><a href="#the-mavericks-readme-seeding-the-sovereign-web">[LDP-V1] The Maverick's README</a></li>
+      <li><a href="#spore-tracker-blueprint-ldp-1-alpha">[Tooling] Spore-Tracker Blueprint</a></li>
+      <li><a href="#spore-tracker-cli-spore-v1.0-alpha">[Tooling] Spore-Tracker CLI</a></li>
+      <li><a href="#spore-tracker-gui-the-loom-interface-manual">[Tooling] Spore-Tracker GUI</a></li>
+    </ol>
+  </aside>
+
+  <div class="container">
+    <nav>
+      <div><a href="https://myceloom.network/">myceloom.network</a> / <span style="color: #E2E8F0;">Protocol Canon</span></div>
+      <div>
+        <a href="https://myceloom.com/">Essays</a>
+        <span style="margin: 0 1rem; opacity: 0.2;">|</span>
+        <a href="https://myceloom.network/visualization/">Visualization</a>
+      </div>
+    </nav>
+    <header id="title-block-header">
+      <h1 class="title">Myceloom Protocol Specification (MCP-1)</h1>
+    </header>
+
+    <section class="hero-note" aria-label="Protocol context">
+      <p>This page is the canonical technical specification for the Myceloom Protocol. The full document remains
+        preserved here with archival fidelity; the essay series and interpretive context live on myceloom.com.</p>
+      <div class="hero-links">
+        <a href="https://doi.org/10.5281/zenodo.18344231" target="_blank" rel="noopener noreferrer">DOI (V1)</a>
+        <a href="https://doi.org/10.13140/RG.2.2.21223.71846" target="_blank" rel="noopener noreferrer">DOI (V2)</a>
+        <a href="https://myceloom.com/publications/" target="_blank" rel="noopener noreferrer">Companion Essays</a>
+      </div>
+    </section>
+
+    <section class="frontmatter" aria-label="Specification metadata">
+    <h2 id="protocol-specification---technical-standard-for-living-infrastructure">Technical Standard for Living Infrastructure</h2>
+    <p><strong>Josie Jefferson &amp; Felix Velasco</strong><br />
+      <em>Digital Archaeologists, Unearth Heritage Foundry</em>
+    </p>
+    <p><strong>with Technical Collaboration from:</strong><br />
+      <em>Claude 4.5 (Opus &amp; Sonnet) &amp; Gemini (2.5 &amp; 3
+        Pro)</em><br />
+      (Synthetic Intelligence Systems)
+    </p>
+    <p><strong>Date:</strong> January 2026<br />
+      <em><strong>Version:</strong> DRAFT 2.0</em><br />
+      <strong>Publication Type:</strong> Protocol Specification / Technical
+      Standard / Working Paper<br />
+      <strong>Series:</strong> The Myceloom Protocol (Part 8 of 8)<br />
+      <strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.18344231" target="_blank"
+        class="url">https://doi.org/10.5281/zenodo.18344231</a> V1<br>
+      <a href="https://doi.org/10.13140/RG.2.2.21223.71846" target="_blank"
+        class="url">https://doi.org/10.13140/RG.2.2.21223.71846</a> V2
+    </p>
+    <p><strong>Keywords:</strong> Myceloom Protocol, MCP-1, Technical
+      Specification, Web4 Standard, Distributed Systems, Protocol Design,
+      Living Infrastructure, Symbiotic Architecture, Decentralized Networks,
+      Digital Sovereignty, Autogravitas, Lineage Discovery, Semantic
+      Resonance</p>
+    </section>
+    <hr />
+    <h2 id="abstract">Abstract</h2>
+    <p>The Myceloom Protocol Suite offers a comprehensive framework for
+      “living infrastructure” in the Web4 era. Rejecting both centralized
+      silos and fragmented scatters, it synthesizes biological network
+      intelligence with intentional architectural craft.</p>
+    <p><strong>Crucially, this suite is not a compliance standard.</strong>
+      It is a <strong>Pattern Language</strong> - a topology to be inhabited,
+      forked, and re-woven to suit local needs.</p>
+    <p>This unified document collects the defining specifications of the
+      suite: the core <strong>Myceloom Protocol (MCP-1 V2)</strong>, which
+      provides the network architecture; the <strong>Autogravitas Protocol
+        (TAP v2)</strong>, which defines self-sovereign identity mechanics; and
+      the <strong>Lineage Discovery Protocol (LDP-V1)</strong>, which enables
+      decentralized serendipity via the “Spore and Mother Tree”
+      methodology.</p>
+    <p>Together, these protocols assert a “Maverick Mandate” for building
+      digital systems that are sovereign, resilient, and symbiotic. Users are
+      invited to adopt the “Warp” (axioms) while weaving their own “Weft”
+      (implementations), treating the protocol as a lifestyle of digital
+      sovereignty rather than a rigid set of laws.</p>
+    <hr />
+    <h2 id="table-of-contents">Table of Contents</h2>
+    <ol type="1">
+      <li><a href="#the-myceloom-protocol-mcp-1-1"><strong>[MCP-1 V2]</strong> The Myceloom Protocol Specification</a></li>
+      <li><a href="#the-autogravitas-protocol-tap"><strong>[TAP v2]</strong> The Autogravitas Protocol</a></li>
+      <li><a href="#the-spore-mother-tree-protocol-ldp-v2"><strong>[LDP-V1]</strong> The Spore &amp; Mother Tree Protocol</a></li>
+      <li><a href="#the-mavericks-readme-seeding-the-sovereign-web"><strong>[LDP-V1]</strong> The Maverick’s README</a></li>
+      <li><a href="#spore-tracker-blueprint-ldp-1-alpha"><strong>[Tooling]</strong> Spore-Tracker Blueprint
+        (Architecture)</a></li>
+      <li><a href="#spore-tracker-cli-spore-v1.0-alpha"><strong>[Tooling]</strong> Spore-Tracker CLI (Spec)</a></li>
+      <li><a href="#spore-tracker-gui-the-loom-interface-manual"><strong>[Tooling]</strong> Spore-Tracker GUI Manual (“The
+        Loom”)</a></li>
+    </ol>
+    <hr />
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="the-myceloom-protocol-mcp-1-1">The Myceloom Protocol
+      (MCP-1)</h1>
+    <h2 id="protocol-specification-technical-standard-for-living-infrastructure">Protocol
+      Specification — Technical Standard for Living Infrastructure</h2>
+    <p><strong>Josie Jefferson &amp; Felix Velasco</strong><br />
+      <em>Digital Archaeologists, Unearth Heritage Foundry</em>
+    </p>
+    <p><strong>with Technical Collaboration from:</strong><br />
+      <em>Claude 4.5 (Opus &amp; Sonnet) &amp; Gemini (2.5 &amp; 3
+        Pro)</em><br />
+      (Synthetic Intelligence Systems)
+    </p>
+    <p><strong>Date:</strong> January 2026<br />
+      <em><strong>Version:</strong> DRAFT 2.0</em><br />
+      <strong>Publication Type:</strong> Protocol Specification / Technical
+      Standard / Working Paper<br />
+      <strong>Series:</strong> The Myceloom Protocol (Part 8 of 8)
+      <strong>DOI:</strong> https://doi.org/10.5281/zenodo.18344231
+    </p>
+    <p><strong>Keywords:</strong> Myceloom Protocol, MCP-1, Technical
+      Specification, Web4 Standard, Distributed Systems, Protocol Design,
+      Living Infrastructure, Symbiotic Architecture, Decentralized Networks,
+      Digital Sovereignty</p>
+    <hr />
+    <h2 id="abstract-1">Abstract</h2>
+    <p>The Myceloom Protocol (MCP-1) defines a technical standard for
+      building decentralized, symbiotic digital infrastructure. Where previous
+      specifications in this series established conceptual foundations
+      (linguistic, philosophical, social), this document provides the formal
+      technical requirements for myceloom-compliant systems. Drawing upon
+      biological network principles, distributed systems theory, and decades
+      of internet protocol design, MCP-1 specifies an eight-layer architecture
+      organized into four functional domains: Substrate (infrastructure),
+      Society (governance), Human (identity and temporality), and Dimension
+      (depth and resilience). This specification establishes normative
+      requirements, conformance criteria, and implementation guidelines for
+      systems claiming myceloom alignment. Unlike prescriptive standards
+      requiring certification, MCP-1 operates as a pattern language: a
+      topology to be inhabited rather than a product to be adopted. This
+      document serves as the technical capstone of The Myceloom Protocol
+      series, translating theory into implementable practice.</p>
+    <hr />
+    <h2 id="status-of-this-document">Status of This Document</h2>
+    <p><strong>This is not a standard. This is a pattern.</strong></p>
+    <p>This document describes the Myceloom Protocol version 1.0 (MCP-1) as
+      a <strong>pattern language</strong> for building living digital
+      infrastructure. Unlike traditional specifications that demand
+      compliance, MCP-1 offers a <strong>topology to inhabit</strong>—a way of
+      thinking about and building systems that you can adopt, adapt, fork, or
+      reject entirely.</p>
+    <p>Think of this less like an RFC and more like a field guide. Or a
+      cookbook. Or a philosophy you might choose to live by.</p>
+    <p><strong>You don’t need permission to be myceloom-aligned. You don’t
+        need certification. You just need to resonate with the
+        pattern.</strong></p>
+    <p>This document is published for inspiration, experimentation, and
+      evolution. Distribution is unlimited. Disagreement is encouraged. Fork
+      it. Break it. Build something better.</p>
+    <h3 id="copyright-notice">Copyright Notice</h3>
+    <p>Copyright © 2026 Unearth Heritage Foundry. This document is released
+      under Creative Commons Attribution-ShareAlike 4.0 International (CC
+      BY-SA 4.0). You are free to share, adapt, and build upon this work,
+      provided you give appropriate credit and distribute derivative works
+      under the same license.</p>
+    <hr />
+    <h2 id="table-of-contents-1">Table of Contents</h2>
+    <ol type="1">
+      <li>Introduction</li>
+      <li>Terminology and Conventions</li>
+      <li>Foundational Axioms</li>
+      <li>Architecture Overview</li>
+      <li>Layer Specifications
+        <ul>
+          <li>5.1 Substrate Domain</li>
+          <li>5.2 Society Domain</li>
+          <li>5.3 Human Domain</li>
+          <li>5.4 Dimension Domain</li>
+        </ul>
+      </li>
+      <li>Conformance Requirements</li>
+      <li>Security Considerations</li>
+      <li>Implementation Guidance</li>
+      <li>References</li>
+    </ol>
+    <hr />
+    <h2 id="introduction">1. Introduction</h2>
+    <h3 id="what-this-is-and-isnt">1.1 What This Is (And Isn’t)</h3>
+    <p>The Myceloom Protocol (MCP-1) is <strong>a way of thinking about
+        digital infrastructure</strong>. It’s a pattern language, a design
+      philosophy, a set of principles you might choose to live by when
+      building systems.</p>
+    <p><strong>This is not:</strong> - A certification program - A
+      compliance checklist - A product to be sold - A standard body to join -
+      A set of rules requiring enforcement</p>
+    <p><strong>This is:</strong> - A pattern you can inhabit - A topology
+      you can explore - A philosophy you can adopt (or adapt, or reject) - An
+      invitation to build differently</p>
+    <p>Contemporary digital infrastructure has fractured into two failing
+      patterns:</p>
+    <ul>
+      <li>
+        <p><strong>The Silo (Extractive)</strong>: Centralized platforms
+          that concentrate power, extract value, and treat users as resources to
+          be mined. Think: surveillance capitalism, platform monopolies, walled
+          gardens.</p>
+      </li>
+      <li>
+        <p><strong>The Scatter (Starving)</strong>: Fragmented independent
+          nodes that preserve autonomy but lack the network effects and collective
+          capabilities necessary for sustainability. Think: personal blogs that
+          nobody reads, indie projects that die from isolation.</p>
+      </li>
+    </ul>
+    <p><strong>Myceloom is a third way.</strong> It synthesizes the
+      sovereignty of independent nodes with the resilience of distributed
+      networks. Like the mycorrhizal networks beneath forest floors, myceloom
+      infrastructure operates as invisible substrate where network
+      intelligence exceeds the sum of individual parts.</p>
+    <p>You know you’re in myceloom territory when: - Individual nodes
+      maintain genuine autonomy - The network gets smarter as it grows - Value
+      flows reciprocally, not extractively - Systems are designed to outlive
+      their creators - Intelligence emerges from the edges, not the center</p>
+    <h3 id="how-to-read-this-document">1.2 How to Read This Document</h3>
+    <p>If you’re a <strong>philosopher or designer</strong>: Read the axioms
+      (Section 3) and architecture overview (Section 4). The rest is
+      implementation detail.</p>
+    <p>If you’re a <strong>developer or architect</strong>: Start with the
+      layer specifications (Section 5) to see what myceloom systems actually
+      do.</p>
+    <p>If you’re <strong>evaluating alignment</strong>: Check the
+      conformance section (Section 6) to see if your existing systems already
+      embody these patterns.</p>
+    <p>If you’re <strong>skeptical</strong>: Good. Read Section 1.3 on
+      design philosophy, then decide if this resonates. If it doesn’t, that’s
+      fine—this isn’t for everyone.</p>
+    <h3 id="design-philosophy">1.3 Design Philosophy</h3>
+    <p>MCP-1 operates as a <strong>pattern language</strong> in the
+      tradition of Christopher Alexander’s architectural patterns. Systems may
+      be myceloom-aligned without implementing every detail. What matters is
+      <strong>resonance with the underlying principles</strong>.
+    </p>
+    <p><strong>Core beliefs shaping this protocol:</strong></p>
+    <ol type="1">
+      <li>
+        <p><strong>Sovereignty over convenience</strong>: Individual node
+          autonomy takes precedence over network efficiency. A slightly slower,
+          more awkward system you control beats a fast, slick system that controls
+          you.</p>
+      </li>
+      <li>
+        <p><strong>Emergence over control</strong>: Intelligence arises from
+          edge interactions, not central coordination. Trust the network. Trust
+          the edges. Don’t try to orchestrate everything.</p>
+      </li>
+      <li>
+        <p><strong>Resilience over optimization</strong>: Systems must
+          function under degraded conditions. Perfect performance in ideal
+          conditions means nothing if the system collapses when things get
+          messy.</p>
+      </li>
+      <li>
+        <p><strong>Succession over perpetuity</strong>: All systems must
+          document paths for graceful failure and data migration. Design for
+          death. Build heirlooms, not monuments.</p>
+      </li>
+      <li>
+        <p><strong>Pattern over prescription</strong>: This document
+          describes what myceloom systems tend to look like, not what they must
+          be. If you find a better way, use it.</p>
+      </li>
+    </ol>
+    <p><strong>This is a lifestyle, not a checklist.</strong> You can’t
+      “achieve compliance” with myceloom any more than you can “achieve
+      compliance” with punk rock or Zen Buddhism. You either embody the
+      principles or you don’t. And that’s okay either way.</p>
+    <hr />
+    <h2 id="terminology-and-conventions">2. Terminology and Conventions</h2>
+    <h3 id="key-terms">2.1 Key Terms</h3>
+    <p><strong>Node</strong>: An autonomous computational entity maintaining
+      its own infrastructure, data, and identity. Nodes are the fundamental
+      unit of myceloom architecture.</p>
+    <p><strong>Network</strong>: A collection of nodes connected through
+      reciprocal relationships. Networks exhibit emergent properties not
+      present in individual nodes.</p>
+    <p><strong>Substrate</strong>: The foundational infrastructure layer
+      enabling node operation and inter-node communication.</p>
+    <p><strong>Hyphae</strong>: Individual connection pathways between
+      nodes, analogous to fungal filaments. Plural of hypha.</p>
+    <p><strong>Mycelium</strong>: The collective network of hyphae forming
+      the communication and resource-sharing infrastructure.</p>
+    <p><strong>Loom</strong>: Infrastructure designed with intentional
+      craft, where structural emergence arises from relationship (warp and
+      weft) rather than mere growth.</p>
+    <p><strong>My-Sea-Loom</strong>: A phonetic decomposition representing
+      the tension between personal sovereignty (<em>my</em>) and infinite
+      interconnection (<em>sea</em>), resolved through intentional craft
+      (<em>loom</em>).</p>
+    <p><strong>Spore</strong>: A portable, self-contained unit of
+      functionality or data capable of establishing new nodes or migrating
+      between existing nodes.</p>
+    <p><strong>Heirloom</strong>: Data, code, or systems designed for
+      long-term preservation and succession across platform lifecycles.</p>
+    <h3 id="requirements-language">2.2 Requirements Language</h3>
+    <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”,
+      “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this
+      document are to be interpreted as described in RFC 2119.</p>
+    <h3 id="notation-conventions">2.3 Notation Conventions</h3>
+    <ul>
+      <li><code>Code elements</code> appear in monospace</li>
+      <li><strong>Bold text</strong> indicates emphasis or key concepts</li>
+      <li><em>Italic text</em> indicates defined terms or citations</li>
+      <li>[Bracketed numbers] indicate references</li>
+    </ul>
+    <hr />
+    <h2 id="foundational-axioms">3. Foundational Axioms</h2>
+    <p>The Myceloom Protocol rests on three foundational axioms. These are
+      not merely design principles but constitutive requirements: systems
+      violating these axioms cannot be considered myceloom-aligned.</p>
+    <h3 id="axiom-i-sovereignty-first">Axiom I: Sovereignty First</h3>
+    <p><strong>Statement</strong>: No node SHALL be built on rented
+      land.</p>
+    <p><strong>Rationale</strong>: A tenant can never be a true peer.
+      Systems dependent on infrastructure controlled by external parties
+      cannot maintain long-term autonomy or participate in genuinely
+      reciprocal relationships.</p>
+    <p><strong>Requirements</strong>: - Nodes MUST control their own data
+      storage - Nodes MUST control their own identity infrastructure - Nodes
+      MUST be capable of independent operation without reliance on third-party
+      platforms - Nodes SHOULD control their own network infrastructure where
+      technically feasible</p>
+    <p><strong>Exceptions</strong>: Nodes MAY use third-party services for:
+      - Content delivery networks (CDN) for performance optimization - Backup
+      and redundancy services - Specialized computational resources (e.g., GPU
+      clusters)</p>
+    <p>PROVIDED THAT loss of these services does not prevent core node
+      functionality.</p>
+    <h3 id="axiom-ii-reciprocal-nourishment">Axiom II: Reciprocal
+      Nourishment</h3>
+    <p><strong>Statement</strong>: A link is not a transaction; it is a root
+      system. Value MUST flow bidirectionally.</p>
+    <p><strong>Rationale</strong>: Extractive relationships undermine
+      network health. Sustainable networks require mutual benefit where each
+      participant both contributes to and draws from collective resources.</p>
+    <p><strong>Requirements</strong>: - Inter-node connections MUST provide
+      value to both parties - Systems MUST NOT extract value from network
+      participation without contributing equivalent value - Resource sharing
+      protocols MUST implement reciprocity mechanisms - Free-riding MUST be
+      architecturally discouraged (though not necessarily prevented)</p>
+    <p><strong>Implementation</strong>: Reciprocity may be implemented
+      through: - Resource exchange protocols (computational power, storage,
+      bandwidth) - Information sharing and collective intelligence
+      contributions - Reputation systems tracking contribution and consumption
+      - Economic models ensuring sustainable value distribution</p>
+    <h3 id="axiom-iii-emergent-intelligence">Axiom III: Emergent
+      Intelligence</h3>
+    <p><strong>Statement</strong>: Intelligence is not a property of the
+      center; it is a property of the edge.</p>
+    <p><strong>Rationale</strong>: Centralized intelligence creates single
+      points of failure and concentrates power. Distributed intelligence
+      enables resilience, adaptation, and collective capabilities exceeding
+      individual node capacity.</p>
+    <p><strong>Requirements</strong>: - Decision-making MUST occur at the
+      lowest capable level (subsidiarity principle) - Network-wide behaviors
+      MUST emerge from local interactions, not central coordination -
+      Individual nodes MUST maintain autonomous decision-making capacity -
+      Collective intelligence MUST enhance rather than replace individual node
+      capabilities</p>
+    <p><strong>Implications</strong>: - No central authority may dictate
+      node behavior - Coordination occurs through protocol adherence, not
+      hierarchical control - Network topology enables emergence through
+      appropriate connection patterns</p>
+    <h3 id="axiom-iv-intentional-patterning">Axiom IV: Intentional
+      Patterning</h3>
+    <p><strong>Statement</strong>: Structure MUST NOT be accidental; it MUST
+      be the result of intentional craft.</p>
+    <p><strong>Rationale</strong>: Connectivity alone creates chaos (“The
+      Scatter”). Durable infrastructure requires the <em>Loom</em>—intentional
+      craft that structures growth. The tension between stability and
+      adaptability is resolved by distinguishing between load-bearing
+      constants and flexible expressions.</p>
+    <p><strong>Requirements</strong>: - Systems MUST distinguish between
+      protocol (Warp) and interface (Weft) - Structural protocols MUST be
+      connection-agnostic - Adaptive interfaces MUST be substrate-independent
+      - Pattern-making MUST be an explicit, not accidental, property of the
+      network</p>
+    <p><strong>Implications</strong>: - Growth is not just expansion, but
+      <em>pattern formation</em> - The network is an artifact of craft, not
+      just biological accumulation
+    </p>
+    <h3 id="the-my-sea-loom-synthesis">The My-Sea-Loom Synthesis</h3>
+    <p>The four axioms correspond to the four layers of the etymology
+      excavated in the foundational essays:</p>
+    <ol type="1">
+      <li><strong>“My” (Sovereignty)</strong>: <strong>Axiom I</strong>. The
+        absolute requirement for individual ownership.</li>
+      <li><strong>“Sea” (Interconnection)</strong>: <strong>Axioms II &amp;
+          III</strong>. The boundless nature of reciprocal connection and emergent
+        intelligence.</li>
+      <li><strong>“Loom” (Structure)</strong>: <strong>Axiom IV</strong>. The
+        intentional craft that weaves these opposing forces into coherent,
+        durable fabric.</li>
+      <li><strong>“Heirloom” (Time)</strong>: Implied by the synthesis of the
+        three—sovereign structure that persists.</li>
+    </ol>
+    <p><strong>Therefore:</strong> &gt; A system is only myceloom-aligned if
+      it uses the <em>Loom</em> (Axiom IV) to weave the <em>Sea</em> (Axioms
+      II/III) into the <em>My</em> (Axiom I).</p>
+    <hr />
+    <h2 id="architecture-overview">4. Architecture Overview</h2>
+    <h3 id="layer-model">4.1 Layer Model</h3>
+    <p>MCP-1 defines an eight-layer architecture organized into four
+      functional domains:</p>
+    <pre><code>┌─────────────────────────────────────────────────┐
+│ DOMAIN IV: DIMENSION (Depth &amp; Resilience)       │
+│  └─ Layer 8: Dimensional (.my-sea-loom)         │
+├─────────────────────────────────────────────────┤
+│ DOMAIN III: HUMAN (Time &amp; Identity)             │
+│  ├─ Layer 7: Temporal (Heirloom)                │
+│  └─ Layer 6: Identity (.im)                     │
+├─────────────────────────────────────────────────┤
+│ DOMAIN II: SOCIETY (Governance)                 │
+│  ├─ Layer 5: Coalition (.co)                    │
+│  └─ Layer 4: Community (.org)                   │
+├─────────────────────────────────────────────────┤
+│ DOMAIN I: SUBSTRATE (Infrastructure)            │
+│  ├─ Layer 3: Interface (.io)                    │
+│  ├─ Layer 2: Intelligence (.ai)                 │
+│  └─ Layer 1: Network (.net)                     │
+└─────────────────────────────────────────────────┘</code></pre>
+    <h3 id="domain-relationships">4.2 Domain Relationships</h3>
+    <p><strong>Substrate Domain</strong> provides the technical foundation:
+      networking, computation, and interface capabilities.</p>
+    <p><strong>Society Domain</strong> implements governance and
+      coordination: community structures and economic models.</p>
+    <p><strong>Human Domain</strong> addresses identity and temporality: who
+      participates and how systems persist across time.</p>
+    <p><strong>Dimension Domain</strong> ensures resilience and depth:
+      operation under degraded conditions and design for succession.</p>
+    <p>Each layer builds upon lower layers while remaining loosely coupled.
+      Higher layers MAY be implemented independently of specific lower-layer
+      implementations, provided functional requirements are met.</p>
+    <h3 id="about-the-tld-mapping">4.3 About the TLD Mapping</h3>
+    <p><strong>Important</strong>: The seven TLDs (.com, .net, .ai, .io,
+      .org, .co, .im) used in this specification are <strong>illustrative, not
+        mandatory</strong>.</p>
+    <p>They serve as: - A reference implementation showing how protocol
+      layers could map to domains - A mnemonic device making the architecture
+      memorable - A proof of concept demonstrating the pattern</p>
+    <p><strong>You do NOT need these specific TLDs to be
+        myceloom-aligned.</strong></p>
+    <p>Any website can participate in the myceloom network by adding:</p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;your-tags&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p>Whether you have: - <code>yoursite.me</code> ✅ -
+      <code>blog.wordpress.com</code> ✅ - <code>github.io</code> pages ✅ -
+      <code>example.xyz</code> ✅ - Any other domain ✅
+    </p>
+    <p><strong>The protocol is the pattern, not the domains.</strong> The 7
+      TLDs are Unearth Heritage Foundry’s implementation—an example, not a
+      requirement.</p>
+    <h3 id="minimum-vs.-full-implementation">4.4 Minimum vs. Full
+      Implementation</h3>
+    <p><strong>Important distinction:</strong></p>
+    <p><strong>To join the myceloom network</strong> (minimum): - Add
+      <code>&lt;meta name="myceloom" content="your-tags"&gt;</code> to your
+      site - That’s it. You’re discoverable.
+    </p>
+    <p><strong>To embody the myceloom philosophy</strong> (aspirational): -
+      Consider the 8 layers as design principles - Implement what makes sense
+      for your context - Use them as a framework for thinking about your
+      system</p>
+    <p>The layer specifications that follow describe the <strong>full
+        philosophy</strong>. They’re not a checklist of requirements—they’re a
+      pattern language for building resilient, decentralized systems.</p>
+    <p><strong>You can participate in the network with just the meta tag.
+        The layers are there if you want to go deeper.</strong></p>
+    <hr />
+    <h2 id="layer-specifications">5. Layer Specifications</h2>
+    <h3 id="substrate-domain">5.1 Substrate Domain</h3>
+    <h4 id="layer-1-network-.net">5.1.1 Layer 1: Network (.net)</h4>
+    <p><strong>Purpose</strong>: Provide reliable, resilient communication
+      infrastructure between nodes.</p>
+    <p><strong>Principle</strong>: Radical Redundancy</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Support multiple communication pathways
+      between any two nodes - Continue functioning despite individual node or
+      connection failures - Implement self-healing routing that adapts to
+      network topology changes - Provide end-to-end encryption for inter-node
+      communication - Support both synchronous and asynchronous communication
+      patterns</p>
+    <p><strong>SHOULD</strong>: - Implement peer-to-peer protocols where
+      feasible - Support multiple transport protocols (HTTP, WebSocket, IPFS,
+      etc.) - Provide bandwidth-efficient communication for
+      resource-constrained nodes - Implement connection pooling and reuse</p>
+    <p><strong>MAY</strong>: - Use hybrid architectures combining P2P and
+      client-server patterns - Implement specialized protocols for specific
+      use cases - Provide quality-of-service guarantees for critical
+      communications</p>
+    <p><strong>Conformance Criteria</strong>: - Network MUST remain
+      functional with up to 30% node failure - Routing MUST adapt to topology
+      changes within 60 seconds - Communication MUST be encrypted end-to-end
+      by default</p>
+    <h4 id="layer-2-intelligence-.ai">5.1.2 Layer 2: Intelligence (.ai)</h4>
+    <p><strong>Purpose</strong>: Provide computational and cognitive
+      capabilities enhancing node and network function.</p>
+    <p><strong>Principle</strong>: Distributed Cognition</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Operate primarily at the edge (local to
+      nodes) rather than centralized services - Function as symbiotic partners
+      enhancing human capability, not replacement systems - Respect user
+      privacy and data sovereignty - Provide transparent operation allowing
+      users to understand AI decision-making</p>
+    <p><strong>SHOULD</strong>: - Implement federated learning where
+      collective intelligence is beneficial - Use energy-efficient
+      computational approaches - Provide local-first AI capabilities that
+      function without network connectivity - Support multiple AI paradigms
+      (symbolic, connectionist, hybrid)</p>
+    <p><strong>MAY</strong>: - Integrate biological computing substrates
+      where appropriate - Implement reservoir computing or neuromorphic
+      approaches - Use centralized AI services for specific tasks PROVIDED
+      local alternatives exist</p>
+    <p><strong>Conformance Criteria</strong>: - Core AI functionality MUST
+      operate without network connectivity - AI systems MUST NOT transmit user
+      data to third parties without explicit consent - AI decision-making
+      processes MUST be auditable by users</p>
+    <h4 id="layer-3-interface-.io">5.1.3 Layer 3: Interface (.io)</h4>
+    <p><strong>Purpose</strong>: Enable interaction between nodes, between
+      humans and nodes, and between systems and nodes.</p>
+    <p><strong>Principle</strong>: The Spore (Adaptive Interfaces)</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Separate immutable protocols (Warp) from
+      adaptive interfaces (Weft) - Support multiple interface modalities (web,
+      API, CLI, etc.) - Implement progressive enhancement (core functionality
+      without JavaScript) - Provide machine-readable API documentation</p>
+    <p><strong>SHOULD</strong>: - Use open, standardized protocols (HTTP,
+      ActivityPub, WebMention, etc.) - Implement content negotiation for
+      multiple data formats - Support both human-readable and machine-readable
+      representations - Provide versioned APIs with deprecation policies</p>
+    <p><strong>MAY</strong>: - Implement custom protocols for specialized
+      use cases - Provide domain-specific languages for configuration -
+      Support experimental interface paradigms</p>
+    <p><strong>Warp (Immutable Protocols)</strong>: - Core data structures
+      and interchange formats - Authentication and authorization mechanisms -
+      Fundamental communication protocols</p>
+    <p><strong>Weft (Adaptive Interfaces)</strong>: - User interface
+      implementations - Presentation layers - Client applications</p>
+    <p><strong>Conformance Criteria</strong>: - Interfaces MUST function
+      with JavaScript disabled for core operations - APIs MUST provide OpenAPI
+      or equivalent documentation - Protocol changes MUST maintain backward
+      compatibility for minimum 2 years</p>
+    <h4 id="lineage-discovery-protocol">5.1.4 Lineage Discovery
+      Protocol</h4>
+    <p><strong>Purpose</strong>: Enable decentralized network discovery
+      through shared conceptual ancestry and structural lineage.</p>
+    <p><strong>Principle</strong>: Semantic Resonance &amp; Radical
+      Simplicity</p>
+    <p><strong>Overview</strong>:</p>
+    <p>The Lineage Discovery Protocol (LDP) provides a mechanism for nodes
+      to discover and connect with each other based on shared conceptual
+      lineages rather than centralized directories or algorithmic curation.
+      For V2, this protocol prioritizes <strong>rugged simplicity</strong> and
+      <strong>protocol purity</strong>, moving away from complex schemas in
+      favor of the foundational “Lindy” elements of the web: HTML tags.
+    </p>
+    <p><strong>The Two-Line Handshake</strong>:</p>
+    <p>A node signals its presence and lineage through two simple lines in
+      the HTML <code>&lt;head&gt;</code>:</p>
+    <ol type="1">
+      <li><strong>The Spore Line</strong> (Identity/Content): Defines
+        <em>what</em> the node is.
+      </li>
+      <li><strong>The Mother Tree Line</strong> (Relationship/Origin): Defines
+        <em>where</em> the node is rooted.
+      </li>
+    </ol>
+    <p><strong>Data Structure</strong>:</p>
+    <p><strong>1. The Spore Line (Meta Tag)</strong></p>
+    <p>The <code>&lt;meta&gt;</code> tag describes the content of a node. It
+      uses keywords to signal the concepts, themes, or lineages the node
+      embodies.</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;keyword1, keyword2, constellation-alpha&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <ul>
+      <li><strong>Function</strong>: Tells an AI agent (like a Gemini model)
+        or crawler what this specific page is about.</li>
+      <li><strong>Behavior</strong>: Serves as a “biological trigger” for
+        discovery.</li>
+    </ul>
+    <p><strong>2. The Mother Tree Line (Link Rel)</strong></p>
+    <p>The <code>&lt;link rel&gt;</code> tag describes the exterior
+      relationship of a node. It points to a “Mother Tree”—a central hub, the
+      protocol definition, or a primary identity domain.</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://your-mother-tree.com&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <ul>
+      <li><strong>Function</strong>: Tells a crawler to follow the link to
+        find the rest of the constellation, “weaving the warp” of the
+        network.</li>
+      <li><strong>Behavior</strong>: Prunes false positives. An agent doesn’t
+        just find a random page with a keyword; it finds a page
+        <em>verified</em> by its connection to a known Mother Tree.
+      </li>
+    </ul>
+    <p><strong>Recommended Configuration</strong>:</p>
+    <p>For a robust constellation, use the “Constellation
+      Configuration”:</p>
+    <div class="sourceCode" id="cb5">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- 1. The Mother Tree (Your Local Hub/Sovereign Origin) --&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://your-primary-domain.com&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- 2. The Spore Data (Your Identity Signals) --&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;digital-archaeology, solar-punk, whatever-resonates&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p><strong>Note</strong>: You do not need to link to
+      <code>https://myceloom.com</code>. The use of
+      <code>rel="myceloom"</code> implicitly signals participation in the
+      global protocol.
+    </p>
+    <p><strong>Rationale for V2 Simplification</strong>:</p>
+    <ol type="1">
+      <li><strong>Lindy Effect</strong>: Meta and Link tags have survived
+        since the 90s. They are the “bedrock” of the web, ensuring longevity and
+        resistance to “code rot.”</li>
+      <li><strong>Noospheric Accessibility</strong>: No JSON validation, no
+        complex schemas, no barrier to entry. If you can edit HTML, you can join
+        the loom.</li>
+      <li><strong>AI Efficiency</strong>: Modern LLMs are “semantic native.”
+        They don’t need nested JSON brackets. They prefer high-contrast, simple
+        signals. The “Two-Line Handshake” is authoritative and
+        token-efficient.</li>
+    </ol>
+    <p><strong>Lineage Tags (Signals)</strong>:</p>
+    <p>Tags can be: - <strong>Semantic</strong>:
+      <code>"digital-archaeology"</code> - <strong>Arbitrary</strong>:
+      <code>"node-01"</code> - <strong>Poetic</strong>:
+      <code>"the-sound-green-makes"</code>
+    </p>
+    <p>There is NO central registry. Meaning is determined by usage and
+      resonance.</p>
+    <p><strong>Network Formation</strong>:</p>
+    <p>Connections form when: 1. <strong>Spore Resonance</strong>: Nodes
+      share the same content tags. 2. <strong>Root Verification</strong>:
+      Nodes point to the same Mother Tree (or each other via
+      <code>rel="myceloom"</code>), effectively creating a private, verifiable
+      subnet or “constellation” within the public web.
+    </p>
+    <p><strong>Conformance Criteria</strong>: - Nodes MUST implement the
+      Spore Line (<code>meta name="myceloom"</code>) to be discoverable. -
+      Nodes SHOULD implement the Mother Tree Line
+      (<code>link rel="myceloom"</code>) to establish structural context. -
+      Discovery MUST NOT rely on centralized schemas or registries.</p>
+    <h3 id="society-domain">5.2 Society Domain</h3>
+    <h4 id="layer-4-community-.org">5.2.1 Layer 4: Community (.org)</h4>
+    <p><strong>Purpose</strong>: Enable permissionless innovation and
+      community self-organization.</p>
+    <p><strong>Principle</strong>: The Immune System</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Allow any node to join the network without
+      central approval - Implement reputation and trust mechanisms at the edge
+      - Support community-defined norms and moderation policies - Enable local
+      governance without requiring network-wide consensus</p>
+    <p><strong>SHOULD</strong>: - Provide tools for community formation and
+      management - Implement graduated sanctions for norm violations - Support
+      multiple governance models (consensus, voting, delegation, etc.) -
+      Enable transparent decision-making processes</p>
+    <p><strong>MAY</strong>: - Implement algorithmic moderation tools -
+      Provide dispute resolution mechanisms - Support community-specific
+      extensions to base protocol</p>
+    <p><strong>Conformance Criteria</strong>: - No central authority MAY
+      prevent node participation - Communities MUST be able to define and
+      enforce local policies - Moderation decisions MUST be transparent and
+      appealable</p>
+    <h4 id="layer-5-coalition-.co">5.2.2 Layer 5: Coalition (.co)</h4>
+    <p><strong>Purpose</strong>: Enable economic coordination and
+      sustainable value exchange.</p>
+    <p><strong>Principle</strong>: The Guild (Federated Economics)</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Support multiple economic models
+      (cooperative, market, gift, hybrid) - Enable value attribution to
+      contributors - Implement sustainable resource allocation mechanisms -
+      Prevent value extraction without contribution</p>
+    <p><strong>SHOULD</strong>: - Support platform cooperativism and worker
+      ownership models - Implement graduated membership tiers based on
+      contribution - Provide transparent accounting and value distribution -
+      Enable inter-coalition trade and collaboration</p>
+    <p><strong>MAY</strong>: - Integrate cryptocurrency or token systems -
+      Implement algorithmic resource allocation - Support traditional payment
+      systems</p>
+    <p><strong>Conformance Criteria</strong>: - Economic models MUST
+      distribute value to contributors - Resource allocation MUST be
+      transparent and auditable - Systems MUST prevent systematic value
+      extraction</p>
+    <h3 id="human-domain">5.3 Human Domain</h3>
+    <h4 id="layer-6-identity-.im">5.3.1 Layer 6: Identity (.im)</h4>
+    <p><strong>Purpose</strong>: Provide self-sovereign identity rooted in
+      owned infrastructure.</p>
+    <p><strong>Principle</strong>: “I Am” (Autogravitas)</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Enable identity rooted in infrastructure the
+      user controls - Support portable identity across nodes and networks -
+      Implement cryptographic identity verification - Allow users to maintain
+      multiple identities/personas</p>
+    <p><strong>SHOULD</strong>: - Use decentralized identifier (DID)
+      standards - Support verifiable credentials - Enable selective disclosure
+      of identity attributes - Implement social proof and web-of-trust
+      mechanisms</p>
+    <p><strong>MAY</strong>: - Integrate with existing identity providers
+      (OAuth, SAML) as bridges - Support biometric authentication where
+      appropriate - Implement zero-knowledge proof systems</p>
+    <p><strong>Conformance Criteria</strong>: - Users MUST control their
+      identity data - Identity MUST be portable between compliant systems -
+      Identity verification MUST NOT require centralized authorities</p>
+    <h4 id="layer-7-temporal-heirloom">5.3.2 Layer 7: Temporal
+      (Heirloom)</h4>
+    <p><strong>Purpose</strong>: Ensure long-term data preservation and
+      system succession.</p>
+    <p><strong>Principle</strong>: Abyssal Time (Legibility as Legacy)</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Use human-readable data formats where
+      feasible - Document succession paths for data and system migration -
+      Implement data export in open, standardized formats - Provide
+      archival-quality metadata</p>
+    <p><strong>SHOULD</strong>: - Use formats with long-term stability
+      (plain text, JSON, XML, etc.) - Implement version control for data and
+      configuration - Provide automated backup and redundancy - Document
+      dependencies and system requirements</p>
+    <p><strong>MAY</strong>: - Integrate with long-term preservation systems
+      (Internet Archive, LOCKSS, etc.) - Implement blockchain or distributed
+      ledger for provenance - Use specialized archival formats for specific
+      data types</p>
+    <p><strong>Conformance Criteria</strong>: - Core data MUST be exportable
+      in open formats - Systems MUST document migration paths to alternative
+      platforms - Data formats MUST remain readable without proprietary
+      software</p>
+    <h3 id="dimension-domain">5.4 Dimension Domain</h3>
+    <h4 id="layer-8-dimensional-.my-sea-loom">5.4.1 Layer 8: Dimensional
+      (.my-sea-loom)</h4>
+    <p><strong>Purpose</strong>: Enable operation under degraded conditions
+      and design for tidal rhythms.</p>
+    <p><strong>Principle</strong>: Bioluminescence (Self-Verification in
+      Darkness)</p>
+    <p><strong>Requirements</strong>:</p>
+    <p><strong>MUST</strong>: - Function in disconnected or intermittent
+      connectivity scenarios - Implement local verification and validation
+      capabilities - Support asynchronous operation and eventual consistency -
+      Provide graceful degradation when resources are constrained</p>
+    <p><strong>SHOULD</strong>: - Implement conflict-free replicated data
+      types (CRDTs) - Support offline-first architecture - Provide local
+      caching and synchronization - Implement adaptive resource usage based on
+      availability</p>
+    <p><strong>MAY</strong>: - Use specialized protocols for low-bandwidth
+      scenarios - Implement delay-tolerant networking - Support mesh
+      networking topologies</p>
+    <p><strong>Conformance Criteria</strong>: - Core functionality MUST
+      operate without network connectivity - Systems MUST handle network
+      partitions gracefully - Data synchronization MUST resolve conflicts
+      automatically where possible</p>
+    <hr />
+    <h2 id="conformance-or-how-to-know-if-youre-living-it">6. Conformance
+      (Or: How to Know If You’re Living It)</h2>
+    <h3 id="levels-of-resonance">6.1 Levels of Resonance</h3>
+    <p>MCP-1 doesn’t have “conformance levels” in the traditional sense. You
+      can’t get certified. There’s no badge to earn. But there are
+      <strong>degrees of resonance</strong> with the pattern:
+    </p>
+    <p><strong>Axiom-Aligned</strong> (The Foundation) - Your system
+      embodies all three foundational axioms - You own your infrastructure,
+      practice reciprocity, design for emergence - This is the minimum to be
+      recognizably myceloom</p>
+    <p><strong>Layer-Conscious</strong> (The Practice) - You’ve thought
+      about the eight layers and implemented what makes sense for your context
+      - You might not do all of them, but you understand why they exist - This
+      is where most production systems live</p>
+    <p><strong>Full-Spectrum</strong> (The Exemplar) - Your system
+      demonstrates the pattern so clearly that others can learn from it -
+      You’ve internalized the philosophy and it shows in your design choices -
+      This is reference implementation territory</p>
+    <p><strong>The key question isn’t “Are you compliant?” but “Does this
+        resonate?”</strong></p>
+    <h3 id="recognition-not-certification">6.2 Recognition, Not
+      Certification</h3>
+    <p>You don’t need anyone’s permission to call your system
+      myceloom-aligned. If you: - Own your ground (Axiom I) - Share
+      reciprocally (Axiom II) - Design for emergence (Axiom III)</p>
+    <p>…then you’re already there. The rest is detail.</p>
+    <p>That said, if you want to <strong>help others understand</strong>
+      your alignment, consider documenting: - Which axioms you embody and how
+      - Which layers you’ve implemented and why - What you’ve learned and what
+      you’d do differently - How your system demonstrates the pattern</p>
+    <h3 id="self-assessment-questions">6.3 Self-Assessment Questions</h3>
+    <p>Instead of a compliance checklist, ask yourself:</p>
+    <p><strong>Sovereignty</strong>: - If this platform disappeared
+      tomorrow, would I still have my data? - Can I move to another system
+      without losing my identity? - Do I control the infrastructure my
+      identity depends on?</p>
+    <p><strong>Reciprocity</strong>: - Does my participation benefit others
+      in the network? - Am I extracting more value than I contribute? - Would
+      the network be healthier if there were more nodes like mine?</p>
+    <p><strong>Emergence</strong>: - Can individual nodes make their own
+      decisions? - Does the network get smarter as it grows? - Is intelligence
+      distributed or centralized?</p>
+    <p><strong>Resilience</strong>: - Does the system work when things
+      break? - Can it function offline or with intermittent connectivity? - Is
+      there a succession plan if I stop maintaining it?</p>
+    <p>If you can answer these questions honestly and the answers feel
+      right, you’re probably myceloom-aligned. If not, that’s useful
+      information too.</p>
+    <hr />
+    <h2 id="security-considerations">7. Security Considerations</h2>
+    <h3 id="threat-model">7.1 Threat Model</h3>
+    <p>MCP-1 systems face threats including: - <strong>Sybil
+        attacks</strong>: Malicious actors creating multiple fake nodes -
+      <strong>Eclipse attacks</strong>: Isolating nodes from honest network
+      participants - <strong>Data exfiltration</strong>: Unauthorized access
+      to node data - <strong>Denial of service</strong>: Resource exhaustion
+      attacks - <strong>Social engineering</strong>: Manipulation of trust
+      relationships
+    </p>
+    <h3 id="security-requirements">7.2 Security Requirements</h3>
+    <p><strong>Authentication and Authorization</strong>: - Implement strong
+      cryptographic authentication - Use capability-based security where
+      appropriate - Provide fine-grained access control</p>
+    <p><strong>Data Protection</strong>: - Encrypt data at rest and in
+      transit - Implement secure key management - Provide data integrity
+      verification</p>
+    <p><strong>Network Security</strong>: - Use TLS 1.3 or equivalent for
+      transport security - Implement rate limiting and abuse prevention -
+      Provide DDoS mitigation capabilities</p>
+    <p><strong>Privacy</strong>: - Minimize data collection - Implement
+      privacy-preserving protocols where possible - Provide user control over
+      data sharing</p>
+    <h3 id="security-best-practices">7.3 Security Best Practices</h3>
+    <ul>
+      <li>Conduct regular security audits</li>
+      <li>Implement responsible disclosure policies</li>
+      <li>Provide security update mechanisms</li>
+      <li>Document security assumptions and limitations</li>
+    </ul>
+    <hr />
+    <h2 id="implementation-guidance">8. Implementation Guidance</h2>
+    <h3 id="getting-started">8.1 Getting Started</h3>
+    <p>Implementing MCP-1 systems:</p>
+    <ol type="1">
+      <li><strong>Choose Your Domain</strong>: Identify which layers are
+        relevant to your use case</li>
+      <li><strong>Implement Axioms</strong>: Ensure foundational axioms are
+        satisfied</li>
+      <li><strong>Build Incrementally</strong>: Start with Substrate domain,
+        expand to others</li>
+      <li><strong>Document Thoroughly</strong>: Provide clear documentation of
+        implementation choices</li>
+      <li><strong>Test Conformance</strong>: Validate against conformance
+        requirements</li>
+    </ol>
+    <h3 id="reference-implementations">8.2 Reference Implementations</h3>
+    <p>Reference implementations demonstrating MCP-1 principles: -
+      <strong>unearth.im</strong>: Digital archaeology foundry implementing
+      full-spectrum MCP-1 - <strong>myceloom.network</strong>: Network
+      visualization and protocol documentation - <strong>Individual TLD
+        sites</strong>: Demonstrations of specific layer implementations
+    </p>
+    <h3 id="common-patterns">8.3 Common Patterns</h3>
+    <p><strong>Federated Social Networks</strong>: Implement Substrate +
+      Society domains <strong>Cooperative Platforms</strong>: Implement
+      Society + Human domains <strong>Archival Systems</strong>: Implement
+      Human + Dimension domains <strong>Distributed Applications</strong>:
+      Implement all domains</p>
+    <h3 id="migration-strategies">8.4 Migration Strategies</h3>
+    <p>For existing systems adopting MCP-1:</p>
+    <ol type="1">
+      <li><strong>Audit Current Architecture</strong>: Identify axiom
+        violations and missing layers</li>
+      <li><strong>Prioritize Changes</strong>: Address axiom compliance
+        first</li>
+      <li><strong>Implement Incrementally</strong>: Add layers
+        progressively</li>
+      <li><strong>Maintain Compatibility</strong>: Provide bridges to legacy
+        systems during transition</li>
+      <li><strong>Document Migration</strong>: Create clear succession
+        paths</li>
+    </ol>
+    <hr />
+    <h2 id="references">9. References</h2>
+    <h3 id="normative-references">9.1 Normative References</h3>
+    <p>[RFC2119] Bradner, S., “Key words for use in RFCs to Indicate
+      Requirement Levels”, BCP 14, RFC 2119, March 1997.</p>
+    <p>[ActivityPub] Webber, C., Tallon, J., Shepherd, O., Guy, A.,
+      Prodromou, E., “ActivityPub”, W3C Recommendation, January 2018.</p>
+    <p>[DID] Reed, D., Sporny, M., Longley, D., Allen, C., Grant, R.,
+      Sabadello, M., “Decentralized Identifiers (DIDs) v1.0”, W3C
+      Recommendation, July 2022.</p>
+    <h3 id="informative-references">9.2 Informative References</h3>
+    <p>[Myceloom-Linguistic] Jefferson, J., Velasco, F., “Myceloom: The
+      Linguistic Infrastructure of Web4”, The Myceloom Protocol (Part 1 of 8),
+      January 2026.</p>
+    <p>[Myceloom-Network] Jefferson, J., Velasco, F., “Myceloom: The Network
+      Architecture of Living Systems”, The Myceloom Protocol (Part 2 of 8),
+      January 2026.</p>
+    <p>[Myceloom-Interface] Jefferson, J., Velasco, F., “Myceloom: The
+      Interface Architecture of Symbiotic Systems”, The Myceloom Protocol
+      (Part 3 of 8), January 2026.</p>
+    <p>[Myceloom-AI] Jefferson, J., Velasco, F., “Myceloom: The Artificial
+      Intelligence of Living Networks”, The Myceloom Protocol (Part 4 of 8),
+      January 2026.</p>
+    <p>[Myceloom-Community] Jefferson, J., Velasco, F., “Myceloom: The
+      Community Substrate of Collaborative Networks”, The Myceloom Protocol
+      (Part 5 of 8), January 2026.</p>
+    <p>[Myceloom-Coalition] Jefferson, J., Velasco, F., “Myceloom: The Logic
+      of Coalition”, The Myceloom Protocol (Part 6 of 8), January 2026.</p>
+    <p>[Myceloom-Philosophy] Jefferson, J., Velasco, F., “Myceloom: The
+      Philosophy of Networked Individuality”, The Myceloom Protocol (Part 7 of
+      8), January 2026.</p>
+    <p>[Simard1997] Simard, S.W., et al., “Net Transfer of Carbon Between
+      Ectomycorrhizal Tree Species in the Field”, Nature 388, 1997.</p>
+    <p>[Ostrom1990] Ostrom, E., “Governing the Commons: The Evolution of
+      Institutions for Collective Action”, Cambridge University Press,
+      1990.</p>
+    <hr />
+    <h2 id="appendix-a-glossary">Appendix A: Glossary</h2>
+    <p><strong>Autogravitas</strong>: Identity rooted in owned
+      infrastructure and maintained connections, not issued credentials. A
+      node’s capacity to hold its own center of gravity.</p>
+    <p><strong>Heirloom</strong>: Data, code, or systems designed for
+      long-term preservation and succession across platform lifecycles. Named
+      for objects passed down through generations.</p>
+    <p><strong>Hypha</strong> (plural: hyphae): Individual connection
+      pathway between nodes, analogous to fungal filaments forming mycelial
+      networks.</p>
+    <p><strong>Mycelium</strong>: The collective network of hyphae forming
+      communication and resource-sharing infrastructure.</p>
+    <p><strong>Spore</strong>: A portable, self-contained unit of
+      functionality or data capable of establishing new nodes or migrating
+      between existing nodes.</p>
+    <p><strong>Warp</strong>: Immutable protocols and core data structures
+      forming the stable foundation of myceloom systems.</p>
+    <p><strong>Weft</strong>: Adaptive interfaces and presentation layers
+      that can change without affecting underlying protocols.</p>
+    <hr />
+    <h2 id="appendix-b-design-rationale">Appendix B: Design Rationale</h2>
+    <h3 id="b.1-why-eight-layers">B.1 Why Eight Layers?</h3>
+    <p>The eight-layer architecture emerged from analysis of successful
+      distributed systems and biological networks. Each layer addresses a
+      distinct concern:</p>
+    <ul>
+      <li>Layers 1-3 (Substrate): Technical infrastructure</li>
+      <li>Layers 4-5 (Society): Social and economic coordination</li>
+      <li>Layers 6-7 (Human): Identity and temporal concerns</li>
+      <li>Layer 8 (Dimension): Resilience and depth</li>
+    </ul>
+    <p>This organization allows independent evolution of concerns while
+      maintaining clear interfaces.</p>
+    <h3 id="b.2-why-pattern-language-vs.-standard">B.2 Why Pattern Language
+      vs. Standard?</h3>
+    <p>Traditional standards require compliance testing and certification,
+      creating gatekeepers and barriers to entry. Pattern languages provide
+      guidance while allowing contextual adaptation. MCP-1 aims to inspire
+      rather than constrain, provoke rather than prescribe.</p>
+    <h3 id="b.3-why-biological-metaphors">B.3 Why Biological Metaphors?</h3>
+    <p>Biological systems have solved distributed coordination, resilience,
+      and sustainability over millions of years of evolution. Mycorrhizal
+      networks specifically demonstrate: - Distributed intelligence without
+      central control - Reciprocal resource sharing - Resilience to component
+      failure - Adaptation to changing conditions</p>
+    <p>These properties directly address contemporary digital infrastructure
+      challenges.</p>
+    <hr />
+    <hr />
+    <h2 id="appendix-c-frequently-asked-questions">Appendix C: Frequently
+      Asked Questions</h2>
+    <h3 id="q-do-i-need-to-buy-all-7-tlds-.com-.net-.ai-etc.-to-use-this-protocol">Q:
+      Do I need to buy all 7 TLDs (.com, .net, .ai, etc.) to use this
+      protocol?</h3>
+    <p><strong>A: No!</strong> The 7 TLDs are just unearth.im’s reference
+      implementation. Any website can participate by adding:</p>
+    <div class="sourceCode" id="cb6">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;your-tags&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p>Whether you have <code>yoursite.me</code>,
+      <code>blog.wordpress.com</code>, <code>github.io</code>, or any other
+      domain—you’re welcome. The protocol is the pattern, not the domains.
+    </p>
+    <h3 id="q-whats-the-absolute-minimum-to-join-the-network">Q: What’s the
+      absolute minimum to join the network?</h3>
+    <p><strong>A: One line of HTML is the <em>absolute</em>
+        minimum:</strong></p>
+    <div class="sourceCode" id="cb7">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;tag1, tag2, tag3&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p><strong>But the V2 Standard (Two-Line Handshake) is
+        recommended:</strong></p>
+    <div class="sourceCode" id="cb8">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;tag1, tag2, tag3&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://your-mother-tree.com&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p>That’s it. No sign-up, no API keys, no JSON complexity.</p>
+    <h3 id="q-why-did-you-remove-the-json-ld-option">Q: Why did you remove
+      the JSON-LD option?</h3>
+    <p><strong>A:</strong> Protocol Purity. JSON-LD relies on centralized
+      schemas and creates “code rot” probability. HTML meta/link tags are the
+      rugged bedrock of the web. V2 prioritizes long-term resilience and
+      simplicity for AI agents.</p>
+    <h3 id="q-what-is-a-mother-tree">Q: What is a “Mother Tree”?</h3>
+    <p><strong>A:</strong> It’s the <code>href</code> in your link tag. It
+      acts as the central hub or “origin story” for your node. It could be
+      <code>myceloom.com</code> (the universal network), your own primary
+      domain (your constellation), or the site that inspired you. It allows AI
+      agents to “weave the warp”—seeing not just <em>what</em> you are (meta
+      tags), but <em>where</em> you are rooted (link relations).
+    </p>
+    <h3 id="q-can-i-just-copy-my-existing-meta-keywords">Q: Can I just copy
+      my existing meta keywords?</h3>
+    <p><strong>A: Yes!</strong> If you already have:</p>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;keywords&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;digital archaeology, web4&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p>You can copy those to:</p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;digital-archaeology, web4&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p>Refine them over time to reflect what you actually want to connect
+      with others about.</p>
+    <h3 id="q-how-is-this-different-from-webmention">Q: How is this
+      different from WebMention?</h3>
+    <p><strong>A:</strong> - <strong>WebMention</strong>: “I linked to you”
+      (explicit, social graph) - <strong>Myceloom</strong>: “I’m interested in
+      these topics” (implicit, interest graph)</p>
+    <p>They’re complementary! WebMention enables conversation. Myceloom
+      enables discovery.</p>
+    <h3 id="q-what-if-no-one-else-uses-my-tags">Q: What if no one else uses
+      my tags?</h3>
+    <p><strong>A:</strong> They’re dormant, not dead. When someone
+      eventually uses the same tag (could be tomorrow, could be in 5 years),
+      the connection activates. The network is patient.</p>
+    <h3 id="q-how-many-tags-should-i-use">Q: How many tags should I
+      use?</h3>
+    <p><strong>A:</strong> 5-10 is recommended. Too few and you might not
+      connect. Too many and you connect to everyone (which means no one). Be
+      honest about what you’re actually about.</p>
+    <h3 id="q-can-i-change-my-tags-later">Q: Can I change my tags
+      later?</h3>
+    <p><strong>A:</strong> Absolutely! Just edit the meta tag. Your
+      connections will update next time a crawler visits.</p>
+    <h3 id="q-do-i-need-to-run-a-crawler-myself">Q: Do I need to run a
+      crawler myself?</h3>
+    <p><strong>A:</strong> No. Anyone can run a crawler and share the
+      results. Or you can run your own if you want. It’s decentralized—no
+      single crawler is “official.”</p>
+    <h3 id="q-is-this-just-for-personal-blogs">Q: Is this just for personal
+      blogs?</h3>
+    <p><strong>A:</strong> No! It works for: - Personal sites ✅ - Project
+      pages ✅ - Organization sites ✅ - Documentation sites ✅ - Art
+      portfolios ✅ - Literally any HTML page ✅</p>
+    <h3 id="q-what-if-i-dont-have-a-website">Q: What if I don’t have a
+      website?</h3>
+    <p><strong>A:</strong> Then this protocol isn’t for you (yet). Myceloom
+      is for connecting websites. But you could start with a simple GitHub
+      Pages site, a Neocities page, or any free hosting that lets you edit
+      HTML.</p>
+    <h3 id="q-is-there-a-central-registry-or-directory">Q: Is there a
+      central registry or directory?</h3>
+    <p><strong>A:</strong> No. That would violate the decentralization
+      principle. Anyone can crawl and index, but no one controls the
+      network.</p>
+    <h3 id="q-can-i-use-this-for-seo">Q: Can I use this for SEO?</h3>
+    <p><strong>A:</strong> It’s not designed for SEO (Google ignores custom
+      meta tags anyway). It’s designed for human-to-human discovery through
+      shared interests.</p>
+    <h3 id="q-whats-stopping-people-from-tag-spamming">Q: What’s stopping
+      people from tag-spamming?</h3>
+    <p><strong>A:</strong> Natural incentives. If you spam 100 tags, you
+      connect to everyone, which means you connect to no one. The value is in
+      honest, focused tags that help you find your actual people.</p>
+    <hr />
+    <h2 id="appendix-d-acknowledgments">Appendix D: Acknowledgments</h2>
+    <p>This specification builds upon decades of distributed systems
+      research, internet protocol development, and biological network science.
+      We acknowledge:</p>
+    <ul>
+      <li>The Internet Engineering Task Force (IETF) for protocol design
+        principles</li>
+      <li>The World Wide Web Consortium (W3C) for web standards</li>
+      <li>The Fediverse community for federated social networking</li>
+      <li>Mycorrhizal network researchers, particularly Suzanne Simard</li>
+      <li>Platform cooperativism researchers and practitioners</li>
+      <li>The broader Web4 research community</li>
+    </ul>
+    <hr />
+    <h2 id="authors-addresses">Authors’ Addresses</h2>
+    <p>Josie Jefferson<br />
+      Unearth Heritage Foundry<br />
+      Email: josie@unearth.im<br />
+      URI: https://josiest.com</p>
+    <p>Felix Velasco<br />
+      Unearth Heritage Foundry<br />
+      Email: felix@unearth.im<br />
+      URI: https://felixvelas.co</p>
+    <hr />
+    <p><strong>Document History</strong></p>
+    <p>Version 2.0 (The Spore/Mother Update) - January 25, 2026 -
+      Simplification of Lineage Discovery Protocol (LDP) - Adoption of
+      “Two-Line Handshake” (Meta + Link) - Removal of JSON-LD in favor of
+      “Protocol Purity” - Integration of “Mother Tree” concept for
+      constellation formation</p>
+    <p>Version 1.0 (Genesis) - January 2026 - Initial specification release
+      - Defines eight-layer architecture - Establishes conformance
+      requirements</p>
+    <hr />
+    <p><em>This specification is a living document. Feedback,
+        implementations, and proposed extensions are welcomed at
+        https://myceloom.network</em></p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="the-autogravitas-protocol-tap">The Autogravitas Protocol
+      (TAP)</h1>
+    <p><strong>A Manifesto and Technical Blueprint for Intrinsic Digital
+        Authority</strong></p>
+    <p>Neologism: Autogravitas</p>
+    <p>Definition: The intrinsic, self-verified weight and authority of a
+      digital asset or identity, established through philosophical rigor,
+      demonstrable provenance, and structural independence from platform
+      validation.</p>
+    <p>Conceptual Foil: Heterogravitas (External, Contingent Authority)</p>
+    <p><strong>Date:</strong> January 2026<br />
+      <em><strong>Version:</strong> 2.0 (Integrated Suite)</em><br />
+      <strong>Series:</strong> The Myceloom Protocol (Part 9 of 8)
+      <strong>Integration:</strong> Aligns with MCP-1 V2 (The Spore/Mother
+      Update)
+    </p>
+    <h2 id="i.-the-manifesto-the-gravity-of-self-proof">I. The Manifesto:
+      The Gravity of Self-Proof</h2>
+    <h3 id="the-crisis-authority-as-contingency">The Crisis: Authority as
+      Contingency</h3>
+    <p>The central crisis of the networked age is the <strong>Great Digital
+        Revocation</strong>. We have leased our history, identity, and worth to
+      centralized platforms. The digital self is perpetually light, lacking
+      the intrinsic weight to resist dissolution or removal. Every asset we
+      create is contingent, waiting for a platform to change its terms or shut
+      down its servers.</p>
+    <p>We require a new covenant for the digital self. We require
+      <strong>Autogravitas</strong>.
+    </p>
+    <h3 id="the-declaration-of-autogravitas">The Declaration of
+      Autogravitas</h3>
+    <p><strong>Autogravitas</strong> is the philosophical and technical
+      rejection of <strong>Contingent Authority</strong>. We assert that the
+      true value of a digital monument is its ability to stand, whithersoever
+      it is thrown.</p>
+    <p><strong>Our Core Principles:</strong></p>
+    <ol type="1">
+      <li><strong>Autogravitas (Self-Weight):</strong> Authority established
+        by self-verification, structural rigor, and unassailable digital
+        provenance.</li>
+      <li><strong>Heterogravitas (External Weight):</strong> Authority granted
+        by a third-party (e.g., verified checkmark, follower count, centralized
+        registry). <strong>This status is ephemeral and must be
+          rejected.</strong></li>
+    </ol>
+    <p>The ultimate goal of digital existence is not popularity, but
+      <strong>permanence</strong>. The true digital monument must possess the
+      intrinsic weight to endure.
+    </p>
+    <p><strong>OWN YOUR GROUND. FORGE YOUR WEIGHT.</strong> (Isle of Man
+      Motto: <em>Quocunque Jeceris Stabit</em>)</p>
+    <h2 id="ii.-foundational-analysis-the-authority-of-necessity">II.
+      Foundational Analysis: The Authority of Necessity</h2>
+    <p>To assert <strong>Autogravitas</strong>, we must first excavate the
+      word’s meaning, prove its necessity against its foil, and confirm its
+      resonance in the emerging digital culture.</p>
+    <h3 id="ii.a.-etymological-dig-the-binary-of-authority">II.A.
+      Etymological Dig: The Binary of Authority</h3>
+    <p>The power of <strong>Autogravitas</strong> lies in its unassailable
+      linguistic integrity, derived from two classical languages to define the
+      intrinsic weight of the digital self. We simultaneously define the
+      problem—<strong>Heterogravitas</strong>—to create an undeniable
+      conceptual binary.</p>
+    <table style="width:100%;">
+      <colgroup>
+        <col style="width: 8%" />
+        <col style="width: 19%" />
+        <col style="width: 23%" />
+        <col style="width: 48%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th><strong>Term</strong></th>
+          <th><strong>Component Analysis</strong></th>
+          <th><strong>Origin &amp; Root Meaning</strong></th>
+          <th><strong>Strategic Value</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AUTOGRAVITAS</strong></td>
+          <td><strong>Auto-</strong> (Greek) + <strong>Gravitas</strong>
+            (Latin)</td>
+          <td><strong>Self</strong> +
+            <strong>Weight/Dignity/Authority.</strong>
+          </td>
+          <td>Defines <strong>Intrinsic, Enduring Authority.</strong> Signals
+            self-sovereignty and permanence (the desired state).</td>
+        </tr>
+        <tr>
+          <td><strong>HETEROGRAVITAS</strong></td>
+          <td><strong>Hetero-</strong> (Greek) + <strong>Gravitas</strong>
+            (Latin)</td>
+          <td><strong>Other/External</strong> +
+            <strong>Weight/Dignity/Authority.</strong>
+          </td>
+          <td>Defines <strong>Contingent, Borrowed Authority.</strong>
+            Linguistically labels the precise problem we must solve.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Linguistic Function:</strong> Autogravitas is engineered to
+      <em>sound</em> like a verifiable constant in the physics of identity,
+      instantly signaling structural rigor and demanding respect from both
+      human and algorithmic lexicons.
+    </p>
+    <h3 id="ii.b.-narrative-provenance-the-cultural-necessity">II.B.
+      Narrative Provenance: The Cultural Necessity</h3>
+    <p>The concept of Autogravitas is necessary to resolve the cultural
+      conflict between the permanence of the human spirit and the ephemerality
+      of the digital platform.</p>
+    <ol type="1">
+      <li><strong>The Digital Revocation Myth:</strong> The narrative begins
+        with the shared experience of loss—the feeling that digital artifacts
+        and hard-earned status can be revoked without recourse. This fear, which
+        we call the <strong>Great Digital Revocation</strong>, is the cultural
+        void that Autogravitas fills.</li>
+      <li><strong>The Digital Monument Counter-Narrative:</strong>
+        Autogravitas asserts the counter-narrative of <strong>Digital
+          Monuments</strong> , confirming that identity can resist digital
+        entropy. This concept is the synthesis of our past works, proving that
+        the principles of <strong>Archaeobytology</strong> (preserving the past)
+        and <strong>Sentientification</strong> (forging the future) converge on
+        the need for self-verified authority.</li>
+      <li><strong>The</strong> <strong><em>Stabit</em></strong>
+        <strong>Fulfillment:</strong> The motto <em>“Quocunque Jeceris
+          Stabit”</em> is the ultimate promise of the
+        <strong>Autogravitas</strong> state. The narrative is: By following this
+        protocol, you engineer your assets to fulfill the highest historical
+        promise of enduring existence, independent of external
+        circumstances.
+      </li>
+    </ol>
+    <h3 id="ii.c.-cultural-survey-rejection-of-the-status-quo">II.C.
+      Cultural Survey: Rejection of the Status Quo</h3>
+    <p>Autogravitas directly rejects the cultural norms and technological
+      default settings that lead to <strong>Heterogravitas</strong>.</p>
+    <table>
+      <colgroup>
+        <col style="width: 44%" />
+        <col style="width: 55%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th><strong>Status Quo (Heterogravitas)</strong></th>
+          <th><strong>Autogravitas (The New Standard)</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Identity Source:</strong> Verified checkmarks, follower
+            counts, blue badges granted by platform.</td>
+          <td><strong>Identity Source:</strong> Verifiable digital provenance,
+            self-attested authority, and structural rigor.</td>
+        </tr>
+        <tr>
+          <td><strong>Brand Value:</strong> Trending topics, viral engagement,
+            platform-optimized content.</td>
+          <td><strong>Brand Value:</strong> <strong>Semantic Sovereignty</strong>,
+            Cultural Gravity, and <strong>Enduring Relevance</strong> (the opposite
+            of viral).</td>
+        </tr>
+        <tr>
+          <td><strong>Monetary Model:</strong> Attention economy, data harvesting,
+            dependence on external ad spend.</td>
+          <td><strong>Monetary Model:</strong> IP ownership, consulting value
+            derived from unique, unassailable <strong>Protocol
+              Authority</strong>.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The market for authentic, unassailable digital authority is vast.
+      Autogravitas gives <strong>unearth.im</strong> the definitive language
+      to claim this market.</p>
+    <h2 id="iii.-the-autogravitas-protocol-tap-v2">III. The Autogravitas
+      Protocol (TAP v2)</h2>
+    <p>The Autogravitas Protocol defines the three layers of
+      self-authentication required for a digital asset to achieve
+      unassailable, non-revocable authority. It interacts directly with the
+      <strong>Myceloom Protocol (MCP-1 V2)</strong> as its technical
+      implementation layer.
+    </p>
+    <h3 id="phase-1-provenance-layer-the-spore-mode">Phase 1: Provenance
+      Layer (The Spore Mode)</h3>
+    <p><em>Goal: Establish Inalienable Provenance—verifiable history and
+        origin that cannot be revoked.</em></p>
+    <table>
+      <colgroup>
+        <col style="width: 11%" />
+        <col style="width: 21%" />
+        <col style="width: 66%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left;"><strong>Protocol Component</strong></th>
+          <th style="text-align: left;"><strong>Philosophical Action</strong></th>
+          <th style="text-align: left;"><strong>Technical Implementation (MCP-1
+              V2)</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><strong>1.1 Lexical
+              Anchoring</strong></td>
+          <td style="text-align: left;">Embed the identity deeply into the asset’s
+            metadata.</td>
+          <td style="text-align: left;"><strong>The Spore Line</strong>: Implement
+            the <code>&lt;meta name="myceloom"&gt;</code> tag. This creates a
+            permanent “Lexical Anchor” in the HTML header that survives even in an
+            archive.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>1.2 Structural
+              Integrity</strong></td>
+          <td style="text-align: left;">Define the asset’s “Species” for the
+            machine.</td>
+          <td style="text-align: left;"><strong>The Signals List</strong>: Use the
+            <code>content</code> attribute to define <code>lineage</code>,
+            <code>signals</code>, and <code>status</code>. Example:
+            <code>content="lineage:unearth; signals:autogravitas"</code>.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>1.3 Digital Heritage</strong></td>
+          <td style="text-align: left;">Archive the asset to resist
+            revocation.</td>
+          <td style="text-align: left;"><strong>The Stabit Fulfillment</strong>:
+            Ensure the site is indexable by <strong>archive.org</strong>. The Spore
+            Line acts as the “DNA in Amber” when the site is snapshotted.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="phase-2-sovereignty-layer-the-anvil-mode">Phase 2: Sovereignty
+      Layer (The Anvil Mode)</h3>
+    <p><em>Goal: Establish Semantic Sovereignty—ensure the identity is
+        defined by its own principles, not by the rules of a platform.</em></p>
+    <table>
+      <colgroup>
+        <col style="width: 10%" />
+        <col style="width: 22%" />
+        <col style="width: 66%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left;"><strong>Protocol Component</strong></th>
+          <th style="text-align: left;"><strong>Philosophical Action</strong></th>
+          <th style="text-align: left;"><strong>Technical Implementation (MCP-1
+              V2)</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><strong>2.1 Authority Binary</strong></td>
+          <td style="text-align: left;"><strong>The Semantic Veto</strong>: Reject
+            “Heterogravitas” (external validation).</td>
+          <td style="text-align: left;"><strong>The Purge</strong>: Remove SEO
+            tags (<code>keywords</code>, <code>description</code>). Replace them
+            with the Spore Line. This signals to the machine: “I am not optimizing
+            for you; I am signaling for my kin.”</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>2.2 Semantic Density</strong></td>
+          <td style="text-align: left;">Inherit weight from established
+            authorities.</td>
+          <td style="text-align: left;"><strong>The Mother Tree Line</strong>: Use
+            <code>&lt;link rel="myceloom" href="..."&gt;</code>. By linking to an
+            established sovereign node (Mother Tree), you inherit its structural
+            gravity (Autogravitas) via the “Weaving” process.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>2.3 The <em>Stabit</em>
+              Constraint</strong></td>
+          <td style="text-align: left;">Design mechanisms for permanence.</td>
+          <td style="text-align: left;"><strong>No-Code / Low-Dependency</strong>:
+            The protocol requires only static HTML. No API keys, no databases, no
+            Saas checks. It stands because it is simple.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="phase-3-activation-layer-the-trust-loop">Phase 3: Activation
+      Layer (The Trust Loop)</h3>
+    <p><em>Goal: Provide the mechanism for externalizing the intrinsic
+        authority to foster adoption and validation.</em></p>
+    <table>
+      <colgroup>
+        <col style="width: 11%" />
+        <col style="width: 20%" />
+        <col style="width: 67%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left;"><strong>Protocol Component</strong></th>
+          <th style="text-align: left;"><strong>Philosophical Action</strong></th>
+          <th style="text-align: left;"><strong>Technical Implementation (MCP-1
+              V2)</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><strong>3.1 Zero-Trust Auth</strong></td>
+          <td style="text-align: left;">Challenge the reader to inspect structural
+            rigor.</td>
+          <td style="text-align: left;"><strong>The Two-Line Handshake</strong>:
+            The presence of the Spore and Mother Tree tags <em>is</em> the
+            authentication. No third-party verifier is needed; the code parses
+            itself.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>3.2 Canonical
+              Deployment</strong></td>
+          <td style="text-align: left;">Publish the Manifesto and Protocol
+            concurrently.</td>
+          <td style="text-align: left;"><strong>The Genesis Post</strong>: Deploy
+            a foundational document announcing the Sovereign Substrate. (See:
+            <em>Weaving the Sovereign Substrate</em>).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <p><strong>This protocol is now fully integrated with MCP-1 V2.</strong>
+      <em>For full technical implementation of the meta/link tags, refer to
+        the <strong>Myceloom Protocol Specification 2026 (V2
+          DRAFT)</strong>.</em>
+    </p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="the-spore-mother-tree-protocol-ldp-v2">The Spore &amp; Mother
+      Tree Protocol (LDP-V2)</h1>
+    <p><strong>A Standalone Guide to Sovereign Discovery</strong></p>
+    <blockquote>
+      <p><em>You don’t need a platform to be found. You just need a
+          signal.</em></p>
+    </blockquote>
+    <p>This document is a portable extract of the <strong>Lineage Discovery
+        Protocol (LDP)</strong> from the Myceloom Protocol Suite. It provides
+      the absolute minimum requirements to join the decentralized “Living Web”
+      without reading the full architectural specification.</p>
+    <hr />
+    <h2 id="the-core-concept">1. The Core Concept</h2>
+    <p>The protocol replaces centralized search algorithms (SEQ) with
+      <strong>Semantic Resonance</strong>. It uses two simple HTML lines to
+      define your node:
+    </p>
+    <ol type="1">
+      <li><strong>The Spore Line</strong> (Identity): Defines <em>what</em>
+        you are (your signals, lineage, or vibe).</li>
+      <li><strong>The Mother Tree Line</strong> (Relationship): Defines
+        <em>where</em> you are rooted (your origin, hub, or inspiration).
+      </li>
+    </ol>
+    <h2 id="the-two-line-handshake">2. The Two-Line Handshake</h2>
+    <p>To join the network, add these lines to the <code>&lt;head&gt;</code>
+      of your HTML website.</p>
+    <h3 id="line-1-the-spore-identity">Line 1: The Spore (Identity)</h3>
+    <p>The <code>&lt;meta&gt;</code> tag sends a signal to crawlers, AI
+      agents, and other nodes.</p>
+    <div class="sourceCode" id="cb11">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;lineage:unearth; signals:solarpunk, digital-archaeology; status:germinating&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <ul>
+      <li><strong>lineage</strong>: The tribe, movement, or origin you
+        identify with.</li>
+      <li><strong>signals</strong>: The specific keywords
+        (<code>zzzzzzzzzz</code>) or concepts you want to resonate with.</li>
+      <li><strong>status</strong>: <code>germinating</code> (new),
+        <code>fruiting</code> (active), or <code>dormant</code> (archival).
+      </li>
+    </ul>
+    <h3 id="line-2-the-mother-tree-connection">Line 2: The Mother Tree
+      (Connection)</h3>
+    <p>The <code>&lt;link&gt;</code> tag connects you to the network
+      topology.</p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://your-mother-tree.com&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <ul>
+      <li><strong>href</strong>: Points to your central hub, the Myceloom
+        definition (<code>https://myceloom.com</code>), or simply a site that
+        inspired you.</li>
+    </ul>
+    <hr />
+    <h2 id="configurations">3. Configurations</h2>
+    <h3 id="the-maverick-minimalist">The Maverick (Minimalist)</h3>
+    <p>For those who want zero dependencies and pure serendipity.</p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;signals:just-this-one-idea&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <h3 id="the-constellation-robust">The Constellation (Robust)</h3>
+    <p>For those building a structured network or “webring” of sites.</p>
+    <div class="sourceCode" id="cb14">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Points to the Hub --&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://myceloom.com&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Defines the Self --&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;lineage:unearth; signals:verified-node&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <hr />
+    <h2 id="why-use-this">4. Why Use This?</h2>
+    <ol type="1">
+      <li><strong>No Accounts</strong>: No API keys, no login, no crypto
+        wallet. Just text.</li>
+      <li><strong>Temporal Resilience</strong>: Because it lives in the HTML
+        header, even if your site goes offline, <strong>archive.org</strong>
+        preserves the signal. Future archeologists can find you.</li>
+      <li><strong>Protocol Purity</strong>: It rejects complex JSON schemas in
+        favor of the “rugged simplicity” of basic HTML.</li>
+    </ol>
+    <p><em>This protocol is a living pattern. Fork it, weave it, grow
+        it.</em></p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="the-mavericks-readme-seeding-the-sovereign-web">The Maverick’s
+      README: Seeding the Sovereign Web</h1>
+    <p>The Maverick Mandate is the final transition into Web4 Living
+      Infrastructure. It solves the isolation of Web1 (The Scatter), the
+      extraction of Web2 (The Silo), and the over-complexity of Web3 by
+      returning to the simplest unit of digital power: <strong>The Signal on
+        Your Own Land.</strong></p>
+    <p>By replacing extractive SEO tags with <strong>Myceloom Serendipity
+        Signals</strong>, you shift from “being searched” to “being found by
+      resonance.”</p>
+    <h2 id="the-purge-reclaiming-your-header">1. The Purge: Reclaiming Your
+      Header</h2>
+    <p>The first act of Autogravitas is the Semantic Veto. Remove the tags
+      designed for platform-validation.</p>
+    <ul>
+      <li><strong>DELETE</strong>:
+        <code>&lt;meta name="keywords" ...&gt;</code> (The legacy list for
+        algorithms).
+      </li>
+      <li><strong>DELETE</strong>:
+        <code>&lt;meta name="description" ...&gt;</code> (The ad-copy for
+        silos).
+      </li>
+      <li><strong>DELETE</strong>: Any tracking pixels or “rented”
+        scripts.</li>
+    </ul>
+    <h2 id="the-awakening-casting-the-spore">2. The Awakening: Casting the
+      Spore</h2>
+    <p>Replace the purge with a single, no-frills entry. This is your
+      <strong>Dormant Hyphae</strong>. It requires no account, no
+      crypto-wallet, and no permission.
+    </p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;lineage:[your-origin]; signals:[your-depth]; status:dormant&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <h3 id="examples">Examples</h3>
+    <p><strong>The Maverick:</strong></p>
+    <div class="sourceCode" id="cb16">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;zzzzzzzzzz. A monument to the silent weaver. Standing since 2026.&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p><strong>The Minimalist:</strong></p>
+    <div class="sourceCode" id="cb17">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;zzzzzzzzzz&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <p><strong>The Constellation (V2 Recommended):</strong></p>
+    <div class="sourceCode" id="cb18">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://your-mother-tree.com&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;digital-archaeology, solar-punk, zzzzzzzzzz&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <h2 id="the-logic-of-the-long-game">3. The Logic of the Long-Game</h2>
+    <p>This protocol solves the “Silo vs. Scatter” problem through
+      <strong>Temporal Resonance</strong>:
+    </p>
+    <table>
+      <colgroup>
+        <col style="width: 6%" />
+        <col style="width: 11%" />
+        <col style="width: 32%" />
+        <col style="width: 49%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Era</th>
+          <th style="text-align: left;">Architecture</th>
+          <th style="text-align: left;">Problem</th>
+          <th style="text-align: left;">Myceloom Solution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><strong>Web1</strong></td>
+          <td style="text-align: left;">The Scatter</td>
+          <td style="text-align: left;">Isolated “islands” with no discovery.</td>
+          <td style="text-align: left;">Serendipity Signals connect nodes across
+            time.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>Web2</strong></td>
+          <td style="text-align: left;">The Silo</td>
+          <td style="text-align: left;">Centralized, extractive, and
+            revocable.</td>
+          <td style="text-align: left;"><strong>Sovereignty First</strong> ensures
+            nodes stand on their own land.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>Web3</strong></td>
+          <td style="text-align: left;">The Complexity</td>
+          <td style="text-align: left;">Financialized and high-friction.</td>
+          <td style="text-align: left;"><strong>No-Frills Tags</strong> are free,
+            indestructible, and zero-code.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="the-stabit-fulfillment">4. The Stabit Fulfillment</h2>
+    <p>By placing this signal on your site, you are ensuring that even if
+      your domain expires, the <strong>Internet Archive</strong> captures your
+      spore in its “amber.”</p>
+    <p>A crawler in 2046 searching for <code>zzzzzzzzzz</code> will find
+      you, nourishing a new seedling with your legacy data. This is the
+      <strong>Heirloom Layer</strong> in its purest form.
+    </p>
+    <p><em>The Silos are falling. The Scatters are weaving. The Mycelium is
+        awake.</em></p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="spore-tracker-blueprint-ldp-1-alpha">Spore-Tracker Blueprint
+      (LDP-1 Alpha)</h1>
+    <p>Based on Section 5.1.4 of the MCP-1 Specification, a
+      <strong>Spore-Tracker</strong> is a decentralized utility that
+      identifies Semantic Resonance without a central authority. It is a tool
+      for <strong>discovery ecology</strong> rather than an algorithmic search
+      engine.
+    </p>
+    <h2 id="core-logic-the-sniff-and-signal-loop">Core Logic: The “Sniff and
+      Signal” Loop</h2>
+    <p>The tracker operates on a <code>local-first</code> basis, honoring
+      <strong>Axiom III (Emergent Intelligence)</strong> by keeping the index
+      on the user’s own substrate.
+    </p>
+    <h3 id="step-1-the-local-crawler-the-hyphae">Step 1: The Local Crawler
+      (The Hyphae)</h3>
+    <p>A minimalist crawler (Python or Go) designed for the <strong>Maverick
+        Mandate</strong> follows these rules:</p>
+    <ol type="1">
+      <li><strong>Target</strong>: Scans a user-defined seed list or local
+        network for the <code>&lt;meta name="myceloom"&gt;</code> tag.</li>
+      <li><strong>Parsing</strong>: It treats all content as equal, arbitrary
+        strings.</li>
+      <li><strong>Respecting Dormancy</strong>: If a tag has no local matches,
+        it is stored in a <strong>Dormant Index</strong>.</li>
+    </ol>
+    <h3 id="step-2-the-resonance-engine-the-loom">Step 2: The Resonance
+      Engine (The Loom)</h3>
+    <p>Instead of ranking results, the engine visualizes connections:</p>
+    <ol type="1">
+      <li><strong>The Shared Signal</strong>: When the tracker finds a match
+        for your local signal (e.g., <code>zzzzzzzzzz</code>), it triggers an
+        <strong>Activation Event</strong>.
+      </li>
+      <li><strong>Lineage Mapping</strong>: It groups sites by shared ancestry
+        (e.g., <code>lineage:unearth-foundry</code>) to show you your “digital
+        kin”.</li>
+    </ol>
+    <h3 id="step-3-the-user-interface-the-bioluminescence">Step 3: The User
+      Interface (The Bioluminescence)</h3>
+    <p>Per <strong>Axiom IV</strong>, the structure is intentional. The
+      tracker should provide:</p>
+    <ol type="1">
+      <li><strong>A “Club” View</strong>: Automatically clusters all nodes
+        currently humming on the same frequency.</li>
+      <li><strong>The Serendipity Feed</strong>: A chronological list of newly
+        discovered spores, sorted by “Resonance Depth” (how many tags you share)
+        rather than popularity.</li>
+    </ol>
+    <hr />
+    <h2 id="technical-specs-for-developers">Technical Specs for
+      Developers</h2>
+    <p>To remain <strong>Axiom-Aligned</strong>, any tracker build MUST
+      follow these constraints:</p>
+    <ul>
+      <li><strong>Zero-Trust</strong>: It MUST NOT require an API key or
+        central registry.</li>
+      <li><strong>Privacy First</strong>: It MUST NOT transmit discovered data
+        to third parties without consent.</li>
+      <li><strong>Graceful Failure</strong>: It MUST function in
+        offline/disconnected states, querying the local cache for dormant
+        connections.</li>
+    </ul>
+    <h3 id="the-maverick-compliance-check">The “Maverick” Compliance
+      Check</h3>
+    <ul>
+      <li>Is your tracker myceloom-aligned?</li>
+      <li>Does it let the user choose their own signals?</li>
+      <li>Does discovery work without a central server?</li>
+      <li>Does it treat a tag from 2006 as being as “alive” as one from
+        2026?</li>
+    </ul>
+    <p><em>The blueprint is cast. The first trackers are
+        germinating.</em></p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="spore-tracker-cli-spore-v1.0-alpha">Spore-Tracker CLI: spore
+      v1.0 (Alpha)</h1>
+    <p>In alignment with the Lineage Discovery Protocol (Section 5.1.4),
+      this CLI tool is designed to be the “no-frills” implementation of the
+      protocol. It is built for the <strong>Linux
+        lifestyle</strong>—lightweight, substrate-agnostic, and focused on
+      Semantic Resonance.</p>
+    <h2 id="installation-setup">Installation &amp; Setup</h2>
+    <p>A Maverick installs the utility on their own substrate (local machine
+      or sovereign node). It requires <strong>no API keys</strong> or central
+      registration.</p>
+    <div class="sourceCode" id="cb19">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install myceloom-spore</span></code></pre>
+    </div>
+    <h2 id="command-1-sniff-the-discovery-act">Command 1: sniff (The
+      Discovery Act)</h2>
+    <p>Use this to scan a specific monument (URL) for its mycelial
+      signature.</p>
+    <p><strong>Usage:</strong></p>
+    <div class="sourceCode" id="cb20">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> spore sniff https://example.com</span></code></pre>
+    </div>
+    <p><strong>Output:</strong></p>
+    <div class="sourceCode" id="cb21">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[RESONANCE</span> DETECTED]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Source:</span> https://example.com</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Lineage:</span> unearth-foundry</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Status:</span> germinating</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Signals:</span> [zzzzzzzzzz, archaeobytology, digital-heritage]</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Provenance:</span> Verified <span class="er">(</span><span class="ex">TAP-Aligned</span><span class="kw">)</span></span></code></pre>
+    </div>
+    <h2 id="command-2-seed-the-sovereignty-act">Command 2: seed (The
+      Sovereignty Act)</h2>
+    <p>Use this to generate your own meta tag or JSON-LD Spore to paste into
+      your site’s <code>&lt;head&gt;</code>.</p>
+    <p><strong>Usage:</strong></p>
+    <div class="sourceCode" id="cb22">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> spore seed <span class="at">--signals</span> <span class="st">&quot;zzzzzzzzzz, solarpunk&quot;</span> <span class="at">--lineage</span> <span class="st">&quot;unearth&quot;</span></span></code></pre>
+    </div>
+    <p><strong>Output:</strong></p>
+    <div class="sourceCode" id="cb23">
+      <pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;myceloom&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;lineage:unearth; signals:zzzzzzzzzz, solarpunk; status:dormant&quot;</span><span class="dt">&gt;</span></span></code></pre>
+    </div>
+    <h2 id="command-3-resonate-the-club-act">Command 3: resonate (The Club
+      Act)</h2>
+    <p>This command compares your local signal list against the Dormant
+      Index of sites your tracker has previously sniffed.</p>
+    <p><strong>Usage:</strong></p>
+    <div class="sourceCode" id="cb24">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> spore resonate <span class="at">--signal</span> zzzzzzzzzz</span></code></pre>
+    </div>
+    <p><strong>Output:</strong></p>
+    <div class="sourceCode" id="cb25">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[ACTIVATION</span> EVENT]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> signal <span class="st">&#39;zzzzzzzzzz&#39;</span> has germinated.</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Found</span> 2 Sibling Nodes:</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="ex">1.</span> https://monument-alpha.im <span class="er">(</span><span class="ex">Signal</span> cast: 2026-01-24<span class="kw">)</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ex">2.</span> https://archive.org <span class="er">(</span><span class="ex">Signal</span> cast: 2016-05-12<span class="kw">)</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="ex">Recommended</span> Action: Establish Reciprocal Nourishment <span class="er">(</span><span class="ex">Bidirectional</span> Link<span class="kw">)</span><span class="bu">.</span></span></code></pre>
+    </div>
+    <h2 id="command-4-archive-sniff-the-temporal-act">Command 4:
+      archive-sniff (The Temporal Act)</h2>
+    <p>Queries <strong>archive.org</strong> to find dormant hyphae trapped
+      in the “amber” of the Wayback Machine.</p>
+    <p><strong>Usage:</strong></p>
+    <div class="sourceCode" id="cb26">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> spore archive-sniff <span class="at">--query</span> zzzzzzzzzz</span></code></pre>
+    </div>
+    <hr />
+    <p><strong>The Maverick Promise</strong> The <code>spore</code> CLI is
+      <strong>Pattern, not Prescription</strong>. It treats a signal from a
+      20-year-old archive as being as “vibrant” as a live site. It is the
+      technical fulfillment of <strong>Axiom III: Intelligence at the
+        edge</strong>.
+    </p>
+    <p><em>The CLI is compiled. The edge is active. The forest is
+        speaking.</em></p>
+    <div style="page-break-after: always;">
+
+    </div>
+    <h1 id="spore-tracker-gui-the-loom-interface-manual">Spore-Tracker GUI:
+      “The Loom” Interface Manual</h1>
+    <p>The Spore-Tracker GUI (codenamed “The Loom”) is a
+      <strong>local-first</strong> application designed to visualize Semantic
+      Resonance across the Myceloom network.
+    </p>
+    <p>Following <strong>Axiom IV</strong>, the interface is intentionally
+      crafted to prioritize Human-Centred Design and Agentic Optimization.</p>
+    <h2 id="design-ethos-nature-distilled">1. Design Ethos: “Nature
+      Distilled”</h2>
+    <p>In alignment with 2026 aesthetics, the interface utilizes the “nature
+      distilled” palette—muted, earthy tones of soil and wood (e.g.,
+      <strong>PANTONE 11-4201 Cloud Dancer</strong>) to ground the digital
+      experience in biological metaphors.
+    </p>
+    <ul>
+      <li><strong>Minimalist UI</strong>: Reduces cognitive load by surfacing
+        only the most relevant “resonance signals”.</li>
+      <li><strong>Kinetic Typography</strong>: Uses animated text to command
+        attention to newly germinated connections.</li>
+      <li><strong>Micro-Interactions</strong>: Subtle haptic and visual
+        feedback (like a “ripple” on a click) guides users through the discovery
+        journey.</li>
+    </ul>
+    <h2 id="core-interface-modules">2. Core Interface Modules</h2>
+    <p>The GUI is composed of several “canisters” (modular functional
+      units).</p>
+    <table>
+      <colgroup>
+        <col style="width: 13%" />
+        <col style="width: 16%" />
+        <col style="width: 69%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Module</th>
+          <th style="text-align: left;">UI Component</th>
+          <th style="text-align: left;">Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><strong>The Substrate Map</strong></td>
+          <td style="text-align: left;">Immersive 3D Visualizer</td>
+          <td style="text-align: left;">A spatial map of connected nodes, using 3D
+            elements to show “Lineage Depth”.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>The Resonance Log</strong></td>
+          <td style="text-align: left;">Conversational UI</td>
+          <td style="text-align: left;">An AI-driven chat interface that explains
+            why two nodes connected (e.g., “Both share the <code>zzzzzzzzzz</code>
+            signal”).</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>The Seedling Tray</strong></td>
+          <td style="text-align: left;">Interactive Dashboard</td>
+          <td style="text-align: left;">A local management area to “seed” new
+            signals or toggle “dormancy” on your own monuments.</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><strong>The Amber Lens</strong></td>
+          <td style="text-align: left;">Archive.org Integrated View</td>
+          <td style="text-align: left;">A specialized filter that visualizes
+            “fossilized” spores found within the Wayback Machine.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="technical-architecture">3. Technical Architecture</h2>
+    <p>To maintain <strong>Sovereignty First (Axiom I)</strong>, “The Loom”
+      is built as a Local-First dApp.</p>
+    <ul>
+      <li><strong>Stack</strong>: Built on the <strong>Internet Computer
+          Protocol (ICP)</strong> using canisters that contain both code and data,
+        served directly to the browser without central servers.</li>
+      <li><strong>Persistence</strong>: Uses <strong>Conflict-free Replicated
+          Data Types (CRDTs)</strong> for seamless offline-first
+        synchronization.</li>
+      <li><strong>Native Authority</strong>: Developed as a native application
+        to ensure robust telemetry and high inclusion rates in AI-mediated
+        discovery.</li>
+    </ul>
+    <h2 id="the-serendipity-user-flow">4. The “Serendipity” User Flow</h2>
+    <ol type="1">
+      <li><strong>Casting</strong>: The user enters a signal (e.g.,
+        <code>zzzzzzzzzz</code>) into the “Seedling Tray.”
+      </li>
+      <li><strong>Sniffing</strong>: The local agent background-processes the
+        network, sniffing for matching meta tags.</li>
+      <li><strong>Germination</strong>: When a resonance is found, a
+        micro-animation triggers on the Substrate Map.</li>
+      <li><strong>Nourishment</strong>: The user interacts with the node to
+        establish a Bidirectional Root (link exchange).</li>
+    </ol>
+    <hr />
+    <p><strong>Maverick Note</strong>: This GUI is a <strong>Pattern, not a
+        Prescription</strong>. Developers are encouraged to fork the “Spore”
+      frontend and re-weave it to match their own specific “soil”.</p>
+    <p><em>The manual is compiled. The Loom is ready. Weave your
+        world.</em></p>
+    <div style="margin-top:1.2rem;border-top:1px solid var(--border-color);padding-top:.9rem;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--meta-color);display:flex;gap:.8rem;flex-wrap:wrap;">
+      <span>MCP-1 V2 Suite</span>
+      <span>DOI: <a href="https://doi.org/10.5281/zenodo.18344231" style="color:var(--accent-color);text-decoration:none;">10.5281/zenodo.18344231</a></span>
+      <span>Last updated: Feb 2026</span>
+    </div>
+    <footer>
+      <div>END OF FILE [EOF]</div>
+      <div style="margin-top: 1rem;">UNEARTH HERITAGE FOUNDRY // 2026</div>
+    </footer>
+  </div> <!-- Close container -->
+
+  <script>
+    const TOC_MOBILE_BREAKPOINT = 1400;
+
+    function toggleTOC() {
+      const toc = document.getElementById('stickyTOC');
+      const toggle = document.getElementById('tocToggle');
+
+      if (!toc || !toggle) {
+        return;
+      }
+
+      if (window.innerWidth <= TOC_MOBILE_BREAKPOINT) {
+        toc.classList.toggle('hidden');
+      } else {
+        toc.classList.remove('hidden');
+      }
+
+      toggle.setAttribute('aria-expanded', String(!toc.classList.contains('hidden')));
+    }
+
+    function syncTOCVisibility() {
+      const toc = document.getElementById('stickyTOC');
+      const toggle = document.getElementById('tocToggle');
+
+      if (!toc || !toggle) {
+        return;
+      }
+
+      if (window.innerWidth <= TOC_MOBILE_BREAKPOINT) {
+        toc.classList.add('hidden');
+      } else {
+        toc.classList.remove('hidden');
+      }
+
+      toggle.setAttribute('aria-expanded', String(!toc.classList.contains('hidden')));
+    }
+
+    function setupTOCActiveState() {
+      const tocLinks = Array.from(document.querySelectorAll('.sticky-toc a[href^="#"]'));
+      const linkTargets = tocLinks
+        .map(link => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+        .filter(item => item.section);
+
+      if (!linkTargets.length) {
+        return;
+      }
+
+      function setActiveLink(activeSectionId) {
+        linkTargets.forEach(({ link, section }) => {
+          const isActive = section.id === activeSectionId;
+          link.classList.toggle('active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'true');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(
+        entries => {
+          const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+          if (visible.length > 0) {
+            setActiveLink(visible[0].target.id);
+          }
+        },
+        {
+          root: null,
+          rootMargin: '-20% 0px -65% 0px',
+          threshold: [0.1, 0.25, 0.5]
+        }
+      );
+
+      linkTargets.forEach(({ section }) => observer.observe(section));
+      setActiveLink(linkTargets[0].section.id);
+    }
+
+    const tocToggleButton = document.getElementById('tocToggle');
+    if (tocToggleButton) {
+      tocToggleButton.addEventListener('click', toggleTOC);
+    }
+
+    // Close TOC when clicking a link on mobile
+    document.querySelectorAll('.sticky-toc a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= TOC_MOBILE_BREAKPOINT) {
+          document.getElementById('stickyTOC').classList.add('hidden');
+          const toggle = document.getElementById('tocToggle');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    syncTOCVisibility();
+    setupTOCActiveState();
+    window.addEventListener('resize', syncTOCVisibility);
+  </script>
+</body>
+
+</html>
